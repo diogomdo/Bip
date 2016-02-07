@@ -23,6 +23,13 @@ public class App
         System.out.println( "Hello!" );
         File file = new File("/home/diogo/Desktop/orig/Soaadas/controller/SoaadasFormController.java");
         
+        
+        //Criar um metodo para mapear os ficheiros do form
+        //por enquanto podera ser so controladores e adapaters
+        
+        //passara por haver uma lista de objectos de cada class do form
+        //eh preciso fazer o "class navigator para o xml
+        
         new ClassNavigator(file);
         
     }
