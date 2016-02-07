@@ -4,6 +4,8 @@ import java.util.Iterator;
 
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.comments.Comment;
+import com.github.javaparser.ast.comments.CommentsCollection;
+import com.github.javaparser.ast.comments.CommentsParser;
 
 import sun.awt.TracedEventQueue;
 
@@ -20,7 +22,6 @@ public class TFDecodeMessageLevelSolver implements TargetComments {
 	
 	private void traceMessages(){
 	if (!currentMethod.getAllContainedComments().isEmpty()){
-		
 		
 		Iterator<Comment> CommentsIterator = currentMethod.getAllContainedComments().iterator();
 		while (CommentsIterator.hasNext()){
