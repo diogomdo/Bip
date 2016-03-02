@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="KEY_BLOCK.Manager.Config" name="KeyBlock">
+		<kind>SimpleBusinessObject</kind>
+		<items>
+			<item name="PROCESS_CODE" logicalName="processCode" type="String"    /> 
+			<item name="PROCESS_DESC" logicalName="processDesc" type="String"    /> 
+		</items>
+		
+			<managerClass>net.hedtech.las.studemre.banner.student.Svacimp.model.KeyBlock</managerClass>
+
+	</manager>
+</b:beans>

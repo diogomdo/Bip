@@ -17,10 +17,10 @@ public class ClassNavigator {
 	
 	public ClassNavigator(File currentFile) throws ParseException, IOException {
 		this.file = currentFile;
-		LoadClass();
+//		LoadClass();
 	}
 	
-	private void LoadClass() throws ParseException, IOException
+	public CompilationUnit LoadClass() throws ParseException, IOException
 	{
 		 FileInputStream in;
 		 
@@ -37,12 +37,14 @@ public class ClassNavigator {
 	            in.close();
 	        }
 	        
+	        return cu;
 	        // visit and print the methods names
-	        new MethodVisitor().visit(cu, null);
-	        
+//	        new MethodVisitor().visit(cu, null);
+	       
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		return null;
 	}
     private static class MethodVisitor extends VoidVisitorAdapter {
 
@@ -51,11 +53,11 @@ public class ClassNavigator {
             // here you can access the attributes of the method.
             // this method will be called for all methods in this 
             // CompilationUnit, including inner class methods
-        	if (n.getName().equals("Soaarol_WhenNewBlockInstanceTrg")){
-        		System.out.println(n.getAllContainedComments());
-        	}
-        	new TFDecodeMessageLevelSolver(n);
-        	
+//        	if (n.getName().equals("Soaarol_WhenNewBlockInstanceTrg")){
+//        		System.out.println(n.getAllContainedComments());
+//        	}
+//        	new TFDecodeMessageLevelSolver(n);
+//        	return n.getAllContainedComments();
         	
         }
     }

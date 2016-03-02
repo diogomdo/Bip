@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import com.codeography.copyValues.Analyser;
 import com.codeography.core.ClassNavigator;
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ParseException;
@@ -18,17 +19,20 @@ import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
  */
 public class App 
 {
-    public static void main( String[] args ) throws ParseException, IOException
+    public static void main( String[] args ) throws Exception
     {
         System.out.println( "Hello!" );
-        File file = new File("/home/diogo/Desktop/orig/Soaadas/controller/SoaadasFormController.java");
-        
+//        File file = new File("/home/diogo/Desktop/orig/Soaadas/controller/SoaadasFormController.java");
+        File file = new File("C:\\otherSpace\\Bip\\sandbox\\Svacimp");
+
         
         //Criar um metodo para mapear os ficheiros do form
         //por enquanto podera ser so controladores e adapaters
         
         //passara por haver uma lista de objectos de cada class do form
         //eh preciso fazer o "class navigator para o xml
+        
+        new Analyser(file);
         
         new ClassNavigator(file);
         

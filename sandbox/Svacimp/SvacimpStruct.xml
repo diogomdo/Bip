@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<FormStructure AlertDataPath="/net/hedtech/las/studemre/banner/student/Svacimp/SvacimpAlerts.xml" FirstNavigationBlock="KEY_BLOCK" LovDataPath="/net/hedtech/las/studemre/banner/student/Svacimp/SvacimpLovs.xml" Name="SVACIMP">
+	<Visual>
+		<Window Id="MAIN_WINDOW" Url="net/hedtech/las/studemre/banner/student/Svacimp/views/ViewMainWindow">
+			<StackedCanvas Id="G$_NAV_CANVAS" Visible="false"/>
+			<StackedCanvas Id="SVACIMP_1_CANVAS"/>
+			<ContentCanvas Id="KEY_BLOCK_CANVAS"/>
+			<ContentCanvas Id="TEMP_CANVAS" Visible="false"/>
+			<StackedCanvas Id="G$_WELCOME_CANVAS" Visible="false"/>
+		</Window>
+		<Window Id="HISTORY_WINDOW" Url="net/hedtech/las/studemre/banner/student/Svacimp/views/ViewHistoryWindow">
+			<ContentCanvas Id="HISTORY_CANVAS"/>
+		</Window>
+	</Visual>
+	<Logic>
+		<Block Id="G$_VPDI_BLOCK"/>
+		<Block Id="G$_SDKEY"/>
+		<Block Id="G$_SDISP"/>
+		<Block Id="G$_NAV_BLOCK"/>
+		<Block Id="FORM_HEADER">
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="WORKFLD" MaxLength="60" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="CALLFLD" MaxLength="60" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="WORKDATE" MaxLength="60" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="CURRENT_INSTITUTION" MaxLength="30" Navigable="false" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="CURRENT_DATE" MaxLength="11" Navigable="false" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="CURRENT_TIME" MaxLength="8" Navigable="false" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="CURRENT_USER" MaxLength="30" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="WORKUSER" MaxLength="30" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Id="CURRENT_FORM" MaxLength="7" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="CURRENT_RELEASE" MaxLength="10" Navigable="false" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="DELETE_IND" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="DELETE_IND1" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" CanvasName="SVACIMP_1_CANVAS" Enabled="false" Id="DATA_SEPARATOR_LINE_0" MaxLength="24" Navigable="false" Type="DisplayItem"/>
+			<Item AllowInsert="false" CanvasName="SVACIMP_1_CANVAS" Enabled="false" Id="DATA_SEPARATOR_LINE_1" MaxLength="24" Navigable="false" Type="DisplayItem"/>
+			<Item AllowInsert="false" CanvasName="HISTORY_CANVAS" Enabled="false" Id="DATA_SEPARATOR_LINE_2" MaxLength="24" Navigable="false" Type="DisplayItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Enabled="false" Id="HOLD_BLOCK_FIELD" MaxLength="61" Navigable="false" Type="TextItem" Visible="false"/>
+		</Block>
+		<Block Id="KEY_BLOCK">
+			<Item AutoSkip="true" CanvasName="KEY_BLOCK_CANVAS" Id="PROCESS_CODE" Lov="GKVSQPR_LOV" MaxLength="30" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="KEY_BLOCK_CANVAS" Id="PROCESS_DESC" MaxLength="60" Navigable="false" Type="DisplayItem"/>
+			<Item CanvasName="KEY_BLOCK_CANVAS" Id="EXECUTE_BTN" MaxLength="30" Type="Button"/>
+			<Item CanvasName="KEY_BLOCK_CANVAS" Id="KEY-CLRFRM_BTN" MaxLength="30" Type="Button" Visible="false"/>
+		</Block>
+		<Block Id="SVBCIMP">
+			<Item Id="SVBCIMP_SQPR_CODE" MaxLength="30" Type="TextItem"/>
+			<Item Id="SVBCIMP_SYSTEM_REQ_IND" MaxLength="1" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="SVACIMP_1_CANVAS" Id="SVBCIMP_EXTERNAL_TABLENAME" MaxLength="30" Type="TextItem"/>
+			<Item AllowSearch="false" CanvasName="SVACIMP_1_CANVAS" Id="REGISTERFILE_DROP" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="SVACIMP_1_CANVAS" Id="SVBCIMP_INCL_FILE_NAME_IND" MaxLength="1" Type="Checkbox"/>
+			<Item AllowSearch="false" CanvasName="SVACIMP_1_CANVAS" Id="SVBCIMP_DIRECTORY" Lov="DIRECTORY_LOV" MaxLength="90" NextItem="SVBCIMP_FILENAME" PreviousItem="SVBCIMP_EXTERNAL_TABLENAME" Type="TextItem"/>
+			<Item CanvasName="SVACIMP_1_CANVAS" Id="SVBCIMP_DIRECTORY_LBT" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="SVACIMP_1_CANVAS" Id="REGISTERFILE_PATH" MaxLength="2000" Type="TextItem"/>
+			<Item AllowSearch="false" CanvasName="SVACIMP_1_CANVAS" Id="SVBCIMP_FILENAME" MaxLength="90" NextItem="SVBCIMP_DEFINITION_YEAR" PreviousItem="SVBCIMP_DIRECTORY" Type="TextItem"/>
+			<Item CanvasName="SVACIMP_1_CANVAS" Id="SVBCIMP_DEFINITION_YEAR" MaxLength="4" Type="TextItem"/>
+			<Item CanvasName="SVACIMP_1_CANVAS" Id="SVBCIMP_FILE_LENGTH" MaxLength="90" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="SVACIMP_1_CANVAS" Id="SVBCIMP_RECORD_DELIMITER" MaxLength="30" Type="TextItem"/>
+			<Item CanvasName="SVACIMP_1_CANVAS" Id="SVBCIMP_FIELDS" MaxLength="4000" Type="TextItem"/>
+			<Item CanvasName="SVACIMP_1_CANVAS" Id="SVBCIMP_LOAD_WHEN" MaxLength="4000" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="SVACIMP_1_CANVAS" Id="SVBCIMP_FIELD_DELIMITER" MaxLength="30" Type="TextItem"/>
+			<Item CanvasName="SVACIMP_1_CANVAS" Id="REGISTERFILE_BUTTON" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item AllowUpdate="false" CanvasName="SVACIMP_1_CANVAS" Id="SVBCIMP_LAST_LOADED_FILE" MaxLength="90" Type="TextItem"/>
+			<Item AllowUpdate="false" CanvasName="SVACIMP_1_CANVAS" Id="SVBCIMP_LOADED_FILE_DATE" MaxLength="26" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="SVACIMP_1_CANVAS" Id="REGISTERFILE_MESSAGEOUT" MaxLength="65534" Type="TextItem"/>
+			<Item AllowUpdate="false" CanvasName="SVACIMP_1_CANVAS" Enabled="false" Id="SVBCIMP_USER_ID" MaxLength="30" Navigable="false" Type="TextItem"/>
+			<Item CanvasName="SVACIMP_1_CANVAS" Enabled="false" Id="SVBCIMP_ACTIVITY_DATE" MaxLength="26" Navigable="false" Required="true" Type="TextItem"/>
+			<Item Id="REIMPORT_FILE" MaxLength="30" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="SVRCIMH" MultiRecord="true">
+			<Item Id="SVRCIMH_SEQ_NUM" MaxLength="11" Type="TextItem"/>
+			<Item Id="SVRCIMH_SQPR_CODE" MaxLength="30" Type="TextItem"/>
+			<Item Id="SVRCIMH_DEFINITION_YEAR" MaxLength="4" Type="TextItem"/>
+			<Item AllowInsert="false" AllowUpdate="false" CanvasName="HISTORY_CANVAS" Id="SVRCIMH_FILENAME" MaxLength="90" Required="true" Type="TextItem"/>
+			<Item AllowInsert="false" AllowUpdate="false" CanvasName="HISTORY_CANVAS" Id="SVRCIMH_USER_ID" MaxLength="30" Required="true" Type="TextItem"/>
+			<Item AllowInsert="false" AllowUpdate="false" CanvasName="HISTORY_CANVAS" Id="SVRCIMH_ACTIVITY_DATE" MaxLength="11" Required="true" Type="TextItem"/>
+		</Block>
+		<Block Id="BUTTON_CONTROL_BLOCK">
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="CHECK_KEYS" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item CanvasName="SVACIMP_1_CANVAS" Id="PROCESS_CODE_LBT" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="HISTORY_CANVAS" Id="RETURN_MAIN" MaxLength="30" Type="Button"/>
+		</Block>
+	</Logic>
+</FormStructure>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<window layout="horizontal" title="mainWindow.title" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<include src="net/hedtech/las/studemre/banner/student/Svacimp/views/PanelKeyBlockCanvas"/>
+	<tabpanel style="ui-panel-view-container ui-notabs">
+		<tab label="main">
+			<include src="net/hedtech/las/studemre/banner/student/Svacimp/views/PanelGNavCanvas"/>
+			<include src="net/hedtech/las/studemre/banner/student/Svacimp/views/PanelSvacimp1Canvas"/>
+
+			<include src="net/hedtech/general/common/libraries/Goqolib/views/PanelGWelcomeCanvas"/>
+		</tab>
+	</tabpanel>
+</window>

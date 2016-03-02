@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="SVBCIMP.Manager.Config" name="SVBCIMP">
+		
+		<items>
+			<item name="SVBCIMP_SQPR_CODE" logicalName="svbcimpSqprCode" type="String" physicalName="SVBCIMP_SQPR_CODE"   /> 
+			<item name="SVBCIMP_SYSTEM_REQ_IND" logicalName="svbcimpSystemReqInd" type="String" physicalName="SVBCIMP_SYSTEM_REQ_IND"   > 
+				<value>
+					<constant>N</constant>
+				</value>	
+			</item>
+			<item name="SVBCIMP_EXTERNAL_TABLENAME" logicalName="svbcimpExternalTablename" type="String" physicalName="SVBCIMP_EXTERNAL_TABLENAME"   > 
+				<value>
+					<constant>REGISTEREDTABLE</constant>
+				</value>	
+			</item>
+			<item name="REGISTERFILE_DROP" logicalName="registerfileDrop" type="String"  virtual="true"  > 
+				<value>
+					<constant>N</constant>
+				</value>	
+			</item>
+			<item name="SVBCIMP_INCL_FILE_NAME_IND" logicalName="svbcimpInclFileNameInd" type="String" physicalName="SVBCIMP_INCL_FILE_NAME_IND"   > 
+				<value>
+					<constant>N</constant>
+				</value>	
+			</item>
+			<item name="SVBCIMP_DIRECTORY" logicalName="svbcimpDirectory" type="String" physicalName="SVBCIMP_DIRECTORY"   /> 
+			<item name="REGISTERFILE_PATH" logicalName="registerfilePath" type="String"  virtual="true"  /> 
+			<item name="SVBCIMP_FILENAME" logicalName="svbcimpFilename" type="String" physicalName="SVBCIMP_FILENAME"   /> 
+			<item name="SVBCIMP_DEFINITION_YEAR" logicalName="svbcimpDefinitionYear" type="String" physicalName="SVBCIMP_DEFINITION_YEAR"   /> 
+			<item name="SVBCIMP_FILE_LENGTH" logicalName="svbcimpFileLength" type="java.math.BigDecimal" physicalName="SVBCIMP_FILE_LENGTH"   /> 
+			<item name="SVBCIMP_RECORD_DELIMITER" logicalName="svbcimpRecordDelimiter" type="String" physicalName="SVBCIMP_RECORD_DELIMITER"   > 
+				<value>
+					<constant>NEWLINE</constant>
+				</value>	
+			</item>
+			<item name="SVBCIMP_FIELDS" logicalName="svbcimpFields" type="String" physicalName="SVBCIMP_FIELDS"   /> 
+			<item name="SVBCIMP_LOAD_WHEN" logicalName="svbcimpLoadWhen" type="String"  virtual="true"  /> 
+			<item name="SVBCIMP_FIELD_DELIMITER" logicalName="svbcimpFieldDelimiter" type="String" physicalName="SVBCIMP_FIELD_DELIMITER"   > 
+				<value>
+					<constant>,</constant>
+				</value>	
+			</item>
+			<item name="SVBCIMP_LAST_LOADED_FILE" logicalName="svbcimpLastLoadedFile" type="String" physicalName="SVBCIMP_LAST_LOADED_FILE"   /> 
+			<item name="SVBCIMP_LOADED_FILE_DATE" logicalName="svbcimpLoadedFileDate" type="java.util.Date" physicalName="SVBCIMP_LOADED_FILE_DATE"   /> 
+			<item name="REGISTERFILE_MESSAGEOUT" logicalName="registerfileMessageout" type="String"  virtual="true"  /> 
+			<item name="SVBCIMP_USER_ID" logicalName="svbcimpUserId" type="String" physicalName="SVBCIMP_USER_ID"   > 
+				<value>
+					<globalVariable name="USER_ID" />
+				</value>	
+			</item>
+			<item name="SVBCIMP_ACTIVITY_DATE" logicalName="svbcimpActivityDate" type="java.util.Date" physicalName="SVBCIMP_ACTIVITY_DATE"   > 
+				<value>
+					<systemVariable name="DBDATE"/>
+				</value>	
+			</item>
+			<item name="REIMPORT_FILE" logicalName="reimportFile" type="String"  virtual="true"  /> 
+		</items>
+		
+		<adapterClass>net.hedtech.las.studemre.banner.student.Svacimp.model.SvbcimpAdapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE svbcimp_sqpr_code = :KEY_BLOCK_PROCESS_CODE]]></defaultWhereClause>	
+
+	</manager>
+</b:beans>

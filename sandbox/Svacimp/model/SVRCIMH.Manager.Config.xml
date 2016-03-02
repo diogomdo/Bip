@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="SVRCIMH.Manager.Config" name="SVRCIMH">
+		
+		<items>
+			<item name="SVRCIMH_SEQ_NUM" logicalName="svrcimhSeqNum" type="java.math.BigDecimal" physicalName="SVRCIMH_SEQ_NUM"   /> 
+			<item name="SVRCIMH_SQPR_CODE" logicalName="svrcimhSqprCode" type="String" physicalName="SVRCIMH_SQPR_CODE"   /> 
+			<item name="SVRCIMH_DEFINITION_YEAR" logicalName="svrcimhDefinitionYear" type="String" physicalName="SVRCIMH_DEFINITION_YEAR"   /> 
+			<item name="SVRCIMH_FILENAME" logicalName="svrcimhFilename" type="String" physicalName="SVRCIMH_FILENAME"   /> 
+			<item name="SVRCIMH_USER_ID" logicalName="svrcimhUserId" type="String" physicalName="SVRCIMH_USER_ID"   /> 
+			<item name="SVRCIMH_ACTIVITY_DATE" logicalName="svrcimhActivityDate" type="java.util.Date" physicalName="SVRCIMH_ACTIVITY_DATE"   /> 
+		</items>
+		
+		<adapterClass>net.hedtech.las.studemre.banner.student.Svacimp.model.SvrcimhAdapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE SVRCIMH_SQPR_CODE = :KEY_BLOCK_PROCESS_CODE AND SVRCIMH_DEFINITION_YEAR = :SVBCIMP_DEFINITION_YEAR]]></defaultWhereClause>	
+		<defaultOrderByClause><![CDATA[SVRCIMH_SEQ_NUM]]></defaultOrderByClause>	
+
+	</manager>
+</b:beans>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<interactionblock name="FORM_HEADER"/>
+	<interactionblock name="KEY_BLOCK"/>
+	<interactionblock name="BUTTON_CONTROL_BLOCK"/>
+	<interactionblock name="SVBCIMP"/>
+	<panel class="StackedCanvas" id="pnlSvacimp1Canvas" menu="G$_DEFAULT_PM" name="SVACIMP_1_CANVAS" width="100%">
+		<framepanel label="svacimp1Canvas.graphic98.text" name="rect24" width="100%">
+			<collapsiblepanel label="svacimp1Canvas.text58.text" name="rect96" width="100%">
+				<panel width="100%">
+					<gridlayout cols="2" orientation="vertical">
+						<gridcell>
+							<textbox block="SVBCIMP" datatype="String" height="166px" label="svbcimp.registerfileMessageout.prompt" maxlength="65534" member="REGISTERFILE_MESSAGEOUT" multiline="true" name="registerfileMessageout" width="329px">
+								<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							</textbox>
+						</gridcell>
+						<gridcell>
+							<button action="WHEN-BUTTON-PRESSED" block="SVBCIMP" height="20px" icon="open" label="svbcimp.registerfileButton.prompt" member="REGISTERFILE_BUTTON" name="registerfileButton" navigable="false" width="20px">
+								<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+							</button>
+						</gridcell>
+						<gridcell>
+							<textbox block="SVBCIMP" datatype="String" height="23px" label="svbcimp.svbcimpLastLoadedFile.prompt" maxlength="90" member="SVBCIMP_LAST_LOADED_FILE" name="svbcimpLastLoadedFile" width="372px">
+								<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							</textbox>
+							<calendar block="SVBCIMP" case="upper" datatype="Date" formatmask="DD-MON-YYYY" height="23px" label="svbcimp.svbcimpLoadedFileDate.prompt" maxlength="26" member="SVBCIMP_LOADED_FILE_DATE" name="svbcimpLoadedFileDate" width="140px">
+								<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							</calendar>
+						</gridcell>
+					</gridlayout>
+				</panel>
+			</collapsiblepanel>
+			<gridlayout>
+				<gridcell>
+					<checkbox block="SVBCIMP" falsevalue="N" height="21px" label="svbcimp.registerfileDrop.prompt" member="REGISTERFILE_DROP" name="registerfileDrop" value="Y" width="20px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</checkbox>
+				</gridcell>
+				<gridcell>
+					<checkbox block="SVBCIMP" falsevalue="N" height="21px" label="svbcimp.svbcimpInclFileNameInd.prompt" member="SVBCIMP_INCL_FILE_NAME_IND" name="svbcimpInclFileNameInd" value="Y" width="20px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</checkbox>
+				</gridcell>
+				<gridcell>
+					<textbox block="SVBCIMP" case="upper" datatype="String" height="23px" label="svbcimp.svbcimpExternalTablename.prompt" maxlength="30" member="SVBCIMP_EXTERNAL_TABLENAME" name="svbcimpExternalTablename" width="200px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</textbox>
+				</gridcell>
+				<gridcell>
+					<textbox block="SVBCIMP" case="upper" datatype="String" height="23px" keyactions="NEXT_ITEM" label="svbcimp.svbcimpDirectory.prompt" maxlength="90" member="SVBCIMP_DIRECTORY" name="svbcimpDirectory" style="ui-buttoninput" validation="server" width="200px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</textbox>
+					<button action="WHEN-BUTTON-PRESSED" block="SVBCIMP" height="23px" icon="search" member="SVBCIMP_DIRECTORY_LBT" name="svbcimpDirectoryLbt" navigable="false" style="ui-buttoninput" width="20px">
+						<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+					</button>
+				</gridcell>
+				<gridcell>
+					<textbox block="SVBCIMP" datatype="String" height="23px" maxlength="2000" member="REGISTERFILE_PATH" name="registerfilePath" width="200px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</textbox>
+				</gridcell>
+				<gridcell>
+					<textbox block="SVBCIMP" datatype="String" height="23px" label="svbcimp.svbcimpFilename.prompt" maxlength="90" member="SVBCIMP_FILENAME" name="svbcimpFilename" width="372px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</textbox>
+				</gridcell>
+				<gridcell>
+					<textbox block="SVBCIMP" datatype="String" height="23px" label="svbcimp.svbcimpDefinitionYear.prompt" maxlength="4" member="SVBCIMP_DEFINITION_YEAR" name="svbcimpDefinitionYear" width="90px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</textbox>
+				</gridcell>
+				<gridcell>
+					<textbox block="SVBCIMP" datatype="Number" height="23px" label="svbcimp.svbcimpFileLength.prompt" maxlength="90" member="SVBCIMP_FILE_LENGTH" name="svbcimpFileLength" width="90px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</textbox>
+				</gridcell>
+				<gridcell>
+					<textbox block="SVBCIMP" case="upper" datatype="String" height="100px" label="svbcimp.svbcimpLoadWhen.prompt" maxlength="4000" member="SVBCIMP_LOAD_WHEN" multiline="true" name="svbcimpLoadWhen" width="238px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</textbox>
+				</gridcell>
+				<gridcell>
+					<textbox block="SVBCIMP" case="upper" datatype="String" height="23px" label="svbcimp.svbcimpRecordDelimiter.prompt" maxlength="30" member="SVBCIMP_RECORD_DELIMITER" name="svbcimpRecordDelimiter" width="200px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</textbox>
+				</gridcell>
+				<gridcell>
+					<textbox block="SVBCIMP" case="upper" datatype="String" height="106px" label="svbcimp.svbcimpFields.prompt" maxlength="4000" member="SVBCIMP_FIELDS" multiline="true" name="svbcimpFields" width="426px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</textbox>
+				</gridcell>
+				<gridcell>
+					<textbox block="SVBCIMP" datatype="String" enabled="false" height="23px" label="svbcimp.svbcimpUserId.prompt" maxlength="30" member="SVBCIMP_USER_ID" name="svbcimpUserId" width="80px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</textbox>
+				</gridcell>
+				<gridcell>
+					<calendar block="SVBCIMP" case="upper" datatype="Date" enabled="false" formatmask="DD-MON-YYYY" height="23px" keyactions="NEXT_ITEM" label="svbcimp.svbcimpActivityDate.prompt" maxlength="26" member="SVBCIMP_ACTIVITY_DATE" name="svbcimpActivityDate" required="true" width="140px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</calendar>
+				</gridcell>
+				<gridcell>
+					<textbox block="SVBCIMP" case="upper" datatype="String" height="23px" label="svbcimp.svbcimpFieldDelimiter.prompt" maxlength="30" member="SVBCIMP_FIELD_DELIMITER" name="svbcimpFieldDelimiter" width="200px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</textbox>
+				</gridcell>
+			</gridlayout>
+		</framepanel>
+	</panel>
+</config>

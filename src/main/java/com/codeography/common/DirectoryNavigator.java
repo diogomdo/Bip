@@ -26,4 +26,19 @@ public class DirectoryNavigator {
 			e.printStackTrace();
 		}
 	}
+	
+	public static File specificDirectoryContents(File dir, String name) {
+		try {
+			File[] files = dir.listFiles();
+			for (File file : files) {
+				if (file.isDirectory() && file.getName().equals(name)) {
+					System.out.println("directory:" + file.getCanonicalPath());
+					return file;
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }

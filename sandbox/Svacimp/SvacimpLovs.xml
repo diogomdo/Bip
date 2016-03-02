@@ -1,0 +1,34 @@
+﻿<Lovs>
+  <Lov Name="GKVSQPA_LOV" Title="Business Rule Parameter Code Validation List (GKVSQPA)" Width="575" Height="267" RecordGroup="GKVSQPA_RG">
+    <Columns>
+      <Column DataMember="GKVSQPA_CODE" Title="Business Rule Parameter Code" Width="226" ReturnItem="GLOBAL.VALUE">
+      </Column>
+      <Column DataMember="GKVSQPA_DESC" Title="Description" Width="678" ReturnItem="">
+      </Column>
+      <Column DataMember="GKVSQPA_DATA_TYPE_CDE" Title="Data Type" Width="27" ReturnItem="">
+      </Column>
+      <Column DataMember="GKVSQPA_ACTIVITY_DATE" Title="Activity Date" Width="96" ReturnItem="">
+      </Column>
+    </Columns>
+  </Lov>
+  <Lov Name="GKVSQPR_LOV" Title="Business Rule Process Code Validation List (GKVSQPR)" Width="575" Height="267" RecordGroup="GKVSQPR_RG">
+    <Columns>
+      <Column DataMember="GKVSQPR_CODE" Title="Business Rule Process Code" Width="226" ReturnItem="GLOBAL.VALUE">
+      </Column>
+      <Column DataMember="GKVSQPR_DESC" Title="Description" Width="678" ReturnItem="">
+      </Column>
+      <Column DataMember="GKVSQPR_SYS_REQ_IND" Title="Sys Req'd" Width="60" ReturnItem="">
+      </Column>
+      <Column DataMember="GKVSQPR_ACTIVITY_DATE" Title="Activity Date" Width="96" ReturnItem="">
+      </Column>
+    </Columns>
+  </Lov>
+  <Lov Name="DIRECTORY_LOV" Title="Directory Names" Width="575" Height="267" RecordGroup="DIRECTORY_RG">
+    <Columns>
+      <Column DataMember="DIRECTORY_NAME" Title="Directory Name" Width="278" ReturnItem="GLOBAL.VALUE">
+      </Column>
+      <Column DataMember="DIRECTORY_PATH" Title="Directory Path" Width="399" ReturnItem="SVBCIMP.REGISTERFILE_PATH">
+      </Column>
+    </Columns>
+  </Lov>
+</Lovs>

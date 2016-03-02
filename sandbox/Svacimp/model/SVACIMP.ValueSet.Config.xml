@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:valueset"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:valueset http://www.morphis-tech.com/schema/foundations/valueset.xsd">
+<valueSet id="GKVSQPA_RG.ValueSet.Config" name="GKVSQPA_RG">
+    <columns>
+		<column name="GKVSQPA_CODE" type="String" size="30"/>
+		<column name="GKVSQPA_DESC" type="String" size="60"/>
+		<column name="GKVSQPA_DATA_TYPE_CDE" type="String" size="1"/>
+		<column name="GKVSQPA_ACTIVITY_DATE" type="String" size="17"/>
+	</columns>
+	<query><![CDATA[
+	SELECT gkvsqpa_code, gkvsqpa_desc, gkvsqpa_data_type_cde, to_char(gkvsqpa_activity_date, G$_DATE.GET_NLS_DATE_FORMAT) gkvsqpa_activity_date  FROM gkvsqpa  WHERE TRUNC(gkvsqpa_start_date) <= TRUNC(SYSDATE) AND TRUNC(NVL(gkvsqpa_end_date, TO_DATE(G$_DATE.NORMALISE_GREG_DATE('31-12-2099', 'DD-MM-YYYY'), G$_DATE.GET_NLS_DATE_FORMAT))) >= TRUNC(SYSDATE)  ORDER BY gkvsqpa_code
+	]]>
+	</query>
+	
+    <parameters>
+	</parameters>
+</valueSet>
+<valueSet id="GKVSQPR_RG.ValueSet.Config" name="GKVSQPR_RG">
+    <columns>
+		<column name="GKVSQPR_CODE" type="String" size="30"/>
+		<column name="GKVSQPR_DESC" type="String" size="60"/>
+		<column name="GKVSQPR_SYS_REQ_IND" type="String" size="1"/>
+		<column name="GKVSQPR_ACTIVITY_DATE" type="String" size="17"/>
+	</columns>
+	<query><![CDATA[
+	SELECT gkvsqpr_code, gkvsqpr_desc, gkvsqpr_sys_req_ind, to_char(gkvsqpr_activity_date, G$_DATE.GET_NLS_DATE_FORMAT) gkvsqpr_activity_date  FROM gkvsqpr  WHERE TRUNC(gkvsqpr_start_date) <= TRUNC(SYSDATE) AND TRUNC(NVL(gkvsqpr_end_date, TO_DATE(G$_DATE.NORMALISE_GREG_DATE('31-12-2099', 'DD-MM-YYYY'), G$_DATE.GET_NLS_DATE_FORMAT))) >= TRUNC(SYSDATE)  ORDER BY gkvsqpr_code
+	]]>
+	</query>
+	
+    <parameters>
+	</parameters>
+</valueSet>
+<valueSet id="DIRECTORY_RG.ValueSet.Config" name="DIRECTORY_RG">
+    <columns>
+		<column name="DIRECTORY_NAME" type="String" size="30"/>
+		<column name="DIRECTORY_PATH" type="String" size="2000"/>
+	</columns>
+	<query><![CDATA[
+	SELECT directory_name, directory_path  FROM all_directories  WHERE directory_name LIKE nvl(:SVBCIMP_DIRECTORY, directory_name)  ORDER BY 1
+	]]>
+	</query>
+	
+    <parameters>
+		<parameter name="SVBCIMP_DIRECTORY">
+			<value>
+				<item businessObject="SVBCIMP" name="SVBCIMP_DIRECTORY"/> 
+			</value>
+        </parameter>
+	</parameters>
+</valueSet>
+</b:beans>

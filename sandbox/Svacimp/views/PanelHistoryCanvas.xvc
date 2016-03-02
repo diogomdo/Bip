@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<interactionblock name="FORM_HEADER"/>
+	<interactionblock name="BUTTON_CONTROL_BLOCK"/>
+	<interactionblock name="SVRCIMH"/>
+	<panel class="ContentCanvas" id="pnlHistoryCanvas" menu="G$_DEFAULT_PM" name="HISTORY_CANVAS" width="100%">
+		<collapsiblepanel label="historyCanvas.text53.text" name="rect358" width="100%">
+			<panel width="100%">
+				<gridview block="SVRCIMH" height="387px" name="grdSvrcimh" width="100%">
+					<viewheader>
+						<viewcolumn block="SVRCIMH" datatype="String" label="svrcimh.svrcimhFilename.prompt" labelstyle="DEFAULT" maxlength="90" member="SVRCIMH_FILENAME" name="svrcimhFilename" required="true" width="239px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+						<viewcolumn block="SVRCIMH" datatype="String" label="svrcimh.svrcimhUserId.prompt" labelstyle="DEFAULT" maxlength="30" member="SVRCIMH_USER_ID" name="svrcimhUserId" required="true" width="108px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+						<viewcolumn block="SVRCIMH" case="upper" datatype="Date" formatmask="DD-MON-YYYY" keyactions="NEXT_ITEM" label="svrcimh.svrcimhActivityDate.prompt" labelstyle="DEFAULT" maxlength="11" member="SVRCIMH_ACTIVITY_DATE" name="svrcimhActivityDate" required="true" width="108px">
+							<editor>
+								<calendar>
+									<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+								</calendar>
+							</editor>
+						</viewcolumn>
+					</viewheader>
+				</gridview>
+				<panel width="100%">
+					<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="20px" label="buttonControlBlock.returnMain.label" member="RETURN_MAIN" name="returnMain" width="106px">
+						<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+					</button>
+				</panel>
+			</panel>
+		</collapsiblepanel>
+	</panel>
+</config>
