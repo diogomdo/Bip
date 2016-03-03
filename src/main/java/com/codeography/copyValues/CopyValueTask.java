@@ -1,6 +1,7 @@
 package com.codeography.copyValues;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.omg.CORBA.portable.ApplicationException;
@@ -11,16 +12,21 @@ import com.codeography.core.TargetComments;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.comments.Comment;
 
-public class Analyser {
+public class CopyValueTask {
 
-	private static File dir;
+	private  File dir;
+	private  String targetBlock;
+	public List<CopyValueStatement> listOfCopyValues;
+	public CopyValueStatement copyValueCmmt;
 
-	public Analyser(File file) throws Exception {
+	public CopyValueTask(File file) throws Exception {
 		this.dir = file;
+		this.copyValueCmmt = new CopyValueStatement();
+		this.listOfCopyValues = new ArrayList<CopyValueStatement>();
 		search();
 	}
 
-	public static void search() throws Exception{
+	public void search() throws Exception{
 		/*Aqui e necessario procurar adapters com comentarios de copy values e criar
 		e criar uma lista de objectos CopyValues
 		*/
@@ -33,13 +39,8 @@ public class Analyser {
 			for(File file: path.listFiles()){
 				if (file.getAbsoluteFile().getName().endsWith("Adapter.java") ){
 					CompilationUnit loadedClass = new ClassNavigator(file).LoadClass();
+					targetBlock = file.getAbsoluteFile().getName().split("Adapter.java")[0];
 					commentChecker(loadedClass.getAllContainedComments());
-					
-					/*
-					 * E necessario fazer uma verificacao sobre o manager do item a ser copiado
-					 * pode acontecer no comentario nao haver bloco correspondente a copia.
-					 */
-					
 				}
 			}
 		else
@@ -47,13 +48,21 @@ public class Analyser {
 			
 	}
 	
-	private static void commentChecker(List<Comment> allContainedComments) {
+	private void commentChecker(List<Comment> allContainedComments) {
 		
 		for (Comment comment : allContainedComments){
 			if (comment.toString().contains(TargetComments.CommentsColl.F2J_COPYVALUE.getCommetMsg())){
-				CopyValueStatement.create(comment);
+
+				copyValueCmmt.create(comment.toString());
+				copyValueCmmt.setTargetBlock(targetBlock.toUpperCase());
+				
+				/*
+				 * E necessario fazer uma verificacao sobre o manager do item a ser copiado
+				 * pode acontecer no comentario nao haver bloco correspondente a copia.
+				 */
+				
+				this.listOfCopyValues.add(copyValueCmmt);
 			}
 		}
 	}
-
 }

@@ -5,8 +5,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import com.codeography.copyValues.Analyser;
+import com.codeography.copyValues.CopyValueTask;
 import com.codeography.core.ClassNavigator;
+import com.codeography.core.FormMigrationTasks;
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ParseException;
 import com.github.javaparser.ast.CompilationUnit;
@@ -32,9 +33,7 @@ public class App
         //passara por haver uma lista de objectos de cada class do form
         //eh preciso fazer o "class navigator para o xml
         
-        new Analyser(file);
-        
-        new ClassNavigator(file);
+        FormMigrationTasks x =  new FormMigrationTasks(file);
         
     }
 }
