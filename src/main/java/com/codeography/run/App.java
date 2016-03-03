@@ -34,6 +34,7 @@ public class App
         //eh preciso fazer o "class navigator para o xml
         
         FormMigrationTasks x =  new FormMigrationTasks(file);
+        x.tasksToExecute();
         
     }
 }
