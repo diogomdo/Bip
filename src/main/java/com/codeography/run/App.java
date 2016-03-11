@@ -23,7 +23,7 @@ public class App
     public static void main( String[] args ) throws Exception
     {
         System.out.println( "Hello!" );
-//        File file = new File("/home/diogo/Desktop/orig/Soaadas/controller/SoaadasFormController.java");
+//      File file = new File("/home/diogo/Desktop/orig/Soaadas/controller/SoaadasFormController.java");
         File file = new File("C:\\otherSpace\\Bip\\sandbox\\Svacimp");
 
         
@@ -33,8 +33,8 @@ public class App
         //passara por haver uma lista de objectos de cada class do form
         //eh preciso fazer o "class navigator para o xml
         
-        FormMigrationTasks x =  new FormMigrationTasks(file);
-        x.tasksToExecute();
-        
+        FormMigrationTasks minion = new FormMigrationTasks(file);
+        minion.tasksToExec();
+
     }
 }

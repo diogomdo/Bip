@@ -1,36 +1,28 @@
 package com.codeography.core;
 
 import java.io.File;
-import java.lang.reflect.Field;
-
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import com.codeography.copyValues.CopyValueTask;
-
-import filteredItems.FilteredItems;
+import com.github.javaparser.ParseException;
 
 public class FormMigrationTasks {
 	
-	public CopyValueTask copyValueTask;
-	public FilteredItems filteredItems;
+	public List<Task> taskList = new ArrayList<Task>();
 	
-	public FormMigrationTasks(File file) throws Exception {
-		this.copyValueTask = new CopyValueTask(file);
-	}
-
 	/*
 	 * TODO
-	 * utilizar reflection para obter atributos da classe
-	 * e puder ver quais delas estao instaciadas e executar como task
-	 * 
-	 * http://stackoverflow.com/questions/3333974/how-to-loop-over-a-class-attributes-in-java
-	 * aqui sugere que se utilize interfaces ao reflection
+	 * ir adicionando as tasks ao construtor conforme forem 
+	 * codificadas
 	 */
-	
-	public void tasksToExecute() {
-		for(Field c : this.getClass().getFields()){
-			if(!c.equals(null)){ 
-				
-			}
-		}
+	public FormMigrationTasks(File file) throws Exception {
+		taskList.add(new CopyValueTask(file));
 	}
 
+	public void tasksToExec() throws ParseException, IOException{
+		for (Task job : taskList){
+			if(job.getHasJobs()) job.execute();
+		}
+	}
 }
