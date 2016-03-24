@@ -685,28 +685,28 @@ END;
 		 *</p>
 		*/
 
-		@ActionTrigger(action="VALIDATE_EXT_TABLE")
-		public void svbcimp_ValidateExtTable()
-		{
-			
-
-				//F2J_WARNING : Caution, the variable may be null.
-				SvbcimpAdapter svbcimpElement = (SvbcimpAdapter)this.getFormModel().getSvbcimp().getRowAdapter(true);
-
-
-				{
-					NString lvMessageOut= NString.getNull();
-					// F2J_WARNING : Passing parameters by name is not supported. Please check that the parameters are in the correct order.
-					if ( !Svkcimp.fValidateExtTable(/*pTableName=>*/svbcimpElement.getSvbcimpExternalTablename(), /*messageout=>*/lvMessageOut) )
-					{
-						svbcimpElement.setRegisterfileMessageout(lvMessageOut);
-						throw new ApplicationException();
-					}
-					else {
-						svbcimpElement.setRegisterfileMessageout(lvMessageOut);
-					}
-				}
-			}
+//		@ActionTrigger(action="VALIDATE_EXT_TABLE")
+//		public void svbcimp_ValidateExtTable()
+//		{
+//			
+//
+//				//F2J_WARNING : Caution, the variable may be null.
+//				SvbcimpAdapter svbcimpElement = (SvbcimpAdapter)this.getFormModel().getSvbcimp().getRowAdapter(true);
+//
+//
+//				{
+//					NString lvMessageOut= NString.getNull();
+//					// F2J_WARNING : Passing parameters by name is not supported. Please check that the parameters are in the correct order.
+//					if ( !Svkcimp.fValidateExtTable(/*pTableName=>*/svbcimpElement.getSvbcimpExternalTablename(), /*messageout=>*/lvMessageOut) )
+//					{
+//						svbcimpElement.setRegisterfileMessageout(lvMessageOut);
+//						throw new ApplicationException();
+//					}
+//					else {
+//						svbcimpElement.setRegisterfileMessageout(lvMessageOut);
+//					}
+//				}
+//			}
 
 		
 		/*

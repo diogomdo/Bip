@@ -1,5 +1,5 @@
 package net.hedtech.las.studemre.banner.student.Svacimp.controller;
- 
+
 import java.util.*;
 import org.jdesktop.databuffer.DataRow.DataRowStatus;
 import morphis.foundations.core.appdatalayer.*;
@@ -29,7 +29,6 @@ import static morphis.foundations.core.appsupportlib.runtime.ValueSetServices.*;
 import static morphis.foundations.core.appsupportlib.runtime.LovServices.*;
 import static morphis.foundations.core.appsupportlib.runtime.ListServices.*;
 import static morphis.foundations.core.appsupportlib.runtime.TreeServices.*;
-
 import static morphis.foundations.core.appsupportlib.Math.*;
 import static morphis.foundations.core.appsupportlib.Lib.*;
 import static morphis.foundations.core.appsupportlib.Globals.*;
@@ -37,57 +36,49 @@ import static morphis.foundations.core.types.Types.*;
 import morphis.foundations.core.util.*;
 import morphis.core.utils.behavior.annotations.*;
 import morphis.foundations.flavors.forms.appsupportlib.runtime.*;
-
 import net.hedtech.general.common.forms.controller.DefaultBlockController;
-
 import net.hedtech.general.common.dbservices.*;
 import net.hedtech.general.common.dbservices.dbtypes.*;
 import net.hedtech.general.common.libraries.Goqrpls.*;
 import net.hedtech.general.common.libraries.Goqwflw.*;
 import net.hedtech.general.common.libraries.Eoqrpls.*;
-
 import net.hedtech.las.studemre.banner.student.Svacimp.model.*;
 import net.hedtech.las.studemre.banner.student.Svacimp.*;
 import net.hedtech.las.studemre.banner.student.Svacimp.services.*;
-
-import net.hedtech.general.common.libraries.Goqolib.services.GDateClass;	
-    
+import net.hedtech.general.common.libraries.Goqolib.services.GDateClass;
 import net.hedtech.general.common.libraries.Goqolib.model.GVpdiBlock;
 import net.hedtech.general.common.libraries.Goqolib.model.GSdkey;
 import net.hedtech.general.common.libraries.Goqolib.model.GSdispAdapter;
 import net.hedtech.general.common.libraries.Goqolib.model.GNavBlock;
-		
+
 public class SvrcimhController extends DefaultBlockController {
 
-	private GDateClass getGDateClass() {
-		return (net.hedtech.general.common.libraries.Goqolib.services.GDateClass) this.getTask().getTaskPart("GOQOLIB").getSupportCodeManager().getPackage("G$_DATE_CLASS");
-	}	
+    /* this is a method */
+    private GDateClass getGDateClass() {
+        return (net.hedtech.general.common.libraries.Goqolib.services.GDateClass) this.getTask().getTaskPart("GOQOLIB").getSupportCodeManager().getPackage("G$_DATE_CLASS");
+    }
 
-	
-	public SvrcimhController(IFormController parentController, String name) 
-	{
-		super(parentController, name);
-	}
-		
-		
-		
-	@Override
-	public SvacimpTask getTask() {
-		return (SvacimpTask)super.getTask();
-	}
+    public SvrcimhController(IFormController parentController, String name) {
+        super(parentController, name);
+    }
 
-	public SvacimpModel getFormModel() {
-		return this.getTask().getModel();
-	}
-		
-			
-	//action methods generated from triggers
-	
-		/* Original PL/SQL code code for TRIGGER SVRCIMH.KEY-PRVBLK
+    /* this is a method */
+    @Override
+    public SvacimpTask getTask() {
+        return (SvacimpTask) super.getTask();
+    }
+
+    /* this is a method */
+    public SvacimpModel getFormModel() {
+        return this.getTask().getModel();
+    }
+
+    //action methods generated from triggers
+    /* Original PL/SQL code code for TRIGGER SVRCIMH.KEY-PRVBLK
 		 EXECUTE_TRIGGER('INVALID_FUNCTION_MSG');
 G$_CHECK_FAILURE;
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -96,21 +87,18 @@ G$_CHECK_FAILURE;
 		 *
 		 *</p>
 		*/
+    /* this is a method */
+    @ActionTrigger(action = "KEY-PRVBLK", function = KeyFunction.PREVIOUS_BLOCK)
+    public void svrcimh_PreviousBlock() {
+        executeAction("INVALID_FUNCTION_MSG");
+        getTask().getGoqrpls().gCheckFailure();
+    }
 
-		@ActionTrigger(action="KEY-PRVBLK", function=KeyFunction.PREVIOUS_BLOCK)
-		public void svrcimh_PreviousBlock()
-		{
-			
-				executeAction("INVALID_FUNCTION_MSG");
-				getTask().getGoqrpls().gCheckFailure();
-			}
-
-		
-		/* Original PL/SQL code code for TRIGGER SVRCIMH.KEY-NXTBLK
+    /* Original PL/SQL code code for TRIGGER SVRCIMH.KEY-NXTBLK
 		 EXECUTE_TRIGGER('INVALID_FUNCTION_MSG');
 G$_CHECK_FAILURE;
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -119,17 +107,14 @@ G$_CHECK_FAILURE;
 		 *
 		 *</p>
 		*/
+    /* this is a method */
+    @ActionTrigger(action = "KEY-NXTBLK", function = KeyFunction.NEXT_BLOCK)
+    public void svrcimh_NextBlock() {
+        executeAction("INVALID_FUNCTION_MSG");
+        getTask().getGoqrpls().gCheckFailure();
+    }
 
-		@ActionTrigger(action="KEY-NXTBLK", function=KeyFunction.NEXT_BLOCK)
-		public void svrcimh_NextBlock()
-		{
-			
-				executeAction("INVALID_FUNCTION_MSG");
-				getTask().getGoqrpls().gCheckFailure();
-			}
-
-		
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -139,26 +124,23 @@ G$_CHECK_FAILURE;
 		 *</p>
 		 * @param args
 		*/
-
-		@BeforeQuery
-		public void svrcimh_BeforeQuery(QueryEvent args)
-		{
-			
-               // F2J_WARNING : Query Parameters initialization. Make sure that all the query parameters are properly initialized
-
-				((IDBBusinessObject)args.getSource()).getSelectCommandParams().add(DbManager.getDataBaseFactory().createDataParameter("KEY_BLOCK_PROCESS_CODE", this.getFormModel().getKeyBlock().getProcessCode()));             
-
-
-                // F2J_WARNING : Caution, the variable may be null.                  
-                SvbcimpAdapter svbcimpElement = (SvbcimpAdapter) this.getFormModel().getSvbcimp().getRowAdapter();                       
-				((IDBBusinessObject)args.getSource()).getSelectCommandParams().add(DbManager.getDataBaseFactory().createDataParameter("SVBCIMP_DEFINITION_YEAR", svbcimpElement.getSvbcimpDefinitionYear()));             
-
-
-           
-               }
-
-		
-		/*
+    //		@BeforeQuery
+    //		public void svrcimh_BeforeQuery(QueryEvent args)
+    //		{
+    //			
+    //               // F2J_WARNING : Query Parameters initialization. Make sure that all the query parameters are properly initialized
+    //
+    //				((IDBBusinessObject)args.getSource()).getSelectCommandParams().add(DbManager.getDataBaseFactory().createDataParameter("KEY_BLOCK_PROCESS_CODE", this.getFormModel().getKeyBlock().getProcessCode()));             
+    //
+    //
+    //                // F2J_WARNING : Caution, the variable may be null.                  
+    //                SvbcimpAdapter svbcimpElement = (SvbcimpAdapter) this.getFormModel().getSvbcimp().getRowAdapter();                       
+    //				((IDBBusinessObject)args.getSource()).getSelectCommandParams().add(DbManager.getDataBaseFactory().createDataParameter("SVBCIMP_DEFINITION_YEAR", svbcimpElement.getSvbcimpDefinitionYear()));             
+    //
+    //
+    //           
+    //               }
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -167,16 +149,13 @@ G$_CHECK_FAILURE;
 		 *
 		 *</p>
 		*/
+    /* this is a method */
+    @ActionTrigger(action = "KEY-NEXT-ITEM", item = "SVRCIMH_ACTIVITY_DATE", function = KeyFunction.NEXT_ITEM)
+    public void svrcimhActivityDate_keyNexItem() {
+        getGDateClass().nextItem();
+    }
 
-		@ActionTrigger(action="KEY-NEXT-ITEM", item="SVRCIMH_ACTIVITY_DATE", function=KeyFunction.NEXT_ITEM)
-		public void svrcimhActivityDate_keyNexItem()
-		{
-			
-			getGDateClass().nextItem();
-		}
-
-		
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -185,16 +164,13 @@ G$_CHECK_FAILURE;
 		 *
 		 *</p>
 		*/
+    /* this is a method */
+    @ActionTrigger(action = "WHEN-NEW-ITEM-INSTANCE", item = "SVRCIMH_ACTIVITY_DATE", function = KeyFunction.ITEM_CHANGE)
+    public void svrcimhActivityDate_itemChange() {
+        getGDateClass().itemChange();
+    }
 
-		@ActionTrigger(action="WHEN-NEW-ITEM-INSTANCE", item="SVRCIMH_ACTIVITY_DATE", function=KeyFunction.ITEM_CHANGE)
-		public void svrcimhActivityDate_itemChange()
-		{
-			
-			getGDateClass().itemChange();
-		}
-
-		
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -203,15 +179,13 @@ G$_CHECK_FAILURE;
 		 *
 		 *</p>
 		*/
+    /* this is a method */
+    @ActionTrigger(action = "POST-TEXT-ITEM", item = "SVRCIMH_ACTIVITY_DATE", function = KeyFunction.ITEM_OUT)
+    public void svrcimhActivityDate_itemOut() {
+        getGDateClass().itemOut();
+    }
 
-		@ActionTrigger(action="POST-TEXT-ITEM", item="SVRCIMH_ACTIVITY_DATE", function=KeyFunction.ITEM_OUT)
-		public void svrcimhActivityDate_itemOut()
-		{
-			
-			getGDateClass().itemOut();
-		}
-
-		
-	
-	
+    public static void Svrcimh_BeforeQuery(QueryEvent... args) {
+        System.out.println("Hello World!");
+    }
 }
