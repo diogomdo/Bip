@@ -53,9 +53,10 @@ public class CopyValueTask implements Task, TargetComments{
 	}
 
 	public void search() throws Exception{
-		/*Aqui e necessario procurar adapters com comentarios de copy values e criar
-		e criar uma lista de objectos CopyValues
-		*/
+		
+		/*Aqui e necessario procurar adapters com comentarios de copy values e criar 
+		 * e criar uma lista de objectos CopyValues
+		 */
 		
 		//Esta chamada e apenas para debug
 		//DirectoryNavigator.displayDirectoryContents(dir);
@@ -96,9 +97,11 @@ public class CopyValueTask implements Task, TargetComments{
 	public void execute() throws ParseException, IOException {
 		/*
 		 * TODO
-		 * CopyValues
-		 * Verificar o controlador e o manager correspondente do bloco
 		 * 
+		 * Preciso estruturar a execucao por ordem de instructions exemplo
+		 * 	<DONE>verificar o se existe o metodo beforequery<DONE>
+		 * 	-adicionar instrucoes no manager dos blocos que tem copyValues
+		 * _________________________________________________________________________
 		 * Controlador
 		 * Verificar se tem o metodo beforequery, caso não é preciso cria-lo adicionar instrucoes
 		 * iniciais
@@ -115,7 +118,13 @@ public class CopyValueTask implements Task, TargetComments{
 					CompilationUnit loadedClass = JavaParser.parse(in);
 					
 					findMethods(loadedClass);
-					this.copyValueCmmt.getBlockCopyFrom();
+
+					/*
+					 * TODO
+					 * criar o metodo que vai criar o copy values no manager
+					 * do bloco
+					 */
+					
 					Files.write(file.getAbsoluteFile().toPath(), 
 							loadedClass.toString().getBytes(Charset.defaultCharset()), 
 			                StandardOpenOption.TRUNCATE_EXISTING
@@ -163,6 +172,8 @@ public class CopyValueTask implements Task, TargetComments{
 		/*
 		 * TODO
 		 * passar os parametros correctos 'queryevent args'
+		 * 
+		 * Ainda e preciso definir o corpo do metodo
 		 */
 		
 	    // add a parameter to the method
@@ -205,6 +216,7 @@ public class CopyValueTask implements Task, TargetComments{
 	/*
 	 * TODO
 	 * class para checar parametros e where clauses
+	 * que ja exista no metodo beforequery
 	 */
 	}
 	
