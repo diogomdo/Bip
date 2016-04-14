@@ -9,13 +9,13 @@ import com.github.javaparser.ast.comments.CommentsParser;
 
 import sun.awt.TracedEventQueue;
 
-public class TFDecodeMessageLevelSolver implements TargetComments {
+public class __TFDecodeMessageLevelSolver implements TargetComments {
 
 	private MethodDeclaration currentMethod;
 	
 	
 
-	public TFDecodeMessageLevelSolver(MethodDeclaration n) {
+	public __TFDecodeMessageLevelSolver(MethodDeclaration n) {
 		this.currentMethod = n;
 		traceMessages();
 	}

@@ -89,6 +89,10 @@ public class CopyValueStatement {
 		this.setBlockCopyTo(targetBlock);
 		
 	}
+	
+	public String getManagerFileName(){
+		return getBlockCopyTo().concat(".Manager.Config.xml");
+	}
 
 
 
