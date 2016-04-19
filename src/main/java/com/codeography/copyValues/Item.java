@@ -11,10 +11,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Item {
 
     public String itemName;
-
     public String itemValue;
     
+ 
     public Item(){};
+    
     public Item(String name, String value) {
 		this.itemName = name;
 		this.itemValue = value;

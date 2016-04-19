@@ -34,7 +34,7 @@ public class CopyValueToManager {
 				Marshaller marshallerObj = jaxbContext.createMarshaller();
 				marshallerObj.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);  
 				
-				Item a = new Item("name", "value");
+				Item a = new Item("name", "dd");
 				
 //				Manager man = new Manager(a);
 				

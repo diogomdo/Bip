@@ -7,28 +7,30 @@ import javax.xml.bind.annotation.*;
 
 
 @XmlRootElement(name="manager")
-//@XmlType(propOrder = { "managerId","managerName","managerItems"})
+//@XmlType(propOrder = { "managerId","managerName","itemsList"})
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Manager {
 	
 
 	private String managerId;
 	private String managerName;
-	
-	@XmlElement(name = "items", type = Item.class)
-	public List<Item> itemsList = new ArrayList<Item>();
+	@XmlElementWrapper(name="items")
+	@XmlElement(name="item")
+	private List<Item> itemsList;
 
 	public Manager(){
 	}
 	
 	public Manager(Item itemA){
+		itemsList = new ArrayList<Item>();
 		this.itemsList.add(itemA);
+		this.itemsList.add(new Item());
 	}
 	
-	public Manager(String id, String name){
+	public Manager(String managerId, String managerName){
 		super();
-		this.managerId = id;
-		this.managerName = name;
+		this.managerId = managerId;
+		this.managerName = managerName;
 	}	
 	
 	@XmlAttribute(name="id")
@@ -36,19 +38,19 @@ public class Manager {
 		return managerId;
 	}
 
-	public void setId(String id) {
-		this.managerId = id;
+	public void setId(String managerId) {
+		this.managerId = managerId;
 	}
 	@XmlAttribute(name="name")
 	public String getName() {
 		return managerName;
 	}
 
-	public void setName(String name) {
-		this.managerName = name;
+	public void setName(String managerName) {
+		this.managerName = managerName;
 	}
 	
-	@XmlElement(name="items")
+
 	public List<Item> getitems() {
 		return itemsList;
 	}
