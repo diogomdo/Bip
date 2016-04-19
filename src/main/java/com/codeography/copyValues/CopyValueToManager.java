@@ -1,12 +1,15 @@
 package com.codeography.copyValues;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
@@ -26,7 +29,20 @@ public class CopyValueToManager {
 			for (CopyValueStatement task : listOfCopyValues){
 				
 				File file = new File(dir.getCanonicalPath().concat("\\model\\").concat(task.getManagerFileName()));
-				JAXBContext jaxbContext = JAXBContext.newInstance(Manager.class);
+				JAXBContext jaxbContext = JAXBContext.newInstance(Beans.class);
+				
+				Marshaller marshallerObj = jaxbContext.createMarshaller();
+				marshallerObj.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);  
+				
+				Item a = new Item("name", "value");
+				
+//				Manager man = new Manager(a);
+				
+				Beans b = new Beans();
+				
+				b.setBeans(new Manager(a));
+				
+				marshallerObj.marshal(b, new FileOutputStream("C:\\otherSpace\\Bip\\sandbox\\question.xml"));  
 				
 //				XMLInputFactory xif = XMLInputFactory.newFactory();
 //				StreamSource xml = new StreamSource(file);
@@ -45,9 +61,9 @@ public class CopyValueToManager {
 		         * 
 		         */
 				
-				Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-				Manager jb = (Manager) jaxbUnmarshaller.unmarshal(file);
-				System.out.println(jb);
+//				Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+//				Beans jb = (Beans) jaxbUnmarshaller.unmarshal(file);
+//				System.out.println(jb);
 		        
 				/*
 				 * TODO 

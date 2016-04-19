@@ -5,7 +5,6 @@
 	xmlns:b="http://www.springframework.org/schema/beans"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
 	<manager id="SVBCIMP.Manager.Config" name="SVBCIMP">
-		
 		<items>
 			<item name="SVBCIMP_SQPR_CODE" logicalName="svbcimpSqprCode" type="String" physicalName="SVBCIMP_SQPR_CODE"   /> 
 			<item name="SVBCIMP_SYSTEM_REQ_IND" logicalName="svbcimpSystemReqInd" type="String" physicalName="SVBCIMP_SYSTEM_REQ_IND"   > 

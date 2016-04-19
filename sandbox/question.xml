@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<beans>
+    <manager>
+        <items name="name" value="value">
+            <itemName>name</itemName>
+            <itemValue>value</itemValue>
+        </items>
+        <items name="name" value="value">
+            <itemName>name</itemName>
+            <itemValue>value</itemValue>
+        </items>
+    </manager>
+</beans>
