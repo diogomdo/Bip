@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <beans>
-    <manager>
+    <manager id="SVBCIMP.Manager.Config" name="SVBCIMP">
         <items>
-            <item name="name" value="dd">
-                <itemName>name</itemName>
-                <itemValue>dd</itemValue>
+            <item name="name" logicalName="dd">
+                <value>
+                    <name>testname</name>
+                </value>
             </item>
             <item/>
         </items>

@@ -1,4 +1,4 @@
-package com.codeography.copyValues;
+package com.codeography.copyValues.mappingObj;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -7,16 +7,17 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlRootElement
+@XmlRootElement(name="beans")
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(namespace="")
 public class Beans {
 	
-	@XmlElement
+	@XmlElement(name="manager")
 	private Manager manager;
 	
 	public Beans(){}
 	
-
+	
 	public Manager getBeans() {
 		return manager;
 	}

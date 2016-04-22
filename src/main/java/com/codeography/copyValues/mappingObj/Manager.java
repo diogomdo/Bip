@@ -1,4 +1,4 @@
-package com.codeography.copyValues;
+package com.codeography.copyValues.mappingObj;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,13 +7,16 @@ import javax.xml.bind.annotation.*;
 
 
 @XmlRootElement(name="manager")
-//@XmlType(propOrder = { "managerId","managerName","itemsList"})
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(namespace="")
 public class Manager {
 	
-
+	@XmlAttribute(name="id")
 	private String managerId;
+	
+	@XmlAttribute(name="name")
 	private String managerName;
+	
 	@XmlElementWrapper(name="items")
 	@XmlElement(name="item")
 	private List<Item> itemsList;
@@ -28,12 +31,11 @@ public class Manager {
 	}
 	
 	public Manager(String managerId, String managerName){
-		super();
+//		super();
 		this.managerId = managerId;
 		this.managerName = managerName;
 	}	
 	
-	@XmlAttribute(name="id")
 	public String getId() {
 		return managerId;
 	}
@@ -41,7 +43,7 @@ public class Manager {
 	public void setId(String managerId) {
 		this.managerId = managerId;
 	}
-	@XmlAttribute(name="name")
+	
 	public String getName() {
 		return managerName;
 	}
