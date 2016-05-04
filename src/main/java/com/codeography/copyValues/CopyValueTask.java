@@ -118,7 +118,8 @@ public class CopyValueTask implements Task, TargetComments{
 					CompilationUnit loadedClass = JavaParser.parse(in);
 					
 					findMethods(loadedClass);
-					CopyValueToManager.run(listOfCopyValues, dir);
+//					CopyValueToManager.run(listOfCopyValues, dir);
+					Executor.run(listOfCopyValues, dir);
 					/*
 					 * TODO
 					 * criar o metodo que vai criar o copy values no manager

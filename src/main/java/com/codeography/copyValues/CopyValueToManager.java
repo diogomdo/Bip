@@ -43,11 +43,6 @@ public class CopyValueToManager {
 				
 				
 				
-				try {
-					SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI); 
-					Schema schema = sf.newSchema(file);
-
-				
 				Marshaller marshallerObj = jaxbContext.createMarshaller();
 				marshallerObj.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);  
 				
@@ -56,7 +51,7 @@ public class CopyValueToManager {
 				 */
 					Item a = new Item("name", "dd");
 					
-					a.setItemCopyValue(new CopyValueItem("testname"));
+					a.setItemCopyValue(new CopyValueItem("xxx"));
 					
 					Manager man = new Manager(a);
 					Beans b = new Beans();
@@ -95,19 +90,10 @@ public class CopyValueToManager {
 		         */
 				
 				Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-				jaxbUnmarshaller.setSchema(schema);
+//				jaxbUnmarshaller.setSchema(schema);
 				jaxbUnmarshaller.setEventHandler(new MyValidationEventHandler());
 				Beans jb = (Beans) jaxbUnmarshaller.unmarshal(file);
 				System.out.println(jb.getBeans().getName());
-				
-				} catch (SAXException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} 
-				/*
-				 * TODO 
-				 * http://blog.bdoughan.com/2012/08/handle-middle-of-xml-document-with-jaxb.html
-				 */
 
 			}
 		} catch (JAXBException | IOException e) {

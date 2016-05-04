@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<beans>
+<b:beans xmlns:b="http://www.springframework.org/schema/beans" xmlns:ns3="urn:schemas:morphis:foundations:businessobject">
     <manager id="SVBCIMP.Manager.Config" name="SVBCIMP">
         <items>
             <item name="name" logicalName="dd">
                 <value>
-                    <name>testname</name>
+                    <name>xxx</name>
                 </value>
             </item>
             <item/>
         </items>
     </manager>
-</beans>
+</b:beans>
