@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="TBRSBMS.Manager.Config" name="TBRSBMS" targetTableName="TBRSBMS" keyMode="Unique" >
+		
+		<items>
+			<item name="TBRSBMS_MESSAGE" logicalName="tbrsbmsMessage" type="String" physicalName="TBRSBMS_MESSAGE"/> 
+			<item name="TBRSBMS_SEQ_NUMBER" logicalName="tbrsbmsSeqNumber" type="java.math.BigDecimal" physicalName="TBRSBMS_SEQ_NUMBER"/> 
+			<item name="TBRSBMS_ACTIVITY_DATE" logicalName="tbrsbmsActivityDate" type="java.util.Date" physicalName="TBRSBMS_ACTIVITY_DATE"/> 
+			<item name="TBRSBMS_SBRC_CODE" logicalName="tbrsbmsSbrcCode" type="String" physicalName="TBRSBMS_SBRC_CODE" key="true"/> 
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.banner.arsys.Tsasbrl.model.TbrsbmsAdapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE tbrsbms_sbrc_code = :TBBSBRL_SBRC_CODE]]></defaultWhereClause>	
+
+	</manager>
+</b:beans>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:task"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:task http://www.morphis-tech.com/schema/foundations/task.xsd">
+	<!-- Attached Libs -->
+	<b:import resource="classpath:net/hedtech/general/common/libraries/Goqrpls/GOQRPLS.Library.Config.xml"/>		
+	<b:import resource="classpath:net/hedtech/general/common/libraries/Goqwflw/GOQWFLW.Library.Config.xml"/>		
+	<b:import resource="classpath:net/hedtech/general/common/libraries/Eoqrpls/EOQRPLS.Library.Config.xml"/>		
+	
+	
+	
+	<!-- model definition-->
+	<b:import resource="classpath:/net/hedtech/banner/arsys/Tsasbrl/model/TSASBRL.Model.Config.xml"/>
+	
+	<task id="TSASBRL.Task.Config" name="TSASBRL">
+		<baseTaskConfiguration config="BASE.Task.Config"/>
+		<taskParts>
+			<taskPartConfiguration name="GOQOLIB" config="GOQOLIB.TaskPart.Config"/>
+			<taskPartConfiguration name="TOQOLIB" config="TOQOLIB.TaskPart.Config"/>
+		</taskParts>
+		<taskClass>net.hedtech.banner.arsys.Tsasbrl.TsasbrlTask</taskClass>
+		<!-- struct -->
+		<taskResources>/net/hedtech/banner/arsys/Tsasbrl/TsasbrlStruct.xml</taskResources>
+		<!-- support code -->
+		<supportCodeConfiguration>
+			<services>net.hedtech.banner.arsys.Tsasbrl.services.TsasbrlServices</services>
+				<!-- Package Beans-->
+
+			<packages>
+
+			</packages>
+			<attachedLibraries>
+	<!-- Attached Libs -->
+				<libraryConfiguration config="GOQRPLS.Lib.Config"/>
+				<libraryConfiguration config="GOQWFLW.Lib.Config"/>
+				<libraryConfiguration config="EOQRPLS.Lib.Config"/>
+			</attachedLibraries>
+		</supportCodeConfiguration>
+
+		<!-- model -->
+		<formModelConfiguration config="TSASBRL.Model.Config"/>
+		<!-- controllers -->
+		<formController>net.hedtech.banner.arsys.Tsasbrl.controller.TsasbrlFormController</formController>
+		<blockControllers>
+			<block  name="G$_VPDI_BLOCK">net.hedtech.banner.arsys.Tsasbrl.controller.GVpdiBlockController</block>
+			<block  name="G$_NAV_BLOCK">net.hedtech.banner.arsys.Tsasbrl.controller.GNavBlockController</block>
+			<block  name="FORM_HEADER">net.hedtech.banner.arsys.Tsasbrl.controller.FormHeaderController</block>
+			<block  name="KEY_BLOCK">net.hedtech.banner.arsys.Tsasbrl.controller.KeyBlockController</block>
+			<block  name="TBBSBRL">net.hedtech.banner.arsys.Tsasbrl.controller.TbbsbrlController</block>
+			<block  name="TBRSBRL">net.hedtech.banner.arsys.Tsasbrl.controller.TbrsbrlController</block>
+			<block  name="TBRSBEP">net.hedtech.banner.arsys.Tsasbrl.controller.TbrsbepController</block>
+			<block  name="TBRSBMS">net.hedtech.banner.arsys.Tsasbrl.controller.TbrsbmsController</block>
+			<block  name="BUTTON_CONTROL_BLOCK">net.hedtech.banner.arsys.Tsasbrl.controller.ButtonControlBlockController</block>
+		</blockControllers>
+		<menuControllers>
+			<menu  name="G$_DEFAULT_PM">net.hedtech.banner.arsys.Tsasbrl.controller.GDefaultPmContextController</menu>
+		</menuControllers>
+
+	</task>
+</b:beans>
+
+ 

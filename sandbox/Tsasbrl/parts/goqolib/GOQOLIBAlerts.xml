@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Alerts>
+	<Alert Name="G$_CAUTION_ALERT"/>
+	<Alert Name="G$_CAUTION_OK_ALERT"/>
+	<Alert Name="G$_INFO_ALERT"/>
+	<Alert Name="G$_WARNING_ALERT"/>
+	<Alert Name="G$_EXTEND_SOLUT_ALERT"/>
+	<Alert Name="G$_EXTEND_SOLUT_2_ALERT"/>
+	<Alert Name="G$_EXIT_FORM_ALERT"/>
+	<Alert Name="G$_CLOSE_FORM_ALERT"/>
+	<Alert Name="G$_PIPE_MESSAGE_ALERT"/>
+</Alerts>
+ 

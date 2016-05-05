@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<interactionblock name="G$_NAV_BLOCK"/>
+	<panel class="StackedCanvas" id="pnlGNavCanvas" label="gNavCanvas.text262.text" name="G$_NAV_CANVAS" visible="false" width="100%">
+		<collapsiblepanel width="100%">
+			<panel width="100%">
+				<gridlayout cols="2" orientation="vertical">
+					<gridcell>
+						<textbox autoskip="true" block="G$_NAV_BLOCK" case="upper" datatype="String" enabled="false" height="23px" keyactions="NEXT_ITEM" label="gNavBlock.goItem.prompt" maxlength="30" member="GO_ITEM" name="goItem" width="118px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<button action="WHEN-BUTTON-PRESSED" block="G$_NAV_BLOCK" height="20px" icon="search" member="GO_ITEM_BTN" name="goItemBtn" navigable="false" tooltip="gNavBlock.goItemBtn.tooltip" width="20px">
+							<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+						</button>
+					</gridcell>
+					<gridcell>
+						<button action="WHEN-BUTTON-PRESSED" block="G$_NAV_BLOCK" enabled="false" height="23px" member="URL_MY_INSTITUTION" name="urlMyInstitution" width="427px"/>
+					</gridcell>
+				</gridlayout>
+			</panel>
+		</collapsiblepanel>
+	</panel>
+</config>

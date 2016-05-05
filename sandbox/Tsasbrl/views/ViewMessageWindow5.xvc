@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<config layout="horizontal" title="messageWindow5.title" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<include src="net/hedtech/banner/arsys/Tsasbrl/views/PanelMessageCanvas5"/>
+</config>

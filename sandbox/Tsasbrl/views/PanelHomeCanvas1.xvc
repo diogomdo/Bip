@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<interactionblock name="TBBSBRL"/>
+	<interactionblock name="BUTTON_CONTROL_BLOCK"/>
+	<interactionblock name="FORM_HEADER"/>
+	<interactionblock name="KEY_BLOCK"/>
+	<panel class="StackedCanvas" id="pnlHomeCanvas1" menu="G$_DEFAULT_PM" name="HOME_CANVAS1" width="100%">
+		<collapsiblepanel name="rect234" width="100%">
+			<panel width="100%">
+				<gridlayout cols="2" orientation="vertical">
+					<gridcell>
+						<textbox autoskip="true" block="TBBSBRL" case="upper" datatype="String" height="23px" keyactions="PREVIOUS_ITEM,NEXT_ITEM" label="tbbsbrl.tbbsbrlUseRulesInd.prompt" maxlength="1" member="TBBSBRL_USE_RULES_IND" name="tbbsbrlUseRulesInd" required="true" validation="server" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+						<textbox block="TBBSBRL" datatype="String" height="23px" keyactions="PREVIOUS_ITEM,NEXT_ITEM" maxlength="30" member="RULES_DESC" name="rulesDesc" width="239px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+				</gridlayout>
+			</panel>
+		</collapsiblepanel>
+	</panel>
+</config>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config xmlns="urn:schemas:morphis:frames:view">
+  <menu name="G$_DEFAULT_PM" xmlns="">
+    <menuitem name="ROLLBACK" label="Rollback" icon="">
+    </menuitem>
+    <menuitem name="SAVE" label="Save" icon="">
+    </menuitem>
+    <menuitem name="EXIT" label="Exit" icon="">
+    </menuitem>
+    <menuitem name="PRINT" label="Print" icon="">
+    </menuitem>
+    <menuitem name="SEP1" type="separator" />
+    <menuitem name="ADD_FORM" label="Add to Personal Menu" icon="">
+    </menuitem>
+    <menuitem name="SEP2" type="separator" />
+    <menuitem name="SUB_MENU_01" label="">
+    </menuitem>
+    <menuitem name="SUB_MENU_02" label="">
+    </menuitem>
+    <menuitem name="SUB_MENU_03" label="">
+    </menuitem>
+    <menuitem name="SUB_MENU_04" label="">
+    </menuitem>
+    <menuitem name="SUB_MENU_05" label="">
+    </menuitem>
+    <menuitem name="SUB_MENU_06" label="">
+    </menuitem>
+    <menuitem name="SUB_MENU_07" label="">
+    </menuitem>
+    <menuitem name="SUB_MENU_08" label="">
+    </menuitem>
+    <menuitem name="SUB_MENU_09" label="">
+    </menuitem>
+    <menuitem name="SUB_MENU_10" label="">
+    </menuitem>
+    <menuitem name="SUB_MENU_11" label="">
+    </menuitem>
+    <menuitem name="SUB_MENU_12" label="">
+    </menuitem>
+    <menuitem name="SUB_MENU_13" label="">
+    </menuitem>
+    <menuitem name="SUB_MENU_14" label="">
+    </menuitem>
+    <menuitem name="SUB_MENU_15" label="">
+    </menuitem>
+    <menuitem name="SUB_MENU_16" label="">
+    </menuitem>
+    <menuitem name="SUB_MENU_17" label="">
+    </menuitem>
+    <menuitem name="SUB_MENU_18" label="">
+    </menuitem>
+    <menuitem name="SUB_MENU_19" label="">
+    </menuitem>
+    <menuitem name="SUB_MENU_20" label="">
+    </menuitem>
+    <menuitem name="SUB_MENU_21" label="">
+    </menuitem>
+    <menuitem name="SUB_MENU_22" label="">
+    </menuitem>
+    <menuitem name="SUB_MENU_23" label="">
+    </menuitem>
+    <menuitem name="SUB_MENU_24" label="">
+    </menuitem>
+  </menu>
+</config>

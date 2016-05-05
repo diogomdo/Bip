@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<FormStructure AlertDataPath="/net/hedtech/banner/arsys/Tsasbrl/TsasbrlAlerts.xml" FirstNavigationBlock="KEY_BLOCK" LovDataPath="/net/hedtech/banner/arsys/Tsasbrl/TsasbrlLovs.xml" Name="TSASBRL">
+	<Visual>
+		<Window Id="MAIN_WINDOW" Url="net/hedtech/banner/arsys/Tsasbrl/views/ViewMainWindow">
+			<StackedCanvas Id="G$_NAV_CANVAS" Visible="false"/>
+			<ContentCanvas Id="TEMP_CANVAS" Visible="false"/>
+			<StackedCanvas Id="HOME_CANVAS1"/>
+			<ContentCanvas Id="KEY_BLOCK_CANVAS"/>
+			<StackedCanvas Id="G$_WELCOME_CANVAS" Visible="false"/>
+		</Window>
+		<Window Id="MESSAGE_WINDOW5" Url="net/hedtech/banner/arsys/Tsasbrl/views/ViewMessageWindow5">
+			<ContentCanvas Id="MESSAGE_CANVAS5"/>
+		</Window>
+		<Window Id="SCHEDULE_WINDOW4" Url="net/hedtech/banner/arsys/Tsasbrl/views/ViewScheduleWindow4">
+			<ContentCanvas Id="SCHEDULE_CANVAS4"/>
+		</Window>
+		<Window Id="BILL_WINDOW3" Url="net/hedtech/banner/arsys/Tsasbrl/views/ViewBillWindow3">
+			<ContentCanvas Id="BILL_CANVAS3"/>
+		</Window>
+		<Window Id="STU_WINDOW2" Url="net/hedtech/banner/arsys/Tsasbrl/views/ViewStuWindow2">
+			<ContentCanvas Id="STU_CANVAS2"/>
+		</Window>
+	</Visual>
+	<Logic>
+		<Block Id="G$_SDKEY"/>
+		<Block Id="G$_SDISP"/>
+		<Block Id="G$_VPDI_BLOCK"/>
+		<Block AllowDelete="false" AllowSearch="false" Id="G$_NAV_BLOCK">
+			<Item AutoSkip="true" CanvasName="G$_NAV_CANVAS" Enabled="false" Id="GO_ITEM" MaxLength="30" Type="TextItem"/>
+			<Item CanvasName="G$_NAV_CANVAS" Id="GO_ITEM_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="G$_NAV_CANVAS" Enabled="false" Id="URL_MY_INSTITUTION" MaxLength="30" Type="Button"/>
+			<Item AllowSearch="false" Id="HOLD_CURSOR_LOCATION" MaxLength="61" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="CALL_FLD" MaxLength="80" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="FORM_LEADING_EDGE" MaxLength="2" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="FORM_TYPE_IND" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="LEAVING_BLK_IND" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="FORM_INIT_IND" MaxLength="30" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="LAST_MENU_ITEM" MaxLength="2" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" CanvasName="BILL_CANVAS3" Enabled="false" Id="DISPLAY_ITEM242" MaxLength="24" Navigable="false" Type="DisplayItem"/>
+		</Block>
+		<Block Id="FORM_HEADER">
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="CURRENT_RELEASE" MaxLength="10" Navigable="false" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="WORKFLD" MaxLength="60" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="DUMMY_VAR" MaxLength="30" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="CALLFLD" MaxLength="60" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="WORKDATE" MaxLength="60" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="CURRENT_INSTITUTION" MaxLength="30" Navigable="false" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="CURRENT_DATE" MaxLength="11" Navigable="false" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="CURRENT_TIME" MaxLength="8" Navigable="false" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="CURRENT_USER" MaxLength="30" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Id="CURRENT_FORM" MaxLength="7" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="RESEQUENCE_IND" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" CanvasName="STU_CANVAS2" Enabled="false" Id="DATA_SEPARATOR_LINE_0" MaxLength="24" Navigable="false" Type="DisplayItem"/>
+			<Item AllowInsert="false" CanvasName="STU_CANVAS2" Enabled="false" Id="DATA_SEPARATOR_LINE_1" MaxLength="24" Navigable="false" Type="DisplayItem"/>
+			<Item AllowInsert="false" CanvasName="BILL_CANVAS3" Enabled="false" Id="DATA_SEPARATOR_LINE_2" MaxLength="24" Navigable="false" Type="DisplayItem"/>
+			<Item AllowInsert="false" CanvasName="HOME_CANVAS1" Enabled="false" Id="DATA_SEPARATOR_LINE_3" MaxLength="24" Navigable="false" Type="DisplayItem"/>
+			<Item AllowInsert="false" CanvasName="SCHEDULE_CANVAS4" Enabled="false" Id="DATA_SEPARATOR_LINE_4" MaxLength="24" Navigable="false" Type="DisplayItem"/>
+			<Item AllowInsert="false" CanvasName="MESSAGE_CANVAS5" Enabled="false" Id="DATA_SEPARATOR_LINE_5" MaxLength="24" Navigable="false" Type="DisplayItem"/>
+			<Item AllowInsert="false" CanvasName="BILL_CANVAS3" Enabled="false" Id="ITEM271" MaxLength="24" Navigable="false" Type="DisplayItem"/>
+		</Block>
+		<Block Id="KEY_BLOCK">
+			<Item AutoSkip="true" CanvasName="KEY_BLOCK_CANVAS" Id="KEYBLOC_SBRC_CODE" Lov="TTVSBRC_LOV" MaxLength="30" Required="true" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="KEY_BLOCK_CANVAS" Id="SBRC_DESC" MaxLength="30" Navigable="false" Type="DisplayItem"/>
+			<Item CanvasName="KEY_BLOCK_CANVAS" Id="EXECUTE_BTN" MaxLength="30" Type="Button"/>
+			<Item CanvasName="KEY_BLOCK_CANVAS" Id="KEY-CLRFRM_BTN" MaxLength="30" Type="Button" Visible="false"/>
+		</Block>
+		<Block Id="TBBSBRL">
+			<Item AutoSkip="true" CanvasName="HOME_CANVAS1" Id="TBBSBRL_USE_RULES_IND" MaxLength="1" Required="true" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="HOME_CANVAS1" Id="RULES_DESC" MaxLength="30" Type="TextItem"/>
+			<Item CanvasName="STU_CANVAS2" Id="TBBSBRL_EXCL_REG_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="BILL_CANVAS3" Id="TBBSBRL_PRINT_FIN_MEMO_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="BILL_CANVAS3" Id="TBBSBRL_PRINT_OTHR_MEMOS_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="BILL_CANVAS3" Id="TBBSBRL_CDE_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="BILL_CANVAS3" Id="TBBSBRL_PRINT_DEP_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="BILL_CANVAS3" Id="TBBSBRL_PRINT_EP_NOTE_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="BILL_CANVAS3" Id="TBBSBRL_SUM_FINAID_MEMO_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="BILL_CANVAS3" Id="TBBSBRL_FINAID_MEMO_AFFECT_DUE" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="BILL_CANVAS3" Id="TBBSBRL_PREAUTH_CRED_AFF_DUE" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="BILL_CANVAS3" Id="TBBSBRL_OTHER_MEMO_AFFECT_DUE" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="BILL_CANVAS3" Id="TBBSBRL_PREV_BAL_OFF_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="BILL_CANVAS3" Id="TBBSBRL_CURR_CRED_PREV_DBT_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="STU_CANVAS2" Id="TBBSBRL_INCL_ENROLL_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="STU_CANVAS2" Id="TBBSBRL_CRSE_REQUIRED_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="STU_CANVAS2" Id="TBBSBRL_ACCT_BILLABLE_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="STU_CANVAS2" Id="TBBSBRL_PRINT_ORDER" MaxLength="30" Required="true" Type="List"/>
+			<Item CanvasName="STU_CANVAS2" Id="TBBSBRL_FORM_TYPE" MaxLength="30" Type="RadioGroup">
+				<Item Id="BLANK_PAPER" Type="RadioButton"/>
+				<Item Id="MAILER" Type="RadioButton"/>
+			</Item>
+			<Item CanvasName="STU_CANVAS2" Id="TBBSBRL_PRINT_HEADINGS_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="STU_CANVAS2" Id="TBBSBRL_PRINT_SCHEDULE_IND" MaxLength="1" Type="Checkbox"/>
+			<Item AutoSkip="true" CanvasName="BILL_CANVAS3" Id="TBBSBRL_CURRENT_DUE_DATE" MaxLength="11" Type="TextItem"/>
+			<Item CanvasName="BILL_CANVAS3" Id="TBBSBRL_SEL_TERM_CHARGES" MaxLength="30" Required="true" Type="List"/>
+			<Item CanvasName="BILL_CANVAS3" Id="TBBSBRL_SUM_TERM_CHARGES" MaxLength="30" Required="true" Type="List"/>
+			<Item CanvasName="BILL_CANVAS3" Id="TBBSBRL_SUM_PAYMENTS" MaxLength="30" Required="true" Type="List"/>
+			<Item CanvasName="BILL_CANVAS3" Id="TBBSBRL_CURR_CODE" Lov="GTVCURR_LOV" MaxLength="30" Type="TextItem"/>
+			<Item CanvasName="BILL_CANVAS3" Id="CURR_TITLE" MaxLength="35" Type="TextItem"/>
+			<Item AllowSearch="false" Id="TBBSBRL_SBRC_CODE" MaxLength="6" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="TBBSBRL_ACTIVITY_DATE" MaxLength="11" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="SCHEDULE_CANVAS4" Id="CRN_LNTH" MaxLength="3" Navigable="false" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="SCHEDULE_CANVAS4" Id="SUBJ_LNTH" MaxLength="3" Navigable="false" Type="TextItem"/>
+			<Item Enabled="false" Id="TBBSBRL_PROC_FINAID_IND" MaxLength="1" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="SCHEDULE_CANVAS4" Id="CRSE_LNTH" MaxLength="3" Navigable="false" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="SCHEDULE_CANVAS4" Id="SECT_LNTH" MaxLength="3" Navigable="false" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="SCHEDULE_CANVAS4" Id="CAMP_LNTH" MaxLength="3" Navigable="false" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="SCHEDULE_CANVAS4" Id="CREDIT_HR_LNTH" MaxLength="3" Navigable="false" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="SCHEDULE_CANVAS4" Id="LEVL_LNTH" MaxLength="3" Navigable="false" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="SCHEDULE_CANVAS4" Id="STAT_LNTH" MaxLength="3" Navigable="false" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="SCHEDULE_CANVAS4" Id="MEET_DAY_LNTH" MaxLength="3" Navigable="false" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="SCHEDULE_CANVAS4" Id="MEET_TIME_LNTH" MaxLength="3" Navigable="false" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="SCHEDULE_CANVAS4" Id="BLDG_LNTH" MaxLength="3" Navigable="false" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="SCHEDULE_CANVAS4" Id="GMOD_LNTH" MaxLength="3" Navigable="false" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="SCHEDULE_CANVAS4" Id="PTRM_LNTH" MaxLength="3" Navigable="false" Type="TextItem"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_PTRM_CODE_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_PTRM_HDNG" MaxLength="3" Type="TextItem"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_CRN_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_CRN_HDNG" MaxLength="5" Type="TextItem"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_SUBJ_CODE_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_SUBJ_HDNG" MaxLength="4" Type="TextItem"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_CRSE_NUMB_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_CRSE_HDNG" MaxLength="5" Type="TextItem"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_SECT_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_SECT_HDNG" MaxLength="3" Type="TextItem"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_CAMP_CODE_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_CAMP_HDNG" MaxLength="3" Type="TextItem"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_CRSE_TITLE_IND" MaxLength="1" Type="Checkbox"/>
+			<Item AllowSearch="false" CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_TITLE_LNTH" MaxLength="2" Required="true" Type="List"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_TITLE_HDNG" MaxLength="30" Type="TextItem"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_CREDIT_HR_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_CREDIT_HR_HDNG" MaxLength="5" Type="TextItem"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_LEVL_CODE_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_LEVL_HDNG" MaxLength="2" Type="TextItem"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_RSTS_CODE_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_STAT_HDNG" MaxLength="2" Type="TextItem"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_MEET_DAY_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_MEET_DAY_HDNG" MaxLength="7" Type="TextItem"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_MEET_TIME_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_MEET_TIME_HDNG" MaxLength="11" Type="TextItem"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_BLDG_CODE_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_BLDG_HDNG" MaxLength="6" Type="TextItem"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_ROOM_CODE_IND" MaxLength="1" Type="Checkbox"/>
+			<Item AllowSearch="false" CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_ROOM_LNTH" MaxLength="2" Required="true" Type="List"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_ROOM_HDNG" MaxLength="10" Type="TextItem"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_INSTRUCTOR_IND" MaxLength="1" Type="Checkbox"/>
+			<Item AllowSearch="false" CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_INSTR_LNTH" MaxLength="2" Required="true" Type="List"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_INSTR_HDNG" MaxLength="25" Type="TextItem"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_GMOD_CODE_IND" MaxLength="1" Type="Checkbox"/>
+			<Item CanvasName="SCHEDULE_CANVAS4" Id="TBBSBRL_GMOD_HDNG" MaxLength="1" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="SCHEDULE_CANVAS4" Id="SELECT_TOTAL" MaxLength="3" Navigable="false" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="EFFDATE_EFF_DATE_TIME" MaxLength="14" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="HOLD_CONV_RATE" MaxLength="17" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="DEL_PENDING" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+		</Block>
+		<Block Id="TBRSBRL" MultiRecord="true">
+			<Item CanvasName="BILL_CANVAS3" Id="TBRSBRL_VALUE" MaxLength="3" Type="TextItem"/>
+			<Item AllowSearch="false" Id="TBRSBRL_SBRC_CODE" MaxLength="6" Type="TextItem" Visible="false"/>
+			<Item Id="TBRSBRL_TYPE_IND" MaxLength="1" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="TBRSBRL_ACTIVITY_DATE" MaxLength="11" Navigable="false" Type="TextItem"/>
+		</Block>
+		<Block Id="TBRSBEP" MultiRecord="true">
+			<Item Id="TBRSBEP_SBRC_CODE" MaxLength="6" Type="TextItem"/>
+			<Item AutoSkip="true" CanvasName="BILL_CANVAS3" Id="TBRSBEP_TERM_CODE" Lov="STVTERM_LOV" MaxLength="30" Required="true" Type="TextItem" ValidateFromList="true"/>
+			<Item CanvasName="BILL_CANVAS3" Id="TBRSBEP_CUTOFF_DATE" MaxLength="11" Type="TextItem"/>
+			<Item CanvasName="BILL_CANVAS3" Id="TBRSBEP_DUE_DATE" MaxLength="11" Type="TextItem"/>
+			<Item Id="TBRSBEP_ACTIVITY_DATE" MaxLength="11" Type="TextItem"/>
+			<Item Id="TBRSBEP_USER_ID" MaxLength="30" Type="TextItem"/>
+			<Item Id="TBRSBEP_DATA_ORIGIN" MaxLength="30" Type="TextItem"/>
+			<Item Id="TBRSBEP_SURROGATE_ID" MaxLength="20" Type="TextItem"/>
+			<Item Id="TBRSBEP_VERSION" MaxLength="20" Type="TextItem"/>
+			<Item Id="TBRSBEP_VPDI_CODE" MaxLength="6" Type="TextItem"/>
+		</Block>
+		<Block Id="TBRSBMS" MultiRecord="true">
+			<Item CanvasName="MESSAGE_CANVAS5" Id="TBRSBMS_MESSAGE" MaxLength="70" Type="TextItem"/>
+			<Item CanvasName="MESSAGE_CANVAS5" Id="TBRSBMS_SEQ_NUMBER" MaxLength="2" Type="TextItem"/>
+			<Item Id="TBRSBMS_ACTIVITY_DATE" MaxLength="11" Type="TextItem" Visible="false"/>
+			<Item Id="TBRSBMS_SBRC_CODE" MaxLength="6" Type="TextItem" Visible="false"/>
+		</Block>
+		<Block Id="BUTTON_CONTROL_BLOCK">
+			<Item CanvasName="HOME_CANVAS1" Id="KEYBLOC_SBRC_CODE_LBT" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_1_PERS_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_1_PARM_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_1_COLS_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_1_MSGS_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_1_ROLLBACK_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_1_EXIT_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_2_PARM_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_2_COLS_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_2_MSGS_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_2_ROLLBACK_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_2_SAVE_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_2_EXIT_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_3_PERS_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_3_COLS_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_3_MSGS_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_3_ROLLBACK_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_3_SAVE_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_3_EXIT_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_4_PERS_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_4_PARM_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_4_MSGS_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_4_ROLLBACK_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_4_SAVE_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_4_EXIT_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_5_PERS_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_5_PARM_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_5_COLS_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_5_ROLLBACK_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_5_SAVE_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="BILL_CANVAS3" Id="TBBSBRL_CURR_CODE_LBT" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="BILL_CANVAS3" Id="TBRSBRL_VALUE_LBT" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="TBBSBRL_5_EXIT_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="BILL_CANVAS3" Id="TBBSBRL_CURRENT_DUE_DATE_DBT" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="BILL_CANVAS3" Id="TBRSBEP_TERM_CODE_LBT" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="BILL_CANVAS3" Id="TBRSBEP_CUTOFF_DATE_DBT" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="CHECK_KEYS" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item CanvasName="BILL_CANVAS3" Id="TBRSBEP_DUE_DATE_DBT" MaxLength="30" Navigable="false" Type="Button"/>
+		</Block>
+	</Logic>
+</FormStructure>

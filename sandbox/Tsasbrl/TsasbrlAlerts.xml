@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Alerts>
+	<Alert Name="TOO_WIDE1" Title="" Type="ERROR">
+		<Text>You have exceeded the total column width for mailer form of 76 characters.</Text>
+ 		<Buttons>
+  			<Button Type="BTN1" Label="OK" />
+		</Buttons>
+	</Alert>	
+	<Alert Name="SRCE_CODE_EXISTS" Title="" Type="ERROR">
+		<Text>You must delete existing 'S' types before adding 'C' types.</Text>
+ 		<Buttons>
+  			<Button Type="BTN1" Label="OK" />
+		</Buttons>
+	</Alert>	
+	<Alert Name="DCAT_CODE_EXISTS" Title="" Type="ERROR">
+		<Text>You must delete existing 'C' types before adding 'S' types.</Text>
+ 		<Buttons>
+  			<Button Type="BTN1" Label="OK" />
+		</Buttons>
+	</Alert>	
+	<Alert Name="TOO_WIDE3" Title="" Type="WARNING">
+		<Text>You have exceeded 80 columns. 132 columns are available with special font only.</Text>
+ 		<Buttons>
+  			<Button Type="BTN1" Label="OK" />
+		</Buttons>
+	</Alert>	
+	<Alert Name="TOO_WIDE2" Title="" Type="ERROR">
+		<Text>You have exceeded the total column width for 8.5 x 11 paper of 132 characters.</Text>
+ 		<Buttons>
+  			<Button Type="BTN1" Label="OK" />
+		</Buttons>
+	</Alert>	
+	<Alert Name="INVALID_COMBO" Title="" Type="ERROR">
+		<Text>If summarizing term charges by Total Charges, you must select All term charges.</Text>
+ 		<Buttons>
+  			<Button Type="BTN1" Label="OK" />
+		</Buttons>
+	</Alert>	
+</Alerts>
+

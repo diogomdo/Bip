@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<interactionblock name="TBRSBMS"/>
+	<interactionblock name="FORM_HEADER"/>
+	<panel class="ContentCanvas" id="pnlMessageCanvas5" menu="G$_DEFAULT_PM" name="MESSAGE_CANVAS5" width="100%">
+		<collapsiblepanel label="messageCanvas5.text244.text" name="rect240" width="100%">
+			<panel width="100%">
+				<gridview block="TBRSBMS" height="387px" name="grdTbrsbms" width="100%">
+					<viewheader>
+						<viewcolumn block="TBRSBMS" datatype="String" label="tbrsbms.tbrsbmsMessage.prompt" labelstyle="DEFAULT" maxlength="70" member="TBRSBMS_MESSAGE" name="tbrsbmsMessage" width="559px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+						<viewcolumn block="TBRSBMS" datatype="Number" label="tbrsbms.tbrsbmsSeqNumber.prompt" labelstyle="DEFAULT" maxlength="2" member="TBRSBMS_SEQ_NUMBER" name="tbrsbmsSeqNumber" textalign="right" width="24px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+					</viewheader>
+				</gridview>
+			</panel>
+		</collapsiblepanel>
+	</panel>
+</config>

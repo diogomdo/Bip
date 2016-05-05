@@ -29,8 +29,8 @@ public class CopyValueStatement {
 
 	private void itemBlockToEvaluation(String str) {
 		if (str.contains(".")){
-			setBlockCopyFrom(str.split(".")[0]);
-			setItemCopyFrom(str.split(".")[1]);
+			setBlockCopyFrom(str.split("\\.")[0]);
+			setItemCopyFrom(str.split("\\.")[1]);
 		}else{
 			/*
 			 * TODO

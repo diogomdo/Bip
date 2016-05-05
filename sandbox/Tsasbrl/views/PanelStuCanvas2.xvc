@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<interactionblock name="TBBSBRL"/>
+	<interactionblock name="FORM_HEADER"/>
+	<panel class="ContentCanvas" id="pnlStuCanvas2" menu="G$_DEFAULT_PM" name="STU_CANVAS2" width="100%">
+		<collapsiblepanel label="stuCanvas2.text21.text" name="rect39" width="100%">
+			<panel width="100%">
+				<gridlayout cols="2" orientation="vertical">
+					<gridcell>
+						<checkbox block="TBBSBRL" falsevalue="N" height="23px" keyactions="PREVIOUS_ITEM,NEXT_ITEM" label="tbbsbrl.tbbsbrlExclRegInd.label" member="TBBSBRL_EXCL_REG_IND" name="tbbsbrlExclRegInd" required="true" value="Y" width="346px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</checkbox>
+					</gridcell>
+					<gridcell>
+						<checkbox block="TBBSBRL" falsevalue="N" height="23px" keyactions="NEXT_ITEM,PREVIOUS_ITEM" label="tbbsbrl.tbbsbrlInclEnrollInd.label" member="TBBSBRL_INCL_ENROLL_IND" name="tbbsbrlInclEnrollInd" required="true" value="Y" width="346px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</checkbox>
+					</gridcell>
+					<gridcell>
+						<checkbox block="TBBSBRL" falsevalue="N" height="23px" keyactions="NEXT_ITEM,PREVIOUS_ITEM" label="tbbsbrl.tbbsbrlCrseRequiredInd.label" member="TBBSBRL_CRSE_REQUIRED_IND" name="tbbsbrlCrseRequiredInd" required="true" value="Y" width="346px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</checkbox>
+					</gridcell>
+					<gridcell>
+						<checkbox block="TBBSBRL" falsevalue="N" height="23px" keyactions="NEXT_ITEM,PREVIOUS_ITEM" label="tbbsbrl.tbbsbrlAcctBillableInd.label" member="TBBSBRL_ACCT_BILLABLE_IND" name="tbbsbrlAcctBillableInd" required="true" value="Y" width="346px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</checkbox>
+					</gridcell>
+				</gridlayout>
+			</panel>
+		</collapsiblepanel>
+		<collapsiblepanel label="stuCanvas2.text24.text" name="rect40" width="100%">
+			<panel width="100%">
+				<gridlayout cols="2" orientation="vertical">
+					<gridcell>
+						<combobox block="TBBSBRL" height="23px" keyactions="NEXT_ITEM,PREVIOUS_ITEM" label="tbbsbrl.tbbsbrlPrintOrder.prompt" member="TBBSBRL_PRINT_ORDER" name="tbbsbrlPrintOrder" required="true" width="192px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							<model>
+								<item label="tbbsbrl.tbbsbrlPrintOrder.item0.label" value="ZN"/>
+								<item label="tbbsbrl.tbbsbrlPrintOrder.item1.label" value="ZI"/>
+								<item label="tbbsbrl.tbbsbrlPrintOrder.item2.label" value="N"/>
+								<item label="tbbsbrl.tbbsbrlPrintOrder.item3.label" value="I"/>
+							</model>
+						</combobox>
+					</gridcell>
+					<gridcell>
+						<checkbox block="TBBSBRL" falsevalue="N" height="23px" keyactions="NEXT_ITEM,PREVIOUS_ITEM" label="tbbsbrl.tbbsbrlPrintHeadingsInd.label" member="TBBSBRL_PRINT_HEADINGS_IND" name="tbbsbrlPrintHeadingsInd" required="true" value="Y" width="186px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</checkbox>
+					</gridcell>
+					<gridcell>
+						<checkbox block="TBBSBRL" falsevalue="N" height="23px" keyactions="NEXT_ITEM,PREVIOUS_ITEM" label="tbbsbrl.tbbsbrlPrintScheduleInd.label" member="TBBSBRL_PRINT_SCHEDULE_IND" name="tbbsbrlPrintScheduleInd" required="true" value="Y" width="186px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</checkbox>
+					</gridcell>
+					<gridcell>
+						<radiogroup block="TBBSBRL" datatype="String" id="tbbsbrlFormType" keyactions="NEXT_ITEM,PREVIOUS_ITEM" member="TBBSBRL_FORM_TYPE" name="tbbsbrlFormType">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							<radiobox group="tbbsbrlFormType" height="23px" label="tbbsbrl.tbbsbrlFormType.mailer.label" labelalign="center" labeloffset="-243" labelposition="right" name="rb_TbbsbrlFormType_Mailer" value="M" width="153px"/>
+							<radiobox group="tbbsbrlFormType" height="23px" label="tbbsbrl.tbbsbrlFormType.blankPaper.label" labelalign="center" labelposition="right" name="rb_TbbsbrlFormType_BlankPaper" value="B" width="153px"/>
+						</radiogroup>
+					</gridcell>
+				</gridlayout>
+			</panel>
+		</collapsiblepanel>
+	</panel>
+</config>

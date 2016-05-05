@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:formmodel"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:formmodel http://www.morphis-tech.com/schema/foundations/formmodel.xsd">
+	
+		<b:import resource="classpath:/net/hedtech/banner/arsys/Tsasbrl/model/G___NAV_BLOCK.Manager.Config.xml"/>
+		<b:import resource="classpath:/net/hedtech/banner/arsys/Tsasbrl/model/FORM_HEADER.Manager.Config.xml"/>
+		<b:import resource="classpath:/net/hedtech/banner/arsys/Tsasbrl/model/KEY_BLOCK.Manager.Config.xml"/>
+		<b:import resource="classpath:/net/hedtech/banner/arsys/Tsasbrl/model/TBBSBRL.Manager.Config.xml"/>
+		<b:import resource="classpath:/net/hedtech/banner/arsys/Tsasbrl/model/TBRSBRL.Manager.Config.xml"/>
+		<b:import resource="classpath:/net/hedtech/banner/arsys/Tsasbrl/model/TBRSBEP.Manager.Config.xml"/>
+		<b:import resource="classpath:/net/hedtech/banner/arsys/Tsasbrl/model/TBRSBMS.Manager.Config.xml"/>
+		<b:import resource="classpath:/net/hedtech/banner/arsys/Tsasbrl/model/BUTTON_CONTROL_BLOCK.Manager.Config.xml"/>
+	
+	<formModel id="TSASBRL.Model.Config" name="TSASBRL" concurrencyCheckConstraints="KeyBased">
+		<modelClass>net.hedtech.banner.arsys.Tsasbrl.model.TsasbrlModel</modelClass>
+		<parameters>
+		</parameters>
+		
+		<businessObjects>
+			<businessObject name="G$_NAV_BLOCK" manager="G___NAV_BLOCK.Manager.Config">
+		
+		
+			</businessObject>
+			<businessObject name="FORM_HEADER" manager="FORM_HEADER.Manager.Config">
+		
+		
+			</businessObject>
+			<businessObject name="KEY_BLOCK" manager="KEY_BLOCK.Manager.Config">
+		
+		
+			</businessObject>
+			<businessObject name="TBBSBRL" manager="TBBSBRL.Manager.Config">
+		
+		
+			</businessObject>
+			<businessObject name="TBRSBRL" manager="TBRSBRL.Manager.Config">
+		
+		
+			</businessObject>
+			<businessObject name="TBRSBEP" manager="TBRSBEP.Manager.Config">
+		
+		
+			</businessObject>
+			<businessObject name="TBRSBMS" manager="TBRSBMS.Manager.Config">
+		
+		
+			</businessObject>
+			<businessObject name="BUTTON_CONTROL_BLOCK" manager="BUTTON_CONTROL_BLOCK.Manager.Config">
+		
+		
+			</businessObject>
+		</businessObjects>
+	</formModel>
+</b:beans>

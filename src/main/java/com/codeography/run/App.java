@@ -24,7 +24,7 @@ public class App
     {
         System.out.println( "Hello!" );
 //      File file = new File("/home/diogo/Desktop/orig/Soaadas/controller/SoaadasFormController.java");
-        File file = new File("C:\\otherSpace\\Bip\\sandbox\\Svacimp");
+        File file = new File("C:\\otherSpace\\Bip\\sandbox\\Tsasbrl");
 
         
         //Criar um metodo para mapear os ficheiros do form

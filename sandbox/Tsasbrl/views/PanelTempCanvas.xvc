@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<interactionblock name="BUTTON_CONTROL_BLOCK"/>
+	<panel class="ContentCanvas" id="pnlTempCanvas" menu="G$_DEFAULT_PM" name="TEMP_CANVAS" visible="false" width="100%">
+		<panel width="100%">
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl1PersBtn.label" member="TBBSBRL_1_PERS_BTN" name="tbbsbrl1PersBtn" navigable="false" width="279px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl1ColsBtn.label" member="TBBSBRL_1_COLS_BTN" name="tbbsbrl1ColsBtn" navigable="false" width="279px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl1ParmBtn.label" member="TBBSBRL_1_PARM_BTN" name="tbbsbrl1ParmBtn" navigable="false" width="279px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl1MsgsBtn.label" member="TBBSBRL_1_MSGS_BTN" name="tbbsbrl1MsgsBtn" navigable="false" width="279px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl1RollbackBtn.label" member="TBBSBRL_1_ROLLBACK_BTN" name="tbbsbrl1RollbackBtn" navigable="false" width="80px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl1ExitBtn.label" member="TBBSBRL_1_EXIT_BTN" name="tbbsbrl1ExitBtn" navigable="false" width="80px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl2ParmBtn.label" member="TBBSBRL_2_PARM_BTN" name="tbbsbrl2ParmBtn" navigable="false" width="96px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl2ColsBtn.label" member="TBBSBRL_2_COLS_BTN" name="tbbsbrl2ColsBtn" navigable="false" width="128px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl2MsgsBtn.label" member="TBBSBRL_2_MSGS_BTN" name="tbbsbrl2MsgsBtn" navigable="false" width="80px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl2RollbackBtn.label" member="TBBSBRL_2_ROLLBACK_BTN" name="tbbsbrl2RollbackBtn" navigable="false" width="80px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl2SaveBtn.label" member="TBBSBRL_2_SAVE_BTN" name="tbbsbrl2SaveBtn" navigable="false" width="80px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl2ExitBtn.label" member="TBBSBRL_2_EXIT_BTN" name="tbbsbrl2ExitBtn" navigable="false" width="80px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl3PersBtn.label" member="TBBSBRL_3_PERS_BTN" name="tbbsbrl3PersBtn" navigable="false" width="152px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl3ColsBtn.label" member="TBBSBRL_3_COLS_BTN" name="tbbsbrl3ColsBtn" navigable="false" width="128px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl3MsgsBtn.label" member="TBBSBRL_3_MSGS_BTN" name="tbbsbrl3MsgsBtn" navigable="false" width="80px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl3RollbackBtn.label" member="TBBSBRL_3_ROLLBACK_BTN" name="tbbsbrl3RollbackBtn" navigable="false" width="80px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl3SaveBtn.label" member="TBBSBRL_3_SAVE_BTN" name="tbbsbrl3SaveBtn" navigable="false" width="64px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl3ExitBtn.label" member="TBBSBRL_3_EXIT_BTN" name="tbbsbrl3ExitBtn" navigable="false" width="64px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl4PersBtn.label" member="TBBSBRL_4_PERS_BTN" name="tbbsbrl4PersBtn" navigable="false" width="152px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl4ParmBtn.label" member="TBBSBRL_4_PARM_BTN" name="tbbsbrl4ParmBtn" navigable="false" width="96px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl4MsgsBtn.label" member="TBBSBRL_4_MSGS_BTN" name="tbbsbrl4MsgsBtn" navigable="false" width="80px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl4RollbackBtn.label" member="TBBSBRL_4_ROLLBACK_BTN" name="tbbsbrl4RollbackBtn" navigable="false" width="80px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl4SaveBtn.label" member="TBBSBRL_4_SAVE_BTN" name="tbbsbrl4SaveBtn" navigable="false" width="80px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl4ExitBtn.label" member="TBBSBRL_4_EXIT_BTN" name="tbbsbrl4ExitBtn" navigable="false" width="80px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl5PersBtn.label" member="TBBSBRL_5_PERS_BTN" name="tbbsbrl5PersBtn" navigable="false" width="152px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl5ParmBtn.label" member="TBBSBRL_5_PARM_BTN" name="tbbsbrl5ParmBtn" navigable="false" width="96px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl5ColsBtn.label" member="TBBSBRL_5_COLS_BTN" name="tbbsbrl5ColsBtn" navigable="false" width="128px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl5RollbackBtn.label" member="TBBSBRL_5_ROLLBACK_BTN" name="tbbsbrl5RollbackBtn" navigable="false" width="80px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl5SaveBtn.label" member="TBBSBRL_5_SAVE_BTN" name="tbbsbrl5SaveBtn" navigable="false" width="56px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.tbbsbrl5ExitBtn.label" member="TBBSBRL_5_EXIT_BTN" name="tbbsbrl5ExitBtn" navigable="false" width="56px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+		</panel>
+	</panel>
+</config>

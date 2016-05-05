@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<interactionblock name="TBBSBRL"/>
+	<interactionblock name="FORM_HEADER"/>
+	<panel class="ContentCanvas" id="pnlScheduleCanvas4" menu="G$_DEFAULT_PM" name="SCHEDULE_CANVAS4" width="100%">
+		<collapsiblepanel label="scheduleCanvas4.text132.text" name="rect237" width="100%">
+			<panel width="100%">
+				<gridlayout cols="2" orientation="vertical">
+					<gridcell>
+						<checkbox action="WHEN-CHECKBOX-CHANGED" block="TBBSBRL" height="23px" keyactions="PREVIOUS_ITEM" label="tbbsbrl.tbbsbrlPtrmCodeInd.label" member="TBBSBRL_PTRM_CODE_IND" name="tbbsbrlPtrmCodeInd" value="Y" width="133px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</checkbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="Number" height="23px" label="tbbsbrl.ptrmLnth.prompt" maxlength="3" member="PTRM_LNTH" name="ptrmLnth" textalign="right" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" case="upper" datatype="String" height="23px" keyactions="PREVIOUS_ITEM" label="tbbsbrl.tbbsbrlPtrmHdng.prompt" maxlength="3" member="TBBSBRL_PTRM_HDNG" name="tbbsbrlPtrmHdng" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="Number" height="23px" label="tbbsbrl.selectTotal.prompt" maxlength="3" member="SELECT_TOTAL" name="selectTotal" textalign="right" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<checkbox action="WHEN-CHECKBOX-CHANGED" block="TBBSBRL" height="23px" label="tbbsbrl.tbbsbrlCrnInd.label" member="TBBSBRL_CRN_IND" name="tbbsbrlCrnInd" value="Y" width="133px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</checkbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="Number" height="23px" maxlength="3" member="CRN_LNTH" name="crnLnth" textalign="right" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="String" height="23px" maxlength="5" member="TBBSBRL_CRN_HDNG" name="tbbsbrlCrnHdng" width="61px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<checkbox action="WHEN-CHECKBOX-CHANGED" block="TBBSBRL" height="23px" label="tbbsbrl.tbbsbrlSubjCodeInd.label" member="TBBSBRL_SUBJ_CODE_IND" name="tbbsbrlSubjCodeInd" value="Y" width="133px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</checkbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="Number" height="23px" maxlength="3" member="SUBJ_LNTH" name="subjLnth" textalign="right" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="String" height="23px" maxlength="4" member="TBBSBRL_SUBJ_HDNG" name="tbbsbrlSubjHdng" width="51px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<checkbox action="WHEN-CHECKBOX-CHANGED" block="TBBSBRL" height="23px" label="tbbsbrl.tbbsbrlCrseNumbInd.label" member="TBBSBRL_CRSE_NUMB_IND" name="tbbsbrlCrseNumbInd" value="Y" width="133px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</checkbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="Number" height="23px" maxlength="3" member="CRSE_LNTH" name="crseLnth" textalign="right" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="String" height="23px" maxlength="5" member="TBBSBRL_CRSE_HDNG" name="tbbsbrlCrseHdng" width="61px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<checkbox action="WHEN-CHECKBOX-CHANGED" block="TBBSBRL" height="23px" label="tbbsbrl.tbbsbrlSectInd.label" member="TBBSBRL_SECT_IND" name="tbbsbrlSectInd" value="Y" width="133px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</checkbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="Number" height="23px" maxlength="3" member="SECT_LNTH" name="sectLnth" textalign="right" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="String" height="23px" maxlength="3" member="TBBSBRL_SECT_HDNG" name="tbbsbrlSectHdng" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<checkbox action="WHEN-CHECKBOX-CHANGED" block="TBBSBRL" height="23px" label="tbbsbrl.tbbsbrlCampCodeInd.label" member="TBBSBRL_CAMP_CODE_IND" name="tbbsbrlCampCodeInd" value="Y" width="133px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</checkbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="Number" height="23px" maxlength="3" member="CAMP_LNTH" name="campLnth" textalign="right" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" case="upper" datatype="String" height="23px" maxlength="3" member="TBBSBRL_CAMP_HDNG" name="tbbsbrlCampHdng" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<checkbox action="WHEN-CHECKBOX-CHANGED" block="TBBSBRL" height="23px" label="tbbsbrl.tbbsbrlCrseTitleInd.label" member="TBBSBRL_CRSE_TITLE_IND" name="tbbsbrlCrseTitleInd" value="Y" width="133px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</checkbox>
+					</gridcell>
+					<gridcell>
+						<combobox action="WHEN-LIST-CHANGED" block="TBBSBRL" height="23px" member="TBBSBRL_TITLE_LNTH" name="tbbsbrlTitleLnth" required="true" textalign="right" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							<model>
+								<item label="tbbsbrl.tbbsbrlTitleLnth.item0.label" value="15"/>
+								<item label="tbbsbrl.tbbsbrlTitleLnth.item1.label" value="20"/>
+								<item label="tbbsbrl.tbbsbrlTitleLnth.item2.label" value="25"/>
+								<item label="tbbsbrl.tbbsbrlTitleLnth.item3.label" value="30"/>
+							</model>
+						</combobox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="String" height="23px" maxlength="30" member="TBBSBRL_TITLE_HDNG" name="tbbsbrlTitleHdng" width="239px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<checkbox action="WHEN-CHECKBOX-CHANGED" block="TBBSBRL" height="23px" label="tbbsbrl.tbbsbrlCreditHrInd.label" member="TBBSBRL_CREDIT_HR_IND" name="tbbsbrlCreditHrInd" value="Y" width="133px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</checkbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="Number" height="23px" maxlength="3" member="CREDIT_HR_LNTH" name="creditHrLnth" textalign="right" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="String" height="23px" maxlength="5" member="TBBSBRL_CREDIT_HR_HDNG" name="tbbsbrlCreditHrHdng" width="61px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<checkbox action="WHEN-CHECKBOX-CHANGED" block="TBBSBRL" height="23px" label="tbbsbrl.tbbsbrlLevlCodeInd.label" member="TBBSBRL_LEVL_CODE_IND" name="tbbsbrlLevlCodeInd" value="Y" width="133px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</checkbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="Number" height="23px" maxlength="3" member="LEVL_LNTH" name="levlLnth" textalign="right" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="String" height="23px" maxlength="2" member="TBBSBRL_LEVL_HDNG" name="tbbsbrlLevlHdng" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<checkbox action="WHEN-CHECKBOX-CHANGED" block="TBBSBRL" height="23px" label="tbbsbrl.tbbsbrlRstsCodeInd.label" member="TBBSBRL_RSTS_CODE_IND" name="tbbsbrlRstsCodeInd" value="Y" width="133px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</checkbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="Number" height="23px" maxlength="3" member="STAT_LNTH" name="statLnth" textalign="right" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="String" height="23px" maxlength="2" member="TBBSBRL_STAT_HDNG" name="tbbsbrlStatHdng" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<checkbox action="WHEN-CHECKBOX-CHANGED" block="TBBSBRL" height="23px" label="tbbsbrl.tbbsbrlMeetDayInd.label" member="TBBSBRL_MEET_DAY_IND" name="tbbsbrlMeetDayInd" value="Y" width="133px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</checkbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="Number" height="23px" maxlength="3" member="MEET_DAY_LNTH" name="meetDayLnth" textalign="right" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="String" height="23px" maxlength="7" member="TBBSBRL_MEET_DAY_HDNG" name="tbbsbrlMeetDayHdng" width="64px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<checkbox action="WHEN-CHECKBOX-CHANGED" block="TBBSBRL" height="23px" label="tbbsbrl.tbbsbrlMeetTimeInd.label" member="TBBSBRL_MEET_TIME_IND" name="tbbsbrlMeetTimeInd" value="Y" width="133px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</checkbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="Number" height="23px" maxlength="3" member="MEET_TIME_LNTH" name="meetTimeLnth" textalign="right" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="String" height="23px" maxlength="11" member="TBBSBRL_MEET_TIME_HDNG" name="tbbsbrlMeetTimeHdng" width="96px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<checkbox action="WHEN-CHECKBOX-CHANGED" block="TBBSBRL" height="23px" label="tbbsbrl.tbbsbrlBldgCodeInd.label" member="TBBSBRL_BLDG_CODE_IND" name="tbbsbrlBldgCodeInd" value="Y" width="133px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</checkbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="Number" height="23px" maxlength="3" member="BLDG_LNTH" name="bldgLnth" textalign="right" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="String" height="23px" maxlength="6" member="TBBSBRL_BLDG_HDNG" name="tbbsbrlBldgHdng" width="61px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<checkbox action="WHEN-CHECKBOX-CHANGED" block="TBBSBRL" height="23px" label="tbbsbrl.tbbsbrlRoomCodeInd.label" member="TBBSBRL_ROOM_CODE_IND" name="tbbsbrlRoomCodeInd" value="Y" width="133px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</checkbox>
+					</gridcell>
+					<gridcell>
+						<combobox action="WHEN-LIST-CHANGED" block="TBBSBRL" height="23px" member="TBBSBRL_ROOM_LNTH" name="tbbsbrlRoomLnth" required="true" textalign="right" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							<model>
+								<item label="tbbsbrl.tbbsbrlRoomLnth.item0.label" value="5"/>
+								<item label="tbbsbrl.tbbsbrlRoomLnth.item1.label" value="6"/>
+								<item label="tbbsbrl.tbbsbrlRoomLnth.item2.label" value="7"/>
+								<item label="tbbsbrl.tbbsbrlRoomLnth.item3.label" value="8"/>
+								<item label="tbbsbrl.tbbsbrlRoomLnth.item4.label" value="9"/>
+								<item label="tbbsbrl.tbbsbrlRoomLnth.item5.label" value="10"/>
+							</model>
+						</combobox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="String" height="23px" maxlength="10" member="TBBSBRL_ROOM_HDNG" name="tbbsbrlRoomHdng" width="96px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<checkbox action="WHEN-CHECKBOX-CHANGED" block="TBBSBRL" height="23px" label="tbbsbrl.tbbsbrlInstructorInd.label" member="TBBSBRL_INSTRUCTOR_IND" name="tbbsbrlInstructorInd" value="Y" width="133px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</checkbox>
+					</gridcell>
+					<gridcell>
+						<combobox action="WHEN-LIST-CHANGED" block="TBBSBRL" height="23px" member="TBBSBRL_INSTR_LNTH" name="tbbsbrlInstrLnth" required="true" textalign="right" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							<model>
+								<item label="tbbsbrl.tbbsbrlInstrLnth.item0.label" value="10"/>
+								<item label="tbbsbrl.tbbsbrlInstrLnth.item1.label" value="15"/>
+								<item label="tbbsbrl.tbbsbrlInstrLnth.item2.label" value="18"/>
+								<item label="tbbsbrl.tbbsbrlInstrLnth.item3.label" value="20"/>
+								<item label="tbbsbrl.tbbsbrlInstrLnth.item4.label" value="25"/>
+							</model>
+						</combobox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="String" height="23px" maxlength="25" member="TBBSBRL_INSTR_HDNG" name="tbbsbrlInstrHdng" width="200px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<checkbox action="WHEN-CHECKBOX-CHANGED" block="TBBSBRL" height="23px" label="tbbsbrl.tbbsbrlGmodCodeInd.label" member="TBBSBRL_GMOD_CODE_IND" name="tbbsbrlGmodCodeInd" value="Y" width="133px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</checkbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="Number" height="23px" maxlength="3" member="GMOD_LNTH" name="gmodLnth" textalign="right" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TBBSBRL" datatype="String" height="23px" keyactions="NEXT_ITEM" maxlength="1" member="TBBSBRL_GMOD_HDNG" name="tbbsbrlGmodHdng" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+				</gridlayout>
+			</panel>
+		</collapsiblepanel>
+	</panel>
+</config>

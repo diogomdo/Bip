@@ -57,27 +57,32 @@ public class CopyValueTask implements Task, TargetComments{
 		/*Aqui e necessario procurar adapters com comentarios de copy values e criar 
 		 * e criar uma lista de objectos CopyValues
 		 */
-		
+
 		//Esta chamada e apenas para debug
 		//DirectoryNavigator.displayDirectoryContents(dir);
 		
 		File path = DirectoryNavigator.specificDirectoryContents(dir, "model");
 		if (path.toString()!=null)
 			for(File file: path.listFiles()){
+				targetBlock = null;
 				if (file.getAbsoluteFile().getName().endsWith("Adapter.java") ){
+					
 					CompilationUnit loadedClass = new ClassNavigator(file).LoadClass();
+
 					targetBlock = file.getAbsoluteFile().getName().split("Adapter.java")[0];
+					
 					commentChecker(loadedClass.getAllContainedComments());
 				}
 			}
-		if(this.listOfCopyValues!=null) jobTodDo  =true;
-		
-		else
-			throw new Exception();
+		if(this.listOfCopyValues!=null){
+			jobTodDo  =true;
 			
+		}else{
+			throw new Exception();
+		}
 	}
 	
-	private void commentChecker(List<Comment> allContainedComments)  {
+	private boolean commentChecker(List<Comment> allContainedComments)  {
 		
 		for (Comment comment : allContainedComments){
 			if (comment.toString().contains(CommentsColl.F2J_COPYVALUE.getCommetMsg())){
@@ -90,8 +95,10 @@ public class CopyValueTask implements Task, TargetComments{
 				 */
 				
 				this.listOfCopyValues.add(copyValueCmmt);
+				return true;
 			}
 		}
+		return false;
 	}
 
 	public void execute() throws ParseException, IOException {
@@ -107,18 +114,23 @@ public class CopyValueTask implements Task, TargetComments{
 		 * iniciais
 		 * caso contrario, verificar se a instrucao existe e se corresponde a algum copy value
 		 * ATENCAO: ha beforequery que tem a where clause imbutida e necessario fazer o despiste
-		 * 
 		 */
 		File path = DirectoryNavigator.specificDirectoryContents(dir, "controller");
 		if (path.toString()!=null)
 			for(File file: path.listFiles()){
+				/*
+				 * Nao ha necessidade de percorrer os controladores todos uma vez que se sabe
+				 * a partida onde devera estar o beforequery
+				 * 
+				 * TODO - Abrir directamente o controlador que interessa
+				 */
 				String filePath = file.getAbsoluteFile().getName();
-				if (filePath.endsWith("Controller.java") && filePath.contains(targetBlock) ){
+				if (filePath.endsWith("Controller.java") && filePath.toLowerCase().contains(copyValueCmmt.getBlockCopyTo().toLowerCase()) ){
 					this.in = new FileInputStream(file);
-					CompilationUnit loadedClass = JavaParser.parse(in);
 					
-					findMethods(loadedClass);
-//					CopyValueToManager.run(listOfCopyValues, dir);
+//					CompilationUnit loadedClass = JavaParser.parse(in);
+//					findMethods(loadedClass);
+					
 					Executor.run(listOfCopyValues, dir);
 					/*
 					 * TODO
@@ -126,11 +138,10 @@ public class CopyValueTask implements Task, TargetComments{
 					 * do bloco
 					 */
 					
-					Files.write(file.getAbsoluteFile().toPath(), 
-							loadedClass.toString().getBytes(Charset.defaultCharset()), 
-			                StandardOpenOption.TRUNCATE_EXISTING
-				
-		        );
+//					Files.write(file.getAbsoluteFile().toPath(), 
+//							loadedClass.toString().getBytes(Charset.defaultCharset()), 
+//			                StandardOpenOption.TRUNCATE_EXISTING
+//		        );
 			}
 		}
 	}

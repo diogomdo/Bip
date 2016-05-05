@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<interactionblock name="BUTTON_CONTROL_BLOCK"/>
+	<interactionblock name="TBRSBRL"/>
+	<interactionblock name="G$_NAV_BLOCK"/>
+	<interactionblock name="TBBSBRL"/>
+	<interactionblock name="FORM_HEADER"/>
+	<interactionblock name="TBRSBEP"/>
+	<panel class="ContentCanvas" id="pnlBillCanvas3" menu="G$_DEFAULT_PM" name="BILL_CANVAS3" width="100%">
+		<framepanel label="billCanvas3.text247.text" name="rect243" width="100%">
+			<collapsiblepanel label="billCanvas3.graphic277.text" name="graphic270" width="100%">
+				<panel width="100%">
+					<gridview block="TBRSBEP" height="364px" name="grdTbrsbep" width="100%">
+						<viewheader>
+							<viewcolumn autoskip="true" block="TBRSBEP" case="upper" datatype="String" keyactions="NEXT_ITEM" label="tbrsbep.tbrsbepTermCode.prompt" labelstyle="DEFAULT" maxlength="30" member="TBRSBEP_TERM_CODE" name="tbrsbepTermCode" required="true" validatefromlist="true" validation="server" width="63px">
+								<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+								<editor>
+									<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="20px" icon="flashlit" label="buttonControlBlock.tbrsbepTermCodeLbt.label" member="TBRSBEP_TERM_CODE_LBT" name="tbrsbepTermCodeLbt" navigable="false" tooltip="buttonControlBlock.tbrsbepTermCodeLbt.tooltip" width="20px">
+										<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+									</button>
+								</editor>
+							</viewcolumn>
+							<viewcolumn block="TBRSBEP" case="upper" datatype="Date" formatmask="DD-MON-YYYY" keyactions="NEXT_ITEM" label="tbrsbep.tbrsbepCutoffDate.prompt" labelstyle="DEFAULT" maxlength="11" member="TBRSBEP_CUTOFF_DATE" name="tbrsbepCutoffDate" validation="server" width="108px">
+								<editor>
+									<calendar>
+										<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+									</calendar>
+								</editor>
+								<editor>
+									<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="20px" icon="calendar" label="buttonControlBlock.tbrsbepCutoffDateDbt.label" member="TBRSBEP_CUTOFF_DATE_DBT" name="tbrsbepCutoffDateDbt" navigable="false" tooltip="buttonControlBlock.tbrsbepCutoffDateDbt.tooltip" width="20px">
+										<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+									</button>
+								</editor>
+							</viewcolumn>
+							<viewcolumn block="TBRSBEP" case="upper" datatype="Date" formatmask="DD-MON-YYYY" keyactions="NEXT_ITEM" label="tbrsbep.tbrsbepDueDate.prompt" labelstyle="DEFAULT" maxlength="11" member="TBRSBEP_DUE_DATE" name="tbrsbepDueDate" validation="server" width="108px">
+								<editor>
+									<calendar>
+										<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+									</calendar>
+								</editor>
+								<editor>
+									<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="20px" icon="calendar" label="buttonControlBlock.tbrsbepDueDateDbt.label" member="TBRSBEP_DUE_DATE_DBT" name="tbrsbepDueDateDbt" navigable="false" tooltip="buttonControlBlock.tbrsbepDueDateDbt.tooltip" width="20px">
+										<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+									</button>
+								</editor>
+							</viewcolumn>
+						</viewheader>
+					</gridview>
+				</panel>
+			</collapsiblepanel>
+			<collapsiblepanel label="billCanvas3.text70.text" name="rect69" width="100%">
+				<panel width="100%">
+					<gridview block="TBRSBRL" height="111px" name="grdTbrsbrl" width="100%">
+						<viewheader>
+							<viewcolumn block="TBRSBRL" case="upper" datatype="String" keyactions="PREVIOUS_ITEM,NEXT_ITEM" labelstyle="DEFAULT" maxlength="3" member="TBRSBRL_VALUE" name="tbrsbrlValue" width="39px">
+								<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+								<editor>
+									<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="20px" icon="flashlit" label="billCanvas3.text70.text" member="TBRSBRL_VALUE_LBT" name="tbrsbrlValueLbt" navigable="false" tooltip="buttonControlBlock.tbrsbrlValueLbt.tooltip" width="20px">
+										<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+									</button>
+								</editor>
+							</viewcolumn>
+						</viewheader>
+					</gridview>
+				</panel>
+			</collapsiblepanel>
+			<gridlayout>
+				<gridcell>
+					<checkbox block="TBBSBRL" falsevalue="N" height="23px" keyactions="NEXT_ITEM" label="tbbsbrl.tbbsbrlPrintFinMemoInd.label" member="TBBSBRL_PRINT_FIN_MEMO_IND" name="tbbsbrlPrintFinMemoInd" required="true" value="Y" width="399px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</checkbox>
+				</gridcell>
+				<gridcell>
+					<checkbox block="TBBSBRL" falsevalue="N" height="23px" keyactions="NEXT_ITEM,PREVIOUS_ITEM" label="tbbsbrl.tbbsbrlCdeInd.label" member="TBBSBRL_CDE_IND" name="tbbsbrlCdeInd" required="true" value="Y" width="399px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</checkbox>
+				</gridcell>
+				<gridcell>
+					<checkbox block="TBBSBRL" falsevalue="N" height="23px" keyactions="NEXT_ITEM,PREVIOUS_ITEM" label="tbbsbrl.tbbsbrlPrintOthrMemosInd.label" member="TBBSBRL_PRINT_OTHR_MEMOS_IND" name="tbbsbrlPrintOthrMemosInd" required="true" value="Y" width="399px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</checkbox>
+				</gridcell>
+				<gridcell>
+					<checkbox block="TBBSBRL" falsevalue="N" height="23px" keyactions="NEXT_ITEM,PREVIOUS_ITEM" label="tbbsbrl.tbbsbrlPrintDepInd.label" member="TBBSBRL_PRINT_DEP_IND" name="tbbsbrlPrintDepInd" required="true" value="Y" width="399px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</checkbox>
+				</gridcell>
+				<gridcell>
+					<checkbox block="TBBSBRL" falsevalue="N" height="23px" keyactions="NEXT_ITEM,PREVIOUS_ITEM" label="tbbsbrl.tbbsbrlPrintEpNoteInd.label" member="TBBSBRL_PRINT_EP_NOTE_IND" name="tbbsbrlPrintEpNoteInd" required="true" value="Y" width="564px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</checkbox>
+				</gridcell>
+				<gridcell>
+					<checkbox block="TBBSBRL" falsevalue="N" height="23px" keyactions="NEXT_ITEM,PREVIOUS_ITEM" label="tbbsbrl.tbbsbrlSumFinaidMemoInd.label" member="TBBSBRL_SUM_FINAID_MEMO_IND" name="tbbsbrlSumFinaidMemoInd" required="true" value="Y" width="399px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</checkbox>
+				</gridcell>
+				<gridcell>
+					<checkbox block="TBBSBRL" falsevalue="N" height="23px" keyactions="NEXT_ITEM,PREVIOUS_ITEM" label="tbbsbrl.tbbsbrlFinaidMemoAffectDue.label" member="TBBSBRL_FINAID_MEMO_AFFECT_DUE" name="tbbsbrlFinaidMemoAffectDue" required="true" value="Y" width="399px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</checkbox>
+				</gridcell>
+				<gridcell>
+					<checkbox block="TBBSBRL" falsevalue="N" height="23px" keyactions="NEXT_ITEM,PREVIOUS_ITEM" label="tbbsbrl.tbbsbrlPreauthCredAffDue.label" member="TBBSBRL_PREAUTH_CRED_AFF_DUE" name="tbbsbrlPreauthCredAffDue" required="true" value="Y" width="399px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</checkbox>
+				</gridcell>
+				<gridcell>
+					<checkbox block="TBBSBRL" falsevalue="N" height="23px" keyactions="NEXT_ITEM,PREVIOUS_ITEM" label="tbbsbrl.tbbsbrlOtherMemoAffectDue.label" member="TBBSBRL_OTHER_MEMO_AFFECT_DUE" name="tbbsbrlOtherMemoAffectDue" required="true" value="Y" width="399px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</checkbox>
+				</gridcell>
+				<gridcell>
+					<checkbox block="TBBSBRL" falsevalue="N" height="23px" keyactions="NEXT_ITEM,PREVIOUS_ITEM" label="tbbsbrl.tbbsbrlPrevBalOffInd.label" member="TBBSBRL_PREV_BAL_OFF_IND" name="tbbsbrlPrevBalOffInd" required="true" value="Y" width="399px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</checkbox>
+				</gridcell>
+				<gridcell>
+					<checkbox block="TBBSBRL" falsevalue="N" height="23px" keyactions="NEXT_ITEM,PREVIOUS_ITEM" label="tbbsbrl.tbbsbrlCurrCredPrevDbtInd.label" member="TBBSBRL_CURR_CRED_PREV_DBT_IND" name="tbbsbrlCurrCredPrevDbtInd" required="true" value="Y" width="399px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</checkbox>
+					<textbox block="TBBSBRL" datatype="String" height="23px" keyactions="NEXT_ITEM,PREVIOUS_ITEM" label="tbbsbrl.tbbsbrlCurrCode.prompt" maxlength="30" member="TBBSBRL_CURR_CODE" name="tbbsbrlCurrCode" style="ui-buttoninput" validation="server" width="51px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</textbox>
+					<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" icon="flashlit" label="buttonControlBlock.tbbsbrlCurrCodeLbt.label" member="TBBSBRL_CURR_CODE_LBT" name="tbbsbrlCurrCodeLbt" navigable="false" style="ui-buttoninput" tooltip="buttonControlBlock.tbbsbrlCurrCodeLbt.tooltip" width="20px">
+						<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+					</button>
+				</gridcell>
+				<gridcell>
+					<calendar autoskip="true" block="TBBSBRL" case="upper" datatype="Date" formatmask="DD-MON-YYYY" height="23px" keyactions="NEXT_ITEM,PREVIOUS_ITEM" label="tbbsbrl.tbbsbrlCurrentDueDate.prompt" maxlength="11" member="TBBSBRL_CURRENT_DUE_DATE" name="tbbsbrlCurrentDueDate" validation="server" width="140px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</calendar>
+				</gridcell>
+				<gridcell>
+					<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="20px" icon="calendar" label="buttonControlBlock.tbbsbrlCurrentDueDateDbt.label" member="TBBSBRL_CURRENT_DUE_DATE_DBT" name="tbbsbrlCurrentDueDateDbt" navigable="false" tooltip="buttonControlBlock.tbbsbrlCurrentDueDateDbt.tooltip" width="20px">
+						<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+					</button>
+				</gridcell>
+				<gridcell>
+					<combobox action="WHEN-LIST-CHANGED" block="TBBSBRL" height="23px" keyactions="NEXT_ITEM,PREVIOUS_ITEM" label="tbbsbrl.tbbsbrlSelTermCharges.prompt" member="TBBSBRL_SEL_TERM_CHARGES" name="tbbsbrlSelTermCharges" required="true" width="168px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						<model>
+							<item label="tbbsbrl.tbbsbrlSelTermCharges.item0.label" value="C"/>
+							<item label="tbbsbrl.tbbsbrlSelTermCharges.item1.label" value="S"/>
+							<item label="tbbsbrl.tbbsbrlSelTermCharges.item2.label" value="A"/>
+						</model>
+					</combobox>
+				</gridcell>
+				<gridcell>
+					<combobox block="TBBSBRL" height="23px" keyactions="PREVIOUS_ITEM,NEXT_ITEM" label="tbbsbrl.tbbsbrlSumTermCharges.prompt" member="TBBSBRL_SUM_TERM_CHARGES" name="tbbsbrlSumTermCharges" required="true" width="168px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						<model>
+							<item label="tbbsbrl.tbbsbrlSumTermCharges.item0.label" value="D"/>
+							<item label="tbbsbrl.tbbsbrlSumTermCharges.item1.label" value="C"/>
+							<item label="tbbsbrl.tbbsbrlSumTermCharges.item2.label" value="S"/>
+							<item label="tbbsbrl.tbbsbrlSumTermCharges.item3.label" value="T"/>
+						</model>
+					</combobox>
+				</gridcell>
+				<gridcell>
+					<combobox block="TBBSBRL" height="23px" keyactions="NEXT_ITEM,PREVIOUS_ITEM" label="tbbsbrl.tbbsbrlSumPayments.prompt" member="TBBSBRL_SUM_PAYMENTS" name="tbbsbrlSumPayments" required="true" width="168px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						<model>
+							<item label="tbbsbrl.tbbsbrlSumPayments.item0.label" value="D"/>
+							<item label="tbbsbrl.tbbsbrlSumPayments.item1.label" value="C"/>
+							<item label="tbbsbrl.tbbsbrlSumPayments.item2.label" value="T"/>
+							<item label="tbbsbrl.tbbsbrlSumPayments.item3.label" value="N"/>
+						</model>
+					</combobox>
+				</gridcell>
+				<gridcell>
+					<textbox block="TBBSBRL" datatype="String" height="23px" maxlength="35" member="CURR_TITLE" name="currTitle" width="279px">
+						<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+					</textbox>
+				</gridcell>
+			</gridlayout>
+		</framepanel>
+	</panel>
+</config>

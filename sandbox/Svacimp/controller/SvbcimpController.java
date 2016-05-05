@@ -1,5 +1,5 @@
 package net.hedtech.las.studemre.banner.student.Svacimp.controller;
- 
+
 import java.util.*;
 import org.jdesktop.databuffer.DataRow.DataRowStatus;
 import morphis.foundations.core.appdatalayer.*;
@@ -29,7 +29,6 @@ import static morphis.foundations.core.appsupportlib.runtime.ValueSetServices.*;
 import static morphis.foundations.core.appsupportlib.runtime.LovServices.*;
 import static morphis.foundations.core.appsupportlib.runtime.ListServices.*;
 import static morphis.foundations.core.appsupportlib.runtime.TreeServices.*;
-
 import static morphis.foundations.core.appsupportlib.Math.*;
 import static morphis.foundations.core.appsupportlib.Lib.*;
 import static morphis.foundations.core.appsupportlib.Globals.*;
@@ -37,53 +36,41 @@ import static morphis.foundations.core.types.Types.*;
 import morphis.foundations.core.util.*;
 import morphis.core.utils.behavior.annotations.*;
 import morphis.foundations.flavors.forms.appsupportlib.runtime.*;
-
 import net.hedtech.general.common.forms.controller.DefaultBlockController;
-
 import net.hedtech.general.common.dbservices.*;
 import net.hedtech.general.common.dbservices.dbtypes.*;
 import net.hedtech.general.common.libraries.Goqrpls.*;
 import net.hedtech.general.common.libraries.Goqwflw.*;
 import net.hedtech.general.common.libraries.Eoqrpls.*;
-
 import net.hedtech.las.studemre.banner.student.Svacimp.model.*;
 import net.hedtech.las.studemre.banner.student.Svacimp.*;
 import net.hedtech.las.studemre.banner.student.Svacimp.services.*;
-
-    
 import net.hedtech.general.common.libraries.Goqolib.model.GVpdiBlock;
 import net.hedtech.general.common.libraries.Goqolib.model.GSdkey;
 import net.hedtech.general.common.libraries.Goqolib.model.GSdispAdapter;
 import net.hedtech.general.common.libraries.Goqolib.model.GNavBlock;
-		
+
 public class SvbcimpController extends DefaultBlockController {
 
+    public SvbcimpController(IFormController parentController, String name) {
+        super(parentController, name);
+    }
 
-	
-	public SvbcimpController(IFormController parentController, String name) 
-	{
-		super(parentController, name);
-	}
-		
-		
-		
-	@Override
-	public SvacimpTask getTask() {
-		return (SvacimpTask)super.getTask();
-	}
+    @Override
+    public SvacimpTask getTask() {
+        return (SvacimpTask) super.getTask();
+    }
 
-	public SvacimpModel getFormModel() {
-		return this.getTask().getModel();
-	}
-		
-			
-	//action methods generated from triggers
-	
-		/* Original PL/SQL code code for TRIGGER SVBCIMP.KEY-PRVBLK
+    public SvacimpModel getFormModel() {
+        return this.getTask().getModel();
+    }
+
+    //action methods generated from triggers
+    /* Original PL/SQL code code for TRIGGER SVBCIMP.KEY-PRVBLK
 		 EXECUTE_TRIGGER('INVALID_FUNCTION_MSG');
 G$_CHECK_FAILURE;
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -92,21 +79,17 @@ G$_CHECK_FAILURE;
 		 *
 		 *</p>
 		*/
+    @ActionTrigger(action = "KEY-PRVBLK", function = KeyFunction.PREVIOUS_BLOCK)
+    public void svbcimp_PreviousBlock() {
+        executeAction("INVALID_FUNCTION_MSG");
+        getTask().getGoqrpls().gCheckFailure();
+    }
 
-		@ActionTrigger(action="KEY-PRVBLK", function=KeyFunction.PREVIOUS_BLOCK)
-		public void svbcimp_PreviousBlock()
-		{
-			
-				executeAction("INVALID_FUNCTION_MSG");
-				getTask().getGoqrpls().gCheckFailure();
-			}
-
-		
-		/* Original PL/SQL code code for TRIGGER SVBCIMP.KEY-NXTBLK
+    /* Original PL/SQL code code for TRIGGER SVBCIMP.KEY-NXTBLK
 		 EXECUTE_TRIGGER('INVALID_FUNCTION_MSG');
 G$_CHECK_FAILURE;
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -115,21 +98,17 @@ G$_CHECK_FAILURE;
 		 *
 		 *</p>
 		*/
+    @ActionTrigger(action = "KEY-NXTBLK", function = KeyFunction.NEXT_BLOCK)
+    public void svbcimp_NextBlock() {
+        executeAction("INVALID_FUNCTION_MSG");
+        getTask().getGoqrpls().gCheckFailure();
+    }
 
-		@ActionTrigger(action="KEY-NXTBLK", function=KeyFunction.NEXT_BLOCK)
-		public void svbcimp_NextBlock()
-		{
-			
-				executeAction("INVALID_FUNCTION_MSG");
-				getTask().getGoqrpls().gCheckFailure();
-			}
-
-		
-		/* Original PL/SQL code code for TRIGGER SVBCIMP.PRE-UPDATE
+    /* Original PL/SQL code code for TRIGGER SVBCIMP.PRE-UPDATE
 		 :SVBCIMP.SVBCIMP_ACTIVITY_DATE := SYSDATE;
 :SVBCIMP.SVBCIMP_USER_ID := :GLOBAL.CURRENT_USER;
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -139,24 +118,18 @@ G$_CHECK_FAILURE;
 		 *</p>
 		 * @param args
 		*/
+    @BeforeRowUpdate
+    public void svbcimp_BeforeRowUpdate(RowAdapterEvent args) {
+        SvbcimpAdapter svbcimpElement = (SvbcimpAdapter) args.getRow();
+        svbcimpElement.setSvbcimpActivityDate(DbManager.getDBDateTime());
+        svbcimpElement.setSvbcimpUserId(getGlobal("CURRENT_USER"));
+    }
 
-		@BeforeRowUpdate
-		public void svbcimp_BeforeRowUpdate(RowAdapterEvent args)
-		{
-			
-				SvbcimpAdapter svbcimpElement = (SvbcimpAdapter)args.getRow();
-
-
-				svbcimpElement.setSvbcimpActivityDate(DbManager.getDBDateTime());
-				svbcimpElement.setSvbcimpUserId(getGlobal("CURRENT_USER"));
-			}
-
-		
-		/* Original PL/SQL code code for TRIGGER SVBCIMP.PRE-INSERT
+    /* Original PL/SQL code code for TRIGGER SVBCIMP.PRE-INSERT
 		 :SVBCIMP.SVBCIMP_ACTIVITY_DATE := SYSDATE;
 :SVBCIMP.SVBCIMP_USER_ID := :GLOBAL.CURRENT_USER;
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -166,20 +139,14 @@ G$_CHECK_FAILURE;
 		 *</p>
 		 * @param args
 		*/
+    @BeforeRowInsert
+    public void svbcimp_BeforeRowInsert(RowAdapterEvent args) {
+        SvbcimpAdapter svbcimpElement = (SvbcimpAdapter) args.getRow();
+        svbcimpElement.setSvbcimpActivityDate(DbManager.getDBDateTime());
+        svbcimpElement.setSvbcimpUserId(getGlobal("CURRENT_USER"));
+    }
 
-		@BeforeRowInsert
-		public void svbcimp_BeforeRowInsert(RowAdapterEvent args)
-		{
-			
-				SvbcimpAdapter svbcimpElement = (SvbcimpAdapter)args.getRow();
-
-
-				svbcimpElement.setSvbcimpActivityDate(DbManager.getDBDateTime());
-				svbcimpElement.setSvbcimpUserId(getGlobal("CURRENT_USER"));
-			}
-
-		
-		/* Original PL/SQL code code for TRIGGER SVBCIMP.POST-QUERY
+    /* Original PL/SQL code code for TRIGGER SVBCIMP.POST-QUERY
 		 IF NVL(:SVBCIMP.SVBCIMP_SYSTEM_REQ_IND,'N') = 'Y' THEN
 	EXECUTE_TRIGGER('DISABLE_DEFAULTS_FIELDS');
 	G$_CHECK_FAILURE;
@@ -189,7 +156,7 @@ ELSE
 
 END IF;
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -199,41 +166,28 @@ END IF;
 		 *</p>
 		 * @param args
 		*/
+    @AfterQuery
+    public void svbcimp_AfterQuery(RowAdapterEvent args) {
+        SvbcimpAdapter svbcimpElement = (SvbcimpAdapter) args.getRow();
+        try {
+            svbcimpElement.setLockDbValues(true);
+            try {
+                this.svbcimpDirectory_PostChange();
+            } catch (Exception ex) {
+            }
+        } finally {
+            svbcimpElement.setLockDbValues(false);
+        }
+        if (isNull(svbcimpElement.getSvbcimpSystemReqInd(), "N").equals("Y")) {
+            executeAction("DISABLE_DEFAULTS_FIELDS");
+            getTask().getGoqrpls().gCheckFailure();
+        } else {
+            executeAction("ENABLE_DEFAULTS_FIELDS");
+            getTask().getGoqrpls().gCheckFailure();
+        }
+    }
 
-		@AfterQuery
-		public void svbcimp_AfterQuery(RowAdapterEvent args)
-		{
-			
-				SvbcimpAdapter svbcimpElement = (SvbcimpAdapter)args.getRow();
-
-
-				// F2J_WARNING : Post-query code is executed once for every row retrieved. If you expect the query to return many records, this may cause a performance problem.
-
-				
-				try
-				{
-					svbcimpElement.setLockDbValues(true);
-					try{
-						this.svbcimpDirectory_PostChange();
-
-					} catch (Exception ex) { }
-
-				} finally { 
-					svbcimpElement.setLockDbValues(false);
-				}
-				if ( isNull(svbcimpElement.getSvbcimpSystemReqInd(), "N").equals("Y") )
-				{
-					executeAction("DISABLE_DEFAULTS_FIELDS");
-					getTask().getGoqrpls().gCheckFailure();
-				}
-				else {
-					executeAction("ENABLE_DEFAULTS_FIELDS");
-					getTask().getGoqrpls().gCheckFailure();
-				}
-			}
-
-		
-		/* Original PL/SQL code code for TRIGGER SVBCIMP.ON-DELETE
+    /* Original PL/SQL code code for TRIGGER SVBCIMP.ON-DELETE
 		 BEGIN
 	sv_load_file_definition.p_delete(p_sqpr_code => :svbcimp.svbcimp_sqpr_code,
 	                                 p_rowid     =>:SVBCIMP.ROWID
@@ -245,7 +199,7 @@ EXCEPTION
 	
 END;	
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -255,29 +209,21 @@ END;
 		 *</p>
 		 * @param args
 		*/
+    @RowDelete
+    public void svbcimp_RowDelete(RowAdapterEvent args) {
+        SvbcimpAdapter svbcimpElement = (SvbcimpAdapter) args.getRow();
+        try {
+            // F2J_TO_COMPLETE : The conversion process could not determine the name of the intended business object. Determine the correct Business Object name and complete the code.
+            // F2J_WARNING : Passing parameters by name is not supported. Please check that the parameters are in the correct order.
+            SvLoadFileDefinition.pDelete(/*pSqprCode=>*/
+            svbcimpElement.getSvbcimpSqprCode(), svbcimpElement.getROWID());
+        } catch (Exception e) {
+            getTask().getGoqrpls().gDisplayErrMsg(errorMessage());
+            throw new  ApplicationException();
+        }
+    }
 
-		@RowDelete
-		public void svbcimp_RowDelete(RowAdapterEvent args)
-		{
-			
-				SvbcimpAdapter svbcimpElement = (SvbcimpAdapter)args.getRow();
-
-
-				try
-				{
-					// F2J_TO_COMPLETE : The conversion process could not determine the name of the intended business object. Determine the correct Business Object name and complete the code.
-					// F2J_WARNING : Passing parameters by name is not supported. Please check that the parameters are in the correct order.
-					SvLoadFileDefinition.pDelete(/*pSqprCode=>*/svbcimpElement.getSvbcimpSqprCode(), /*pRowid=>*/svbcimpElement.getROWID());
-				}
-				catch(Exception  e)
-				{
-					getTask().getGoqrpls().gDisplayErrMsg(errorMessage());
-					throw new ApplicationException();
-				}
-			}
-
-		
-		/* Original PL/SQL code code for TRIGGER SVBCIMP.ON-INSERT
+    /* Original PL/SQL code code for TRIGGER SVBCIMP.ON-INSERT
 		 BEGIN
   sv_load_file_definition.p_create(
     p_sqpr_code           =>    :svbcimp.svbcimp_sqpr_code,
@@ -303,7 +249,7 @@ EXCEPTION
 END; 
     
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -313,35 +259,37 @@ END;
 		 *</p>
 		 * @param args
 		*/
+    @RowInsert
+    public void svbcimp_RowInsert(RowAdapterEvent args) {
+        SvbcimpAdapter svbcimpElement = (SvbcimpAdapter) args.getRow();
+        try {
+            // F2J_TO_COMPLETE : The conversion process could not determine the name of the intended business object. Determine the correct Business Object name and complete the code.
+            // F2J_WARNING : Passing parameters by name is not supported. Please check that the parameters are in the correct order.
+            SvLoadFileDefinition.pCreate(/*pSqprCode=>*/
+            svbcimpElement.getSvbcimpSqprCode(), /*pSystemReqInd=>*/
+            svbcimpElement.getSvbcimpSystemReqInd(), /*pExternalTablename=>*/
+            svbcimpElement.getSvbcimpExternalTablename(), /*pRecordDelimiter=>*/
+            svbcimpElement.getSvbcimpRecordDelimiter(), svbcimpElement.getSvbcimpFields(), /*pFieldDelimiter=>*/
+            svbcimpElement.getSvbcimpFieldDelimiter(), /*pDefinitionYear=>*/
+            svbcimpElement.getSvbcimpDefinitionYear(), /*pInclFileNameInd=>*/
+            svbcimpElement.getSvbcimpInclFileNameInd(), svbcimpElement.getSvbcimpDirectory(), svbcimpElement.getSvbcimpFilename(), /*pLoadWhen=>*/
+            toNumber(svbcimpElement.getSvbcimpLoadWhen()), /*pFileLength=>*/
+            toStr(svbcimpElement.getSvbcimpFileLength()), /*pUserId=>*/
+            toDate(svbcimpElement.getSvbcimpUserId()), /*pRowidOut=>*/
+            "SVACIMP", svbcimpElement.getROWID());
+        } catch (Exception e) {
+            getTask().getGoqrpls().gDisplayErrMsg(errorMessage());
+            throw new  ApplicationException();
+        }
+    }
 
-		@RowInsert
-		public void svbcimp_RowInsert(RowAdapterEvent args)
-		{
-			
-				SvbcimpAdapter svbcimpElement = (SvbcimpAdapter)args.getRow();
-
-
-				try
-				{
-					// F2J_TO_COMPLETE : The conversion process could not determine the name of the intended business object. Determine the correct Business Object name and complete the code.
-					// F2J_WARNING : Passing parameters by name is not supported. Please check that the parameters are in the correct order.
-					SvLoadFileDefinition.pCreate(/*pSqprCode=>*/svbcimpElement.getSvbcimpSqprCode(), /*pSystemReqInd=>*/svbcimpElement.getSvbcimpSystemReqInd(), /*pExternalTablename=>*/svbcimpElement.getSvbcimpExternalTablename(), /*pRecordDelimiter=>*/svbcimpElement.getSvbcimpRecordDelimiter(), /*pFields=>*/svbcimpElement.getSvbcimpFields(), /*pFieldDelimiter=>*/svbcimpElement.getSvbcimpFieldDelimiter(), /*pDefinitionYear=>*/svbcimpElement.getSvbcimpDefinitionYear(), /*pInclFileNameInd=>*/svbcimpElement.getSvbcimpInclFileNameInd(), /*pDirectory=>*/svbcimpElement.getSvbcimpDirectory(), /*pFilename=>*/svbcimpElement.getSvbcimpFilename(), toNumber(/*pLoadWhen=>*/svbcimpElement.getSvbcimpLoadWhen()), toStr(/*pFileLength=>*/svbcimpElement.getSvbcimpFileLength()), toDate(/*pUserId=>*/svbcimpElement.getSvbcimpUserId()), /*pDataOrigin=>*/"SVACIMP", /*pRowidOut=>*/svbcimpElement.getROWID());
-				}
-				catch(Exception  e)
-				{
-					getTask().getGoqrpls().gDisplayErrMsg(errorMessage());
-					throw new ApplicationException();
-				}
-			}
-
-		
-		/* Original PL/SQL code code for TRIGGER SVBCIMP.PRE-DELETE
+    /* Original PL/SQL code code for TRIGGER SVBCIMP.PRE-DELETE
 		 IF  :SVBCIMP.SVBCIMP_SYSTEM_REQ_IND  = 'Y' THEN
     Message( G$_NLS.Get('SVACIMP-0005', 'FORM','*ERROR* You can not delete this record; Definition is being used by the System.') );
     RAISE FORM_TRIGGER_FAILURE;
 END IF;
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -351,23 +299,16 @@ END IF;
 		 *</p>
 		 * @param args
 		*/
+    @BeforeRowDelete
+    public void svbcimp_BeforeRowDelete(RowAdapterEvent args) {
+        SvbcimpAdapter svbcimpElement = (SvbcimpAdapter) args.getRow();
+        if (svbcimpElement.getSvbcimpSystemReqInd().equals("Y")) {
+            errorMessage(GNls.Fget(toStr("SVACIMP-0005"), toStr("FORM"), toStr("*ERROR* You can not delete this record; Definition is being used by the System.")));
+            throw new  ApplicationException();
+        }
+    }
 
-		@BeforeRowDelete
-		public void svbcimp_BeforeRowDelete(RowAdapterEvent args)
-		{
-			
-				SvbcimpAdapter svbcimpElement = (SvbcimpAdapter)args.getRow();
-
-
-				if ( svbcimpElement.getSvbcimpSystemReqInd().equals("Y") )
-				{
-					errorMessage(GNls.Fget(toStr("SVACIMP-0005"), toStr("FORM"), toStr("*ERROR* You can not delete this record; Definition is being used by the System.")));
-					throw new ApplicationException();
-				}
-			}
-
-		
-		/* Original PL/SQL code code for TRIGGER SVBCIMP.ON-UPDATE
+    /* Original PL/SQL code code for TRIGGER SVBCIMP.ON-UPDATE
 		 BEGIN
   sv_load_file_definition.p_update(
     p_sqpr_code           =>    :svbcimp.svbcimp_sqpr_code,
@@ -393,7 +334,7 @@ EXCEPTION
 END; 
 
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -403,29 +344,31 @@ END;
 		 *</p>
 		 * @param args
 		*/
+    @RowUpdate
+    public void svbcimp_RowUpdate(RowAdapterEvent args) {
+        SvbcimpAdapter svbcimpElement = (SvbcimpAdapter) args.getRow();
+        try {
+            // F2J_TO_COMPLETE : The conversion process could not determine the name of the intended business object. Determine the correct Business Object name and complete the code.
+            // F2J_WARNING : Passing parameters by name is not supported. Please check that the parameters are in the correct order.
+            SvLoadFileDefinition.pUpdate(/*pSqprCode=>*/
+            svbcimpElement.getSvbcimpSqprCode(), /*pSystemReqInd=>*/
+            svbcimpElement.getSvbcimpSystemReqInd(), /*pExternalTablename=>*/
+            svbcimpElement.getSvbcimpExternalTablename(), /*pRecordDelimiter=>*/
+            svbcimpElement.getSvbcimpRecordDelimiter(), svbcimpElement.getSvbcimpFields(), /*pFieldDelimiter=>*/
+            svbcimpElement.getSvbcimpFieldDelimiter(), /*pDefinitionYear=>*/
+            svbcimpElement.getSvbcimpDefinitionYear(), /*pInclFileNameInd=>*/
+            svbcimpElement.getSvbcimpInclFileNameInd(), svbcimpElement.getSvbcimpDirectory(), svbcimpElement.getSvbcimpFilename(), /*pLoadWhen=>*/
+            toNumber(svbcimpElement.getSvbcimpLoadWhen()), /*pFileLength=>*/
+            toStr(svbcimpElement.getSvbcimpFileLength()), /*pUserId=>*/
+            toDate(svbcimpElement.getSvbcimpUserId()), /*pRowid=>*/
+            "SVACIMP", svbcimpElement.getROWID());
+        } catch (Exception e) {
+            getTask().getGoqrpls().gDisplayErrMsg(errorMessage());
+            throw new  ApplicationException();
+        }
+    }
 
-		@RowUpdate
-		public void svbcimp_RowUpdate(RowAdapterEvent args)
-		{
-			
-				SvbcimpAdapter svbcimpElement = (SvbcimpAdapter)args.getRow();
-
-
-				try
-				{
-					// F2J_TO_COMPLETE : The conversion process could not determine the name of the intended business object. Determine the correct Business Object name and complete the code.
-					// F2J_WARNING : Passing parameters by name is not supported. Please check that the parameters are in the correct order.
-					SvLoadFileDefinition.pUpdate(/*pSqprCode=>*/svbcimpElement.getSvbcimpSqprCode(), /*pSystemReqInd=>*/svbcimpElement.getSvbcimpSystemReqInd(), /*pExternalTablename=>*/svbcimpElement.getSvbcimpExternalTablename(), /*pRecordDelimiter=>*/svbcimpElement.getSvbcimpRecordDelimiter(), /*pFields=>*/svbcimpElement.getSvbcimpFields(), /*pFieldDelimiter=>*/svbcimpElement.getSvbcimpFieldDelimiter(), /*pDefinitionYear=>*/svbcimpElement.getSvbcimpDefinitionYear(), /*pInclFileNameInd=>*/svbcimpElement.getSvbcimpInclFileNameInd(), /*pDirectory=>*/svbcimpElement.getSvbcimpDirectory(), /*pFilename=>*/svbcimpElement.getSvbcimpFilename(), toNumber(/*pLoadWhen=>*/svbcimpElement.getSvbcimpLoadWhen()), toStr(/*pFileLength=>*/svbcimpElement.getSvbcimpFileLength()), toDate(/*pUserId=>*/svbcimpElement.getSvbcimpUserId()), /*pDataOrigin=>*/"SVACIMP", /*pRowid=>*/svbcimpElement.getROWID());
-				}
-				catch(Exception  e)
-				{
-					getTask().getGoqrpls().gDisplayErrMsg(errorMessage());
-					throw new ApplicationException();
-				}
-			}
-
-		
-		/* Original PL/SQL code code for TRIGGER SVBCIMP.UPDATE_LOADED_FIELDS
+    /* Original PL/SQL code code for TRIGGER SVBCIMP.UPDATE_LOADED_FIELDS
 		 BEGIN
 :SYSTEM.MESSAGE_LEVEL := '5';
 :SVBCIMP_LAST_LOADED_FILE:= :SVBCIMP_FILENAME;
@@ -440,7 +383,7 @@ WHERE  SVBCIMP_SQPR_CODE = :PROCESS_CODE  ;
 
 END;
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -449,34 +392,25 @@ END;
 		 *
 		 *</p>
 		*/
+    @ActionTrigger(action = "UPDATE_LOADED_FIELDS")
+    public void svbcimp_UpdateLoadedFields() {
+        //F2J_WARNING : Caution, the variable may be null.
+        SvbcimpAdapter svbcimpElement = (SvbcimpAdapter) this.getFormModel().getSvbcimp().getRowAdapter(true);
+        int rowCount = 0;
+        // F2J_WARNING : Please validate if you need to surround the message level manipulation with a try/finally block
+        MessageServices.setMessageLevel(FormsMessageLevel.decodeMessageLevel("5"));
+        svbcimpElement.setSvbcimpLastLoadedFile(svbcimpElement.getSvbcimpFilename());
+        svbcimpElement.setSvbcimpLoadedFileDate(DbManager.getDBDateTime());
+        String sql1 = "UPDATE SVBCIMP " + "SET SVBCIMP_LAST_LOADED_FILE = :SVBCIMP_LAST_LOADED_FILE, SVBCIMP_LOADED_FILE_DATE = :SVBCIMP_LOADED_FILE_DATE " + " WHERE SVBCIMP_SQPR_CODE = :PROCESS_CODE";
+        DataCommand command1 = new  DataCommand(sql1);
+        //Setting query parameters
+        command1.addParameter("SVBCIMP_LAST_LOADED_FILE", svbcimpElement.getSvbcimpLastLoadedFile());
+        command1.addParameter("SVBCIMP_LOADED_FILE_DATE", svbcimpElement.getSvbcimpLoadedFileDate());
+        command1.addParameter("PROCESS_CODE", getFormModel().getKeyBlock().getProcessCode());
+        rowCount = command1.execute();
+    }
 
-		@ActionTrigger(action="UPDATE_LOADED_FIELDS")
-		public void svbcimp_UpdateLoadedFields()
-		{
-			
-
-				//F2J_WARNING : Caution, the variable may be null.
-				SvbcimpAdapter svbcimpElement = (SvbcimpAdapter)this.getFormModel().getSvbcimp().getRowAdapter(true);
-
-
-				int rowCount = 0;
-				// F2J_WARNING : Please validate if you need to surround the message level manipulation with a try/finally block
-				MessageServices.setMessageLevel(FormsMessageLevel.decodeMessageLevel("5"));
-				svbcimpElement.setSvbcimpLastLoadedFile(svbcimpElement.getSvbcimpFilename());
-				svbcimpElement.setSvbcimpLoadedFileDate(DbManager.getDBDateTime());
-				String sql1 = "UPDATE SVBCIMP " +
-	"SET SVBCIMP_LAST_LOADED_FILE = :SVBCIMP_LAST_LOADED_FILE, SVBCIMP_LOADED_FILE_DATE = :SVBCIMP_LOADED_FILE_DATE " +
-	" WHERE SVBCIMP_SQPR_CODE = :PROCESS_CODE";
-				DataCommand command1 = new DataCommand(sql1);
-				//Setting query parameters
-				command1.addParameter("SVBCIMP_LAST_LOADED_FILE", svbcimpElement.getSvbcimpLastLoadedFile());
-				command1.addParameter("SVBCIMP_LOADED_FILE_DATE", svbcimpElement.getSvbcimpLoadedFileDate());
-				command1.addParameter("PROCESS_CODE", getFormModel().getKeyBlock().getProcessCode());
-				rowCount = command1.execute();
-			}
-
-		
-		/* Original PL/SQL code code for TRIGGER SVBCIMP.CREATE_HISTORY_RECORD
+    /* Original PL/SQL code code for TRIGGER SVBCIMP.CREATE_HISTORY_RECORD
 		 DECLARE
 	CURSOR SVRCIMH_SEQ_C IS
   SELECT nvl(MAX(svrcimh_seq_num),0) + 1
@@ -509,7 +443,7 @@ EXCEPTION
 END; 
 
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -518,58 +452,48 @@ END;
 		 *
 		 *</p>
 		*/
+    @ActionTrigger(action = "CREATE_HISTORY_RECORD")
+    public void svbcimp_CreateHistoryRecord() {
+        //F2J_WARNING : Caution, the variable may be null.
+        SvbcimpAdapter svbcimpElement = (SvbcimpAdapter) this.getFormModel().getSvbcimp().getRowAdapter(true);
+        int rowCount = 0;
+        {
+            String sqlsvrcimhSeqC = "SELECT nvl(MAX(svrcimh_seq_num), 0) + 1 " + " FROM SVRCIMH " + " WHERE svrcimh_sqpr_code = :PROCESS_CODE ";
+            DataCursor svrcimhSeqC = new  DataCursor(sqlsvrcimhSeqC);
+            NNumber lvSeqNo = NNumber.getNull();
+            UnknownTypes.GbCommonInternalRecordIdType lvRowid = null;
+            try {
+                try {
+                    //Setting query parameters
+                    svrcimhSeqC.addParameter("PROCESS_CODE", getFormModel().getKeyBlock().getProcessCode());
+                    //F2J_WARNING : Make sure that the method "Close" is being called over the variable svrcimhSeqC.
+                    svrcimhSeqC.open();
+                    ResultSet svrcimhSeqCResults = svrcimhSeqC.fetchInto();
+                    if (svrcimhSeqCResults != null) {
+                        lvSeqNo = svrcimhSeqCResults.getNumber(0);
+                    }
+                    svrcimhSeqC.close();
+                    // F2J_WARNING : Passing parameters by name is not supported. Please check that the parameters are in the correct order.
+                    Ref<NString> p_rowid_out_ref = new  Ref<NString>(lvRowid);
+                    /*pSeqNum=>*/
+                    SvLoadHistory.pCreate(/*pSqprCode=>*/
+                    lvSeqNo, getFormModel().getKeyBlock().getProcessCode(), svbcimpElement.getSvbcimpDefinitionYear(), svbcimpElement.getSvbcimpFilename(), /*pDataOrigin=>*/
+                    getUser(), "SVACIMP", p_rowid_out_ref);
+                    lvRowid = p_rowid_out_ref.val;
+                    commitTask();
+                    // F2J_WARNING : Please validate if you need to surround the message level manipulation with a try/finally block
+                    MessageServices.setMessageLevel(FormsMessageLevel.decodeMessageLevel("0"));
+                } catch (Exception e) {
+                    getTask().getGoqrpls().gDisplayErrMsg(errorMessage());
+                    throw new  ApplicationException();
+                }
+            } finally {
+                svrcimhSeqC.close();
+            }
+        }
+    }
 
-		@ActionTrigger(action="CREATE_HISTORY_RECORD")
-		public void svbcimp_CreateHistoryRecord()
-		{
-			
-
-				//F2J_WARNING : Caution, the variable may be null.
-				SvbcimpAdapter svbcimpElement = (SvbcimpAdapter)this.getFormModel().getSvbcimp().getRowAdapter(true);
-
-
-				int rowCount = 0;
-				{
-					String sqlsvrcimhSeqC = "SELECT nvl(MAX(svrcimh_seq_num), 0) + 1 " +
-	" FROM SVRCIMH " +
-	" WHERE svrcimh_sqpr_code = :PROCESS_CODE ";
-					DataCursor svrcimhSeqC = new DataCursor(sqlsvrcimhSeqC);
-					NNumber lvSeqNo= NNumber.getNull();
-					UnknownTypes.GbCommonInternalRecordIdType lvRowid= null;
-					try {
-						try
-						{
-							//Setting query parameters
-							svrcimhSeqC.addParameter("PROCESS_CODE", getFormModel().getKeyBlock().getProcessCode());
-							//F2J_WARNING : Make sure that the method "Close" is being called over the variable svrcimhSeqC.
-							svrcimhSeqC.open();
-							ResultSet svrcimhSeqCResults = svrcimhSeqC.fetchInto();
-							if ( svrcimhSeqCResults != null ) {
-								lvSeqNo = svrcimhSeqCResults.getNumber(0);
-							}
-							svrcimhSeqC.close();
-							// F2J_WARNING : Passing parameters by name is not supported. Please check that the parameters are in the correct order.
-							Ref<NString> p_rowid_out_ref = new Ref<NString>(lvRowid);
-							SvLoadHistory.pCreate(/*pSeqNum=>*/lvSeqNo, /*pSqprCode=>*/getFormModel().getKeyBlock().getProcessCode(), /*pDefinitionYear=>*/svbcimpElement.getSvbcimpDefinitionYear(), /*pFilename=>*/svbcimpElement.getSvbcimpFilename(), /*pUserId=>*/getUser(), /*pDataOrigin=>*/"SVACIMP", p_rowid_out_ref);
-							lvRowid = p_rowid_out_ref.val;
-							commitTask();
-							// F2J_WARNING : Please validate if you need to surround the message level manipulation with a try/finally block
-							MessageServices.setMessageLevel(FormsMessageLevel.decodeMessageLevel("0"));
-						}
-						catch(Exception  e)
-						{
-							getTask().getGoqrpls().gDisplayErrMsg(errorMessage());
-							throw new ApplicationException();
-						}
-					}
-					finally{
-						svrcimhSeqC.close();
-					}
-				}
-			}
-
-		
-		/* Original PL/SQL code code for TRIGGER SVBCIMP.VALIDATE_FILE_NAME
+    /* Original PL/SQL code code for TRIGGER SVBCIMP.VALIDATE_FILE_NAME
 		 DECLARE
 	CURSOR SVRCIMH_C IS
 	SELECT 'Y'
@@ -598,7 +522,7 @@ BEGIN
 END;	
 
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -607,57 +531,44 @@ END;
 		 *
 		 *</p>
 		*/
+    @ActionTrigger(action = "VALIDATE_FILE_NAME")
+    public void svbcimp_ValidateFileName() {
+        //F2J_WARNING : Caution, the variable may be null.
+        SvbcimpAdapter svbcimpElement = (SvbcimpAdapter) this.getFormModel().getSvbcimp().getRowAdapter(true);
+        int rowCount = 0;
+        {
+            String sqlsvrcimhC = "SELECT 'Y' " + " FROM SVRCIMH " + " WHERE svrcimh_sqpr_code = :PROCESS_CODE AND svrcimh_filename = :SVBCIMP_FILENAME AND svrcimh_definition_year = :SVBCIMP_SVBCIMP_DEFINITION_YEAR ";
+            DataCursor svrcimhC = new  DataCursor(sqlsvrcimhC);
+            NString lvFileIsLoaded = toStr("N");
+            AlertDescriptor alertId = null;
+            NNumber alertButton = NNumber.getNull();
+            try {
+                //Setting query parameters
+                svrcimhC.addParameter("PROCESS_CODE", getFormModel().getKeyBlock().getProcessCode());
+                svrcimhC.addParameter("SVBCIMP_FILENAME", svbcimpElement.getSvbcimpFilename());
+                svrcimhC.addParameter("SVBCIMP_SVBCIMP_DEFINITION_YEAR", svbcimpElement.getSvbcimpDefinitionYear());
+                //F2J_WARNING : Make sure that the method "Close" is being called over the variable svrcimhC.
+                svrcimhC.open();
+                ResultSet svrcimhCResults = svrcimhC.fetchInto();
+                if (svrcimhCResults != null) {
+                    lvFileIsLoaded = svrcimhCResults.getStr(0);
+                }
+                svrcimhC.close();
+                if (lvFileIsLoaded.equals("Y")) {
+                    setAlertMessageText("G$_CAUTION_ALERT", GNls.Fget(toStr("SVACIMP-0006"), toStr("FORM"), toStr("The file that you are trying to import has been already imported for this year.Are you sure you want to re-import it?")));
+                    alertButton = toNumber(showAlert("G$_CAUTION_ALERT"));
+                    if (alertButton.equals(MessageServices.BUTTON2)) {
+                        //  :REIMPORT_FILE='N';
+                        throw new  ApplicationException();
+                    }
+                }
+            } finally {
+                svrcimhC.close();
+            }
+        }
+    }
 
-		@ActionTrigger(action="VALIDATE_FILE_NAME")
-		public void svbcimp_ValidateFileName()
-		{
-			
-
-				//F2J_WARNING : Caution, the variable may be null.
-				SvbcimpAdapter svbcimpElement = (SvbcimpAdapter)this.getFormModel().getSvbcimp().getRowAdapter(true);
-
-
-				int rowCount = 0;
-				{
-					String sqlsvrcimhC = "SELECT 'Y' " +
-	" FROM SVRCIMH " +
-	" WHERE svrcimh_sqpr_code = :PROCESS_CODE AND svrcimh_filename = :SVBCIMP_FILENAME AND svrcimh_definition_year = :SVBCIMP_SVBCIMP_DEFINITION_YEAR ";
-					DataCursor svrcimhC = new DataCursor(sqlsvrcimhC);
-					NString lvFileIsLoaded = toStr("N");
-					AlertDescriptor alertId= null;
-					NNumber alertButton= NNumber.getNull();
-					try {
-						//Setting query parameters
-						svrcimhC.addParameter("PROCESS_CODE", getFormModel().getKeyBlock().getProcessCode());
-						svrcimhC.addParameter("SVBCIMP_FILENAME", svbcimpElement.getSvbcimpFilename());
-						svrcimhC.addParameter("SVBCIMP_SVBCIMP_DEFINITION_YEAR", svbcimpElement.getSvbcimpDefinitionYear());
-						//F2J_WARNING : Make sure that the method "Close" is being called over the variable svrcimhC.
-						svrcimhC.open();
-						ResultSet svrcimhCResults = svrcimhC.fetchInto();
-						if ( svrcimhCResults != null ) {
-							lvFileIsLoaded = svrcimhCResults.getStr(0);
-						}
-						svrcimhC.close();
-						if ( lvFileIsLoaded.equals("Y") )
-						{
-							setAlertMessageText("G$_CAUTION_ALERT", GNls.Fget(toStr("SVACIMP-0006"), toStr("FORM"), toStr("The file that you are trying to import has been already imported for this year.Are you sure you want to re-import it?")));
-							alertButton = toNumber(showAlert("G$_CAUTION_ALERT"));
-							if ( alertButton.equals(MessageServices.BUTTON2) )
-							{
-								// If cancel do not import the file 
-								//  :REIMPORT_FILE='N';
-								throw new ApplicationException();
-							}
-						}
-					}
-					finally{
-						svrcimhC.close();
-					}
-				}
-			}
-
-		
-		/* Original PL/SQL code code for TRIGGER SVBCIMP.VALIDATE_EXT_TABLE
+    /* Original PL/SQL code code for TRIGGER SVBCIMP.VALIDATE_EXT_TABLE
 		 DECLARE
 	lv_message_out varchar2(4000);
 BEGIN
@@ -675,7 +586,7 @@ BEGIN
 	  
 END;	
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -684,32 +595,29 @@ END;
 		 *
 		 *</p>
 		*/
-
-//		@ActionTrigger(action="VALIDATE_EXT_TABLE")
-//		public void svbcimp_ValidateExtTable()
-//		{
-//			
-//
-//				//F2J_WARNING : Caution, the variable may be null.
-//				SvbcimpAdapter svbcimpElement = (SvbcimpAdapter)this.getFormModel().getSvbcimp().getRowAdapter(true);
-//
-//
-//				{
-//					NString lvMessageOut= NString.getNull();
-//					// F2J_WARNING : Passing parameters by name is not supported. Please check that the parameters are in the correct order.
-//					if ( !Svkcimp.fValidateExtTable(/*pTableName=>*/svbcimpElement.getSvbcimpExternalTablename(), /*messageout=>*/lvMessageOut) )
-//					{
-//						svbcimpElement.setRegisterfileMessageout(lvMessageOut);
-//						throw new ApplicationException();
-//					}
-//					else {
-//						svbcimpElement.setRegisterfileMessageout(lvMessageOut);
-//					}
-//				}
-//			}
-
-		
-		/*
+    //		@ActionTrigger(action="VALIDATE_EXT_TABLE")
+    //		public void svbcimp_ValidateExtTable()
+    //		{
+    //			
+    //
+    //				//F2J_WARNING : Caution, the variable may be null.
+    //				SvbcimpAdapter svbcimpElement = (SvbcimpAdapter)this.getFormModel().getSvbcimp().getRowAdapter(true);
+    //
+    //
+    //				{
+    //					NString lvMessageOut= NString.getNull();
+    //					// F2J_WARNING : Passing parameters by name is not supported. Please check that the parameters are in the correct order.
+    //					if ( !Svkcimp.fValidateExtTable(/*pTableName=>*/svbcimpElement.getSvbcimpExternalTablename(), /*messageout=>*/lvMessageOut) )
+    //					{
+    //						svbcimpElement.setRegisterfileMessageout(lvMessageOut);
+    //						throw new ApplicationException();
+    //					}
+    //					else {
+    //						svbcimpElement.setRegisterfileMessageout(lvMessageOut);
+    //					}
+    //				}
+    //			}
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -719,21 +627,7 @@ END;
 		 *</p>
 		 * @param args
 		*/
-
-		@BeforeQuery
-		public void svbcimp_BeforeQuery(QueryEvent args)
-		{
-			
-               // F2J_WARNING : Query Parameters initialization. Make sure that all the query parameters are properly initialized
-
-				((IDBBusinessObject)args.getSource()).getSelectCommandParams().add(DbManager.getDataBaseFactory().createDataParameter("KEY_BLOCK_PROCESS_CODE", this.getFormModel().getKeyBlock().getProcessCode()));             
-
-
-           
-               }
-
-		
-		/* Original PL/SQL code code for TRIGGER SVBCIMP_DIRECTORY.WHEN-VALIDATE-ITEM
+    /* Original PL/SQL code code for TRIGGER SVBCIMP_DIRECTORY.WHEN-VALIDATE-ITEM
 		 DECLARE
 	CURSOR DIR_C IS SELECT 'Y',directory_path FROM all_directories  WHERE directory_name = :SVBCIMP_DIRECTORY;
   dummy VARCHAR2(1) := 'N';
@@ -750,7 +644,7 @@ BEGIN
 END;
 
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -759,53 +653,40 @@ END;
 		 *
 		 *</p>
 		*/
+    @ValidationTrigger(item = "SVBCIMP_DIRECTORY")
+    public void svbcimpDirectory_validate() {
+        //F2J_WARNING : Caution, the variable may be null.
+        SvbcimpAdapter svbcimpElement = (SvbcimpAdapter) this.getFormModel().getSvbcimp().getRowAdapter(true);
+        int rowCount = 0;
+        this.svbcimpDirectory_PostChange();
+        {
+            String sqldirC = "SELECT 'Y', directory_path " + " FROM all_directories " + " WHERE directory_name = :SVBCIMP_DIRECTORY ";
+            DataCursor dirC = new  DataCursor(sqldirC);
+            NString dummy = toStr("N");
+            try {
+                if (!svbcimpElement.getSvbcimpDirectory().isNull()) {
+                    //Setting query parameters
+                    dirC.addParameter("SVBCIMP_DIRECTORY", svbcimpElement.getSvbcimpDirectory());
+                    //F2J_WARNING : Make sure that the method "Close" is being called over the variable dirC.
+                    dirC.open();
+                    ResultSet dirCResults = dirC.fetchInto();
+                    if (dirCResults != null) {
+                        dummy = dirCResults.getStr(0);
+                        svbcimpElement.setRegisterfilePath(dirCResults.getStr(1));
+                    }
+                    dirC.close();
+                    if (dummy.notEquals("Y")) {
+                        errorMessage(GNls.Fget(toStr("SVACIMP-0007"), toStr("FORM"), toStr("*ERROR* Invalid directory name.")));
+                        throw new  ApplicationException();
+                    }
+                }
+            } finally {
+                dirC.close();
+            }
+        }
+    }
 
-		@ValidationTrigger(item="SVBCIMP_DIRECTORY")
-		public void svbcimpDirectory_validate()
-		{
-			
-
-				//F2J_WARNING : Caution, the variable may be null.
-				SvbcimpAdapter svbcimpElement = (SvbcimpAdapter)this.getFormModel().getSvbcimp().getRowAdapter(true);
-
-
-				int rowCount = 0;
-			this.svbcimpDirectory_PostChange();
-
-				{
-					String sqldirC = "SELECT 'Y', directory_path " +
-	" FROM all_directories " +
-	" WHERE directory_name = :SVBCIMP_DIRECTORY ";
-					DataCursor dirC = new DataCursor(sqldirC);
-					NString dummy = toStr("N");
-					try {
-						if ( !svbcimpElement.getSvbcimpDirectory().isNull() )
-						{
-							//Setting query parameters
-							dirC.addParameter("SVBCIMP_DIRECTORY", svbcimpElement.getSvbcimpDirectory());
-							//F2J_WARNING : Make sure that the method "Close" is being called over the variable dirC.
-							dirC.open();
-							ResultSet dirCResults = dirC.fetchInto();
-							if ( dirCResults != null ) {
-								dummy = dirCResults.getStr(0);
-								svbcimpElement.setRegisterfilePath(dirCResults.getStr(1));
-							}
-							dirC.close();
-							if ( dummy.notEquals("Y") )
-							{
-								errorMessage(GNls.Fget(toStr("SVACIMP-0007"), toStr("FORM"), toStr("*ERROR* Invalid directory name.")));
-								throw new ApplicationException();
-							}
-						}
-					}
-					finally{
-						dirC.close();
-					}
-				}
-			}
-
-		
-		/* Original PL/SQL code code for TRIGGER SVBCIMP_DIRECTORY.KEY-NEXT-ITEM
+    /* Original PL/SQL code code for TRIGGER SVBCIMP_DIRECTORY.KEY-NEXT-ITEM
 		 DECLARE
 	l_var VARCHAR2(2) := '%';
 BEGIN
@@ -824,7 +705,7 @@ NEXT_ITEM;
 
 
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -833,34 +714,25 @@ NEXT_ITEM;
 		 *
 		 *</p>
 		*/
+    @ActionTrigger(action = "KEY-NEXT-ITEM", item = "SVBCIMP_DIRECTORY", function = KeyFunction.NEXT_ITEM)
+    public void svbcimpDirectory_keyNexItem() {
+        //F2J_WARNING : Caution, the variable may be null.
+        SvbcimpAdapter svbcimpElement = (SvbcimpAdapter) this.getFormModel().getSvbcimp().getRowAdapter(true);
+        {
+            NString lVar = toStr("%");
+            // F2J_TODO: not supported key word 'escape'
+            if (like(svbcimpElement.getSvbcimpDirectory(), "%!%%")) {
+                getTask().getGoqrpls().gDisplayLov(toStr("SVBCIMP.SVBCIMP_DIRECTORY"), toStr("DIRECTORY_LOV"), toStr("N"));
+                getTask().getGoqrpls().gCheckFailure();
+                if ((!getGlobal("VALUE").isNull())) {
+                    svbcimpElement.setSvbcimpDirectory(getGlobal("VALUE"));
+                }
+            }
+        }
+        nextItem();
+    }
 
-		@ActionTrigger(action="KEY-NEXT-ITEM", item="SVBCIMP_DIRECTORY", function=KeyFunction.NEXT_ITEM)
-		public void svbcimpDirectory_keyNexItem()
-		{
-			
-
-				//F2J_WARNING : Caution, the variable may be null.
-				SvbcimpAdapter svbcimpElement = (SvbcimpAdapter)this.getFormModel().getSvbcimp().getRowAdapter(true);
-
-
-				{
-					NString lVar = toStr("%");
-					// F2J_TODO: not supported key word 'escape'
-					if ( like(svbcimpElement.getSvbcimpDirectory(), "%!%%") )
-					{
-						getTask().getGoqrpls().gDisplayLov(toStr("SVBCIMP.SVBCIMP_DIRECTORY"), toStr("DIRECTORY_LOV"), toStr("N"));
-						getTask().getGoqrpls().gCheckFailure();
-						if ((!getGlobal("VALUE").isNull()))
-						{
-							svbcimpElement.setSvbcimpDirectory(getGlobal("VALUE"));
-						}
-					}
-				}
-				nextItem();
-			}
-
-		
-		/* Original PL/SQL code code for TRIGGER SVBCIMP_DIRECTORY.POST-CHANGE
+    /* Original PL/SQL code code for TRIGGER SVBCIMP_DIRECTORY.POST-CHANGE
 		 DECLARE
 	CURSOR DIR_C IS SELECT 'Y',directory_path FROM all_directories  WHERE directory_name = :SVBCIMP_DIRECTORY;
   dummy VARCHAR2(1) := 'N';
@@ -877,7 +749,7 @@ BEGIN
 END;
 
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -886,58 +758,46 @@ END;
 		 *
 		 *</p>
 		*/
+    @ActionTrigger(action = "POST-CHANGE", item = "SVBCIMP_DIRECTORY")
+    public void svbcimpDirectory_PostChange() {
+        //F2J_WARNING : Caution, the variable may be null.
+        SvbcimpAdapter svbcimpElement = (SvbcimpAdapter) this.getFormModel().getSvbcimp().getRowAdapter(true);
+        int rowCount = 0;
+        if (svbcimpElement.getSvbcimpDirectory().isNull())
+            return;
+        {
+            String sqldirC = "SELECT 'Y', directory_path " + " FROM all_directories " + " WHERE directory_name = :SVBCIMP_DIRECTORY ";
+            DataCursor dirC = new  DataCursor(sqldirC);
+            NString dummy = toStr("N");
+            try {
+                if (!svbcimpElement.getSvbcimpDirectory().isNull()) {
+                    //Setting query parameters
+                    dirC.addParameter("SVBCIMP_DIRECTORY", svbcimpElement.getSvbcimpDirectory());
+                    //F2J_WARNING : Make sure that the method "Close" is being called over the variable dirC.
+                    dirC.open();
+                    ResultSet dirCResults = dirC.fetchInto();
+                    if (dirCResults != null) {
+                        dummy = dirCResults.getStr(0);
+                        svbcimpElement.setRegisterfilePath(dirCResults.getStr(1));
+                    }
+                    dirC.close();
+                    if (dummy.notEquals("Y")) {
+                        errorMessage(GNls.Fget(toStr("SVACIMP-0008"), toStr("FORM"), toStr("*ERROR* Invalid directory name.")));
+                        throw new  ApplicationException();
+                    }
+                }
+            } finally {
+                dirC.close();
+            }
+        }
+    }
 
-		@ActionTrigger(action="POST-CHANGE", item="SVBCIMP_DIRECTORY")
-		public void svbcimpDirectory_PostChange()
-		{
-			
-
-				//F2J_WARNING : Caution, the variable may be null.
-				SvbcimpAdapter svbcimpElement = (SvbcimpAdapter)this.getFormModel().getSvbcimp().getRowAdapter(true);
-
-
-				int rowCount = 0;
-				if(svbcimpElement.getSvbcimpDirectory().isNull())
-		return;
-				{
-					String sqldirC = "SELECT 'Y', directory_path " +
-	" FROM all_directories " +
-	" WHERE directory_name = :SVBCIMP_DIRECTORY ";
-					DataCursor dirC = new DataCursor(sqldirC);
-					NString dummy = toStr("N");
-					try {
-						if ( !svbcimpElement.getSvbcimpDirectory().isNull() )
-						{
-							//Setting query parameters
-							dirC.addParameter("SVBCIMP_DIRECTORY", svbcimpElement.getSvbcimpDirectory());
-							//F2J_WARNING : Make sure that the method "Close" is being called over the variable dirC.
-							dirC.open();
-							ResultSet dirCResults = dirC.fetchInto();
-							if ( dirCResults != null ) {
-								dummy = dirCResults.getStr(0);
-								svbcimpElement.setRegisterfilePath(dirCResults.getStr(1));
-							}
-							dirC.close();
-							if ( dummy.notEquals("Y") )
-							{
-								errorMessage(GNls.Fget(toStr("SVACIMP-0008"), toStr("FORM"), toStr("*ERROR* Invalid directory name.")));
-								throw new ApplicationException();
-							}
-						}
-					}
-					finally{
-						dirC.close();
-					}
-				}
-			}
-
-		
-		/* Original PL/SQL code code for TRIGGER SVBCIMP_DIRECTORY_LBT.WHEN-MOUSE-CLICK
+    /* Original PL/SQL code code for TRIGGER SVBCIMP_DIRECTORY_LBT.WHEN-MOUSE-CLICK
 		 BEGIN
   NULL;
 END;
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -946,21 +806,17 @@ END;
 		 *
 		 *</p>
 		*/
+    @ActionTrigger(action = "WHEN-MOUSE-CLICK", item = "SVBCIMP_DIRECTORY_LBT")
+    @Before
+    public void svbcimpDirectoryLbt_click() {
+    }
 
-		@ActionTrigger(action="WHEN-MOUSE-CLICK", item="SVBCIMP_DIRECTORY_LBT")
-		@Before
-		public void svbcimpDirectoryLbt_click()
-		{
-			
-			}
-
-		
-		/* Original PL/SQL code code for TRIGGER REGISTERFILE_BUTTON.WHEN-MOUSE-CLICK
+    /* Original PL/SQL code code for TRIGGER REGISTERFILE_BUTTON.WHEN-MOUSE-CLICK
 		 BEGIN
   NULL;
 END;
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -969,16 +825,12 @@ END;
 		 *
 		 *</p>
 		*/
+    @ActionTrigger(action = "WHEN-MOUSE-CLICK", item = "REGISTERFILE_BUTTON")
+    @Before
+    public void registerfileButton_click() {
+    }
 
-		@ActionTrigger(action="WHEN-MOUSE-CLICK", item="REGISTERFILE_BUTTON")
-		@Before
-		public void registerfileButton_click()
-		{
-			
-			}
-
-		
-		/* Original PL/SQL code code for TRIGGER REGISTERFILE_BUTTON.WHEN-BUTTON-PRESSED
+    /* Original PL/SQL code code for TRIGGER REGISTERFILE_BUTTON.WHEN-BUTTON-PRESSED
 		 declare
 	temp number;
 	lv_temp_fields VARCHAR2(4000);
@@ -1070,7 +922,7 @@ begin
 	END IF;
 end;
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -1079,107 +931,94 @@ end;
 		 *
 		 *</p>
 		*/
+    @ActionTrigger(action = "WHEN-BUTTON-PRESSED", item = "REGISTERFILE_BUTTON")
+    public void registerfileButton_buttonClick() {
+        //F2J_WARNING : Caution, the variable may be null.
+        SvbcimpAdapter svbcimpElement = (SvbcimpAdapter) this.getFormModel().getSvbcimp().getRowAdapter(true);
+        {
+            NNumber temp = NNumber.getNull();
+            NString lvTempFields = NString.getNull();
+            NString lvFileName = toStr("_FILE_NAME");
+            NNumber lvFileLength = toNumber(90);
+            NString lvFileColumn = NString.getNull();
+            if (svbcimpElement.getSvbcimpExternalTablename().isNull()) {
+                errorMessage(GNls.Fget(toStr("SVACIMP-0009"), toStr("FORM"), toStr("*ERROR* Enter external table name.")));
+                goItem(toStr("SVBCIMP_EXTERNAL_TABLENAME"));
+                throw new  ApplicationException();
+            } else if (svbcimpElement.getSvbcimpDirectory().isNull()) {
+                errorMessage(GNls.Fget(toStr("SVACIMP-0010"), toStr("FORM"), toStr("*ERROR* Enter directory name.")));
+                goItem(toStr("SVBCIMP_DIRECTORY"));
+                throw new  ApplicationException();
+            } else if (svbcimpElement.getSvbcimpFilename().isNull()) {
+                errorMessage(GNls.Fget(toStr("SVACIMP-0011"), toStr("FORM"), toStr("*ERROR* Enter file name.")));
+                goItem(toStr("SVBCIMP_FILENAME"));
+                throw new  ApplicationException();
+            } else if (svbcimpElement.getSvbcimpFileLength().isNull()) {
+                errorMessage(GNls.Fget(toStr("SVACIMP-0012"), toStr("FORM"), toStr("*ERROR* Enter file Length.")));
+                goItem(toStr("SVBCIMP_FILE_LENGTH"));
+                throw new  ApplicationException();
+            } else if (svbcimpElement.getSvbcimpRecordDelimiter().isNull()) {
+                errorMessage(GNls.Fget(toStr("SVACIMP-0013"), toStr("FORM"), toStr("*ERROR* Enter record delimiter name.")));
+                goItem(toStr("SVBCIMP_RECORD_DELIMITER"));
+                throw new  ApplicationException();
+            } else if (svbcimpElement.getSvbcimpFields().isNull()) {
+                errorMessage(GNls.Fget(toStr("SVACIMP-0014"), toStr("FORM"), toStr("*ERROR* Enter fields.")));
+                goItem(toStr("SVBCIMP_FIELDS"));
+                throw new  ApplicationException();
+            } else if (svbcimpElement.getSvbcimpDefinitionYear().isNull()) {
+                errorMessage(GNls.Fget(toStr("SVACIMP-0015"), toStr("FORM"), toStr("*ERROR* Enter the definition year.")));
+                goItem(toStr("SVBCIMP_DEFINITION_YEAR"));
+                throw new  ApplicationException();
+            } else if (svbcimpElement.getSvbcimpFieldDelimiter().isNull()) {
+                errorMessage(GNls.Fget(toStr("SVACIMP-0016"), toStr("FORM"), toStr("*ERROR* Enter field delimiter.")));
+                goItem(toStr("SVBCIMP_FIELD_DELIMITER"));
+                throw new  ApplicationException();
+            } else {
+                if (getBlockStatus().equals("CHANGED")) {
+                    errorMessage(GNls.Fget(toStr("SVACIMP-0017"), toStr("FORM"), toStr("*ERROR* Must save your changes before Importing the File.")));
+                    throw new  ApplicationException();
+                }
+                svbcimpElement.setReimportFile(toStr("Y"));
+                executeAction("VALIDATE_FILE_NAME");
+                getTask().getGoqrpls().gCheckFailure();
+                svbcimpElement.setRegisterfileMessageout(toStr(""));
+                if (svbcimpElement.getSvbcimpInclFileNameInd().equals("Y")) {
+                    lvFileColumn = svbcimpElement.getSvbcimpExternalTablename().append(lvFileName);
+                    lvTempFields = svbcimpElement.getSvbcimpFields().append(",").append(lvFileColumn).append("(").append(toChar(isNull(toNumber(svbcimpElement.getSvbcimpFileLength()), 0).add(1))).append(":").append(toChar(lvFileLength)).append(")");
+                } else {
+                    lvTempFields = svbcimpElement.getSvbcimpFields();
+                }
+                // F2J_WARNING : Passing parameters by name is not supported. Please check that the parameters are in the correct order.
+                Ref<NString> messageout_ref = new  Ref<NString>(svbcimpElement.getSvbcimpLoadWhen());
+                temp = Svkcimp.FgenerateExtTable(/*pTableName=>*/
+                svbcimpElement.getSvbcimpExternalTablename(), svbcimpElement.getSvbcimpDirectory(), svbcimpElement.getSvbcimpFilename(), /*pRecordDelimiter=>*/
+                isNull(svbcimpElement.getSvbcimpRecordDelimiter(), /*pFieldDelimiter=>*/
+                "NEWLINE"), isNull(svbcimpElement.getSvbcimpFieldDelimiter(), /*pFields=>*/
+                "FIXEDLENGTH"), /*pFileFields=>*/
+                lvTempFields, svbcimpElement.getSvbcimpFields(), /*pDropifexists=>*/
+                lvFileColumn, isNull(svbcimpElement.getRegisterfileDrop(), "N"), /*pIncludeFileNameInd=>*/
+                messageout_ref, svbcimpElement.getSvbcimpInclFileNameInd(), svbcimpElement.getRegisterfileMessageout());
+                svbcimpElement.setSvbcimpLoadWhen(messageout_ref.val);
+                //  If the file was successfully loaded
+                if (temp.equals(1)) {
+                    executeAction("VALIDATE_EXT_TABLE");
+                    getTask().getGoqrpls().gCheckFailure();
+                    executeAction("UPDATE_LOADED_FIELDS");
+                    getTask().getGoqrpls().gCheckFailure();
+                    executeAction("CREATE_HISTORY_RECORD");
+                    getTask().getGoqrpls().gCheckFailure();
+                }
+            }
+        }
+    }
 
-		@ActionTrigger(action="WHEN-BUTTON-PRESSED", item="REGISTERFILE_BUTTON")
-		public void registerfileButton_buttonClick()
-		{
-			
-
-				//F2J_WARNING : Caution, the variable may be null.
-				SvbcimpAdapter svbcimpElement = (SvbcimpAdapter)this.getFormModel().getSvbcimp().getRowAdapter(true);
-
-
-				{
-					NNumber temp= NNumber.getNull();
-					NString lvTempFields= NString.getNull();
-					NString lvFileName = toStr("_FILE_NAME");
-					NNumber lvFileLength = toNumber(90);
-					NString lvFileColumn= NString.getNull();
-					if ( svbcimpElement.getSvbcimpExternalTablename().isNull() )
-					{
-						errorMessage(GNls.Fget(toStr("SVACIMP-0009"), toStr("FORM"), toStr("*ERROR* Enter external table name.")));
-						goItem(toStr("SVBCIMP_EXTERNAL_TABLENAME"));
-						throw new ApplicationException();
-					}
-					else if ( svbcimpElement.getSvbcimpDirectory().isNull() ) {
-						errorMessage(GNls.Fget(toStr("SVACIMP-0010"), toStr("FORM"), toStr("*ERROR* Enter directory name.")));
-						goItem(toStr("SVBCIMP_DIRECTORY"));
-						throw new ApplicationException();
-					}
-					else if ( svbcimpElement.getSvbcimpFilename().isNull() ) {
-						errorMessage(GNls.Fget(toStr("SVACIMP-0011"), toStr("FORM"), toStr("*ERROR* Enter file name.")));
-						goItem(toStr("SVBCIMP_FILENAME"));
-						throw new ApplicationException();
-					}
-					else if ( svbcimpElement.getSvbcimpFileLength().isNull() ) {
-						errorMessage(GNls.Fget(toStr("SVACIMP-0012"), toStr("FORM"), toStr("*ERROR* Enter file Length.")));
-						goItem(toStr("SVBCIMP_FILE_LENGTH"));
-						throw new ApplicationException();
-					}
-					else if ( svbcimpElement.getSvbcimpRecordDelimiter().isNull() ) {
-						errorMessage(GNls.Fget(toStr("SVACIMP-0013"), toStr("FORM"), toStr("*ERROR* Enter record delimiter name.")));
-						goItem(toStr("SVBCIMP_RECORD_DELIMITER"));
-						throw new ApplicationException();
-					}
-					else if ( svbcimpElement.getSvbcimpFields().isNull() ) {
-						errorMessage(GNls.Fget(toStr("SVACIMP-0014"), toStr("FORM"), toStr("*ERROR* Enter fields.")));
-						goItem(toStr("SVBCIMP_FIELDS"));
-						throw new ApplicationException();
-					}
-					else if ( svbcimpElement.getSvbcimpDefinitionYear().isNull() ) {
-						errorMessage(GNls.Fget(toStr("SVACIMP-0015"), toStr("FORM"), toStr("*ERROR* Enter the definition year.")));
-						goItem(toStr("SVBCIMP_DEFINITION_YEAR"));
-						throw new ApplicationException();
-					}
-					else if ( svbcimpElement.getSvbcimpFieldDelimiter().isNull() ) {
-						errorMessage(GNls.Fget(toStr("SVACIMP-0016"), toStr("FORM"), toStr("*ERROR* Enter field delimiter.")));
-						goItem(toStr("SVBCIMP_FIELD_DELIMITER"));
-						throw new ApplicationException();
-					}
-					else {
-						if ( getBlockStatus().equals("CHANGED") )
-						{
-							errorMessage(GNls.Fget(toStr("SVACIMP-0017"), toStr("FORM"), toStr("*ERROR* Must save your changes before Importing the File.")));
-							throw new ApplicationException();
-						}
-						svbcimpElement.setReimportFile(toStr("Y"));
-						executeAction("VALIDATE_FILE_NAME");
-						getTask().getGoqrpls().gCheckFailure();
-						svbcimpElement.setRegisterfileMessageout(toStr(""));
-						if ( svbcimpElement.getSvbcimpInclFileNameInd().equals("Y") )
-						{
-							lvFileColumn = svbcimpElement.getSvbcimpExternalTablename().append(lvFileName);
-							lvTempFields = svbcimpElement.getSvbcimpFields().append(",").append(lvFileColumn).append("(").append(toChar(isNull(toNumber(svbcimpElement.getSvbcimpFileLength()), 0).add(1))).append(":").append(toChar(lvFileLength)).append(")");
-						}
-						else {
-							lvTempFields = svbcimpElement.getSvbcimpFields();
-						}
-						// F2J_WARNING : Passing parameters by name is not supported. Please check that the parameters are in the correct order.
-						Ref<NString> messageout_ref = new Ref<NString>(svbcimpElement.getSvbcimpLoadWhen());
-						temp = Svkcimp.FgenerateExtTable(/*pTableName=>*/svbcimpElement.getSvbcimpExternalTablename(), /*pDir=>*/svbcimpElement.getSvbcimpDirectory(), /*pFileName=>*/svbcimpElement.getSvbcimpFilename(), /*pRecordDelimiter=>*/isNull(svbcimpElement.getSvbcimpRecordDelimiter(), "NEWLINE"), /*pFieldDelimiter=>*/isNull(svbcimpElement.getSvbcimpFieldDelimiter(), "FIXEDLENGTH"), /*pFields=>*/lvTempFields, /*pFileFields=>*/svbcimpElement.getSvbcimpFields(), /*pFieldTransform=>*/lvFileColumn, /*pDropifexists=>*/isNull(svbcimpElement.getRegisterfileDrop(), "N"), messageout_ref, /*pIncludeFileNameInd=>*/svbcimpElement.getSvbcimpInclFileNameInd(), /*messageout=>*/svbcimpElement.getRegisterfileMessageout());
-						svbcimpElement.setSvbcimpLoadWhen(messageout_ref.val);
-						//  If the file was successfully loaded
-						if ( temp.equals(1) )
-						{
-							executeAction("VALIDATE_EXT_TABLE");
-							getTask().getGoqrpls().gCheckFailure();
-							executeAction("UPDATE_LOADED_FIELDS");
-							getTask().getGoqrpls().gCheckFailure();
-							executeAction("CREATE_HISTORY_RECORD");
-							getTask().getGoqrpls().gCheckFailure();
-						}
-					}
-				}
-			}
-
-		
-		/* Original PL/SQL code code for TRIGGER SVBCIMP_ACTIVITY_DATE.KEY-NEXT-ITEM
+    /* Original PL/SQL code code for TRIGGER SVBCIMP_ACTIVITY_DATE.KEY-NEXT-ITEM
 		 BEGIN
   G$_DATE_NEXT_ITEM;
   G$_CHECK_FAILURE;
 END;
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -1188,23 +1027,19 @@ END;
 		 *
 		 *</p>
 		*/
+    @ActionTrigger(action = "KEY-NEXT-ITEM", item = "SVBCIMP_ACTIVITY_DATE", function = KeyFunction.NEXT_ITEM)
+    public void svbcimpActivityDate_keyNexItem() {
+        getTask().getGoqrpls().gDateNextItem();
+        getTask().getGoqrpls().gCheckFailure();
+    }
 
-		@ActionTrigger(action="KEY-NEXT-ITEM", item="SVBCIMP_ACTIVITY_DATE", function=KeyFunction.NEXT_ITEM)
-		public void svbcimpActivityDate_keyNexItem()
-		{
-			
-				getTask().getGoqrpls().gDateNextItem();
-				getTask().getGoqrpls().gCheckFailure();
-			}
-
-		
-		/* Original PL/SQL code code for TRIGGER SVBCIMP_ACTIVITY_DATE.WHEN-NEW-ITEM-INSTANCE
+    /* Original PL/SQL code code for TRIGGER SVBCIMP_ACTIVITY_DATE.WHEN-NEW-ITEM-INSTANCE
 		 BEGIN
   G$_DATE_WHEN_NEW_ITEM;
   G$_CHECK_FAILURE;
 END;
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -1213,23 +1048,19 @@ END;
 		 *
 		 *</p>
 		*/
+    @ActionTrigger(action = "WHEN-NEW-ITEM-INSTANCE", item = "SVBCIMP_ACTIVITY_DATE", function = KeyFunction.ITEM_CHANGE)
+    public void svbcimpActivityDate_itemChange() {
+        getTask().getGoqrpls().gDateWhenNewItem();
+        getTask().getGoqrpls().gCheckFailure();
+    }
 
-		@ActionTrigger(action="WHEN-NEW-ITEM-INSTANCE", item="SVBCIMP_ACTIVITY_DATE", function=KeyFunction.ITEM_CHANGE)
-		public void svbcimpActivityDate_itemChange()
-		{
-			
-				getTask().getGoqrpls().gDateWhenNewItem();
-				getTask().getGoqrpls().gCheckFailure();
-			}
-
-		
-		/* Original PL/SQL code code for TRIGGER SVBCIMP_ACTIVITY_DATE.POST-TEXT-ITEM
+    /* Original PL/SQL code code for TRIGGER SVBCIMP_ACTIVITY_DATE.POST-TEXT-ITEM
 		 BEGIN
   G$_DATE_POST_ITEM;
   G$_CHECK_FAILURE;
 END;
 		*/
-		/*
+    /*
 		 *<p>
 		 *<b>Migration Comments</b>
 		 * Generated from trigger:
@@ -1238,16 +1069,13 @@ END;
 		 *
 		 *</p>
 		*/
+    @ActionTrigger(action = "POST-TEXT-ITEM", item = "SVBCIMP_ACTIVITY_DATE", function = KeyFunction.ITEM_OUT)
+    public void svbcimpActivityDate_itemOut() {
+        getTask().getGoqrpls().gDatePostItem();
+        getTask().getGoqrpls().gCheckFailure();
+    }
 
-		@ActionTrigger(action="POST-TEXT-ITEM", item="SVBCIMP_ACTIVITY_DATE", function=KeyFunction.ITEM_OUT)
-		public void svbcimpActivityDate_itemOut()
-		{
-			
-				getTask().getGoqrpls().gDatePostItem();
-				getTask().getGoqrpls().gCheckFailure();
-			}
-
-		
-	
-	
+    public static void Svrcimh_BeforeQuery(QueryEvent... args) {
+        System.out.println("Hello World!");
+    }
 }

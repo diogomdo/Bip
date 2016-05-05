@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="G___NAV_BLOCK.Manager.Config" name="GNavBlock" >
+		<kind>SimpleBusinessObject</kind>
+		<items>
+			<item name="GO_ITEM" logicalName="goItem" type="String"  virtual="true"/> 
+			<item name="HOLD_CURSOR_LOCATION" logicalName="holdCursorLocation" type="String"  virtual="true"/> 
+			<item name="CALL_FLD" logicalName="callFld" type="String"  virtual="true"/> 
+			<item name="FORM_LEADING_EDGE" logicalName="formLeadingEdge" type="String"  virtual="true"/> 
+			<item name="FORM_TYPE_IND" logicalName="formTypeInd" type="String"  virtual="true"/> 
+			<item name="LEAVING_BLK_IND" logicalName="leavingBlkInd" type="String"  virtual="true"/> 
+			<item name="FORM_INIT_IND" logicalName="formInitInd" type="String"  virtual="true"/> 
+			<item name="LAST_MENU_ITEM" logicalName="lastMenuItem" type="long"  virtual="true"/> 
+			<item name="DISPLAY_ITEM242" logicalName="displayItem242" type="String" /> 
+		</items>
+		
+			<managerClass>net.hedtech.banner.arsys.Tsasbrl.model.GNavBlock</managerClass>
+
+	</manager>
+</b:beans>

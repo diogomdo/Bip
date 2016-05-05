@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="FORM_HEADER.Manager.Config" name="FormHeader" keyMode="Unique" >
+		<kind>SimpleBusinessObject</kind>
+		<items>
+			<item name="CURRENT_RELEASE" logicalName="currentRelease" type="String"  virtual="true"/> 
+			<item name="WORKFLD" logicalName="workfld" type="String"  virtual="true"/> 
+			<item name="DUMMY_VAR" logicalName="dummyVar" type="String"  virtual="true"/> 
+			<item name="CALLFLD" logicalName="callfld" type="String"  virtual="true"/> 
+			<item name="WORKDATE" logicalName="workdate" type="String"  virtual="true"/> 
+			<item name="CURRENT_INSTITUTION" logicalName="currentInstitution" type="String"  virtual="true"/> 
+			<item name="CURRENT_DATE" logicalName="currentDate" type="String"  virtual="true"/> 
+			<item name="CURRENT_TIME" logicalName="currentTime" type="String"  virtual="true"/> 
+			<item name="CURRENT_USER" logicalName="currentUser" type="String"  virtual="true"/> 
+			<item name="CURRENT_FORM" logicalName="currentForm" type="String"  virtual="true"/> 
+			<item name="RESEQUENCE_IND" logicalName="resequenceInd" type="String"  virtual="true"/> 
+			<item name="DATA_SEPARATOR_LINE_0" logicalName="dataSeparatorLine0" type="String" /> 
+			<item name="DATA_SEPARATOR_LINE_1" logicalName="dataSeparatorLine1" type="String" /> 
+			<item name="DATA_SEPARATOR_LINE_2" logicalName="dataSeparatorLine2" type="String" /> 
+			<item name="DATA_SEPARATOR_LINE_3" logicalName="dataSeparatorLine3" type="String" /> 
+			<item name="DATA_SEPARATOR_LINE_4" logicalName="dataSeparatorLine4" type="String" /> 
+			<item name="DATA_SEPARATOR_LINE_5" logicalName="dataSeparatorLine5" type="String" /> 
+			<item name="ITEM271" logicalName="item271" type="String" /> 
+		</items>
+		
+			<managerClass>net.hedtech.banner.arsys.Tsasbrl.model.FormHeader</managerClass>
+
+	</manager>
+</b:beans>

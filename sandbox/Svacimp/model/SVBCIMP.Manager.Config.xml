@@ -1,63 +1,64 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<b:beans 
-	xmlns="urn:schemas:morphis:foundations:businessobject"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:b="http://www.springframework.org/schema/beans"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<b:beans xmlns:b="http://www.springframework.org/schema/beans" xmlns="urn:schemas:morphis:foundations:businessobject" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
 	<manager id="SVBCIMP.Manager.Config" name="SVBCIMP">
 		<items>
-			<item name="SVBCIMP_SQPR_CODE" logicalName="svbcimpSqprCode" type="String" physicalName="SVBCIMP_SQPR_CODE"   /> 
-			<item name="SVBCIMP_SYSTEM_REQ_IND" logicalName="svbcimpSystemReqInd" type="String" physicalName="SVBCIMP_SYSTEM_REQ_IND"   > 
+			<item logicalName="svbcimpSqprCode" name="SVBCIMP_SQPR_CODE" physicalName="SVBCIMP_SQPR_CODE" type="String">
+                <value>
+                    <item businessObject="KEYBLOCK" name="PROCESS_CODE"/>
+                </value>
+            </item>
+
+			<item logicalName="svbcimpSystemReqInd" name="SVBCIMP_SYSTEM_REQ_IND" physicalName="SVBCIMP_SYSTEM_REQ_IND" type="String"> 
 				<value>
 					<constant>N</constant>
 				</value>	
 			</item>
-			<item name="SVBCIMP_EXTERNAL_TABLENAME" logicalName="svbcimpExternalTablename" type="String" physicalName="SVBCIMP_EXTERNAL_TABLENAME"   > 
+			<item logicalName="svbcimpExternalTablename" name="SVBCIMP_EXTERNAL_TABLENAME" physicalName="SVBCIMP_EXTERNAL_TABLENAME" type="String"> 
 				<value>
 					<constant>REGISTEREDTABLE</constant>
 				</value>	
 			</item>
-			<item name="REGISTERFILE_DROP" logicalName="registerfileDrop" type="String"  virtual="true"  > 
+			<item logicalName="registerfileDrop" name="REGISTERFILE_DROP" type="String" virtual="true"> 
 				<value>
 					<constant>N</constant>
 				</value>	
 			</item>
-			<item name="SVBCIMP_INCL_FILE_NAME_IND" logicalName="svbcimpInclFileNameInd" type="String" physicalName="SVBCIMP_INCL_FILE_NAME_IND"   > 
+			<item logicalName="svbcimpInclFileNameInd" name="SVBCIMP_INCL_FILE_NAME_IND" physicalName="SVBCIMP_INCL_FILE_NAME_IND" type="String"> 
 				<value>
 					<constant>N</constant>
 				</value>	
 			</item>
-			<item name="SVBCIMP_DIRECTORY" logicalName="svbcimpDirectory" type="String" physicalName="SVBCIMP_DIRECTORY"   /> 
-			<item name="REGISTERFILE_PATH" logicalName="registerfilePath" type="String"  virtual="true"  /> 
-			<item name="SVBCIMP_FILENAME" logicalName="svbcimpFilename" type="String" physicalName="SVBCIMP_FILENAME"   /> 
-			<item name="SVBCIMP_DEFINITION_YEAR" logicalName="svbcimpDefinitionYear" type="String" physicalName="SVBCIMP_DEFINITION_YEAR"   /> 
-			<item name="SVBCIMP_FILE_LENGTH" logicalName="svbcimpFileLength" type="java.math.BigDecimal" physicalName="SVBCIMP_FILE_LENGTH"   /> 
-			<item name="SVBCIMP_RECORD_DELIMITER" logicalName="svbcimpRecordDelimiter" type="String" physicalName="SVBCIMP_RECORD_DELIMITER"   > 
+			<item logicalName="svbcimpDirectory" name="SVBCIMP_DIRECTORY" physicalName="SVBCIMP_DIRECTORY" type="String"/> 
+			<item logicalName="registerfilePath" name="REGISTERFILE_PATH" type="String" virtual="true"/> 
+			<item logicalName="svbcimpFilename" name="SVBCIMP_FILENAME" physicalName="SVBCIMP_FILENAME" type="String"/> 
+			<item logicalName="svbcimpDefinitionYear" name="SVBCIMP_DEFINITION_YEAR" physicalName="SVBCIMP_DEFINITION_YEAR" type="String"/> 
+			<item logicalName="svbcimpFileLength" name="SVBCIMP_FILE_LENGTH" physicalName="SVBCIMP_FILE_LENGTH" type="java.math.BigDecimal"/> 
+			<item logicalName="svbcimpRecordDelimiter" name="SVBCIMP_RECORD_DELIMITER" physicalName="SVBCIMP_RECORD_DELIMITER" type="String"> 
 				<value>
 					<constant>NEWLINE</constant>
 				</value>	
 			</item>
-			<item name="SVBCIMP_FIELDS" logicalName="svbcimpFields" type="String" physicalName="SVBCIMP_FIELDS"   /> 
-			<item name="SVBCIMP_LOAD_WHEN" logicalName="svbcimpLoadWhen" type="String"  virtual="true"  /> 
-			<item name="SVBCIMP_FIELD_DELIMITER" logicalName="svbcimpFieldDelimiter" type="String" physicalName="SVBCIMP_FIELD_DELIMITER"   > 
+			<item logicalName="svbcimpFields" name="SVBCIMP_FIELDS" physicalName="SVBCIMP_FIELDS" type="String"/> 
+			<item logicalName="svbcimpLoadWhen" name="SVBCIMP_LOAD_WHEN" type="String" virtual="true"/> 
+			<item logicalName="svbcimpFieldDelimiter" name="SVBCIMP_FIELD_DELIMITER" physicalName="SVBCIMP_FIELD_DELIMITER" type="String"> 
 				<value>
 					<constant>,</constant>
 				</value>	
 			</item>
-			<item name="SVBCIMP_LAST_LOADED_FILE" logicalName="svbcimpLastLoadedFile" type="String" physicalName="SVBCIMP_LAST_LOADED_FILE"   /> 
-			<item name="SVBCIMP_LOADED_FILE_DATE" logicalName="svbcimpLoadedFileDate" type="java.util.Date" physicalName="SVBCIMP_LOADED_FILE_DATE"   /> 
-			<item name="REGISTERFILE_MESSAGEOUT" logicalName="registerfileMessageout" type="String"  virtual="true"  /> 
-			<item name="SVBCIMP_USER_ID" logicalName="svbcimpUserId" type="String" physicalName="SVBCIMP_USER_ID"   > 
+			<item logicalName="svbcimpLastLoadedFile" name="SVBCIMP_LAST_LOADED_FILE" physicalName="SVBCIMP_LAST_LOADED_FILE" type="String"/> 
+			<item logicalName="svbcimpLoadedFileDate" name="SVBCIMP_LOADED_FILE_DATE" physicalName="SVBCIMP_LOADED_FILE_DATE" type="java.util.Date"/> 
+			<item logicalName="registerfileMessageout" name="REGISTERFILE_MESSAGEOUT" type="String" virtual="true"/> 
+			<item logicalName="svbcimpUserId" name="SVBCIMP_USER_ID" physicalName="SVBCIMP_USER_ID" type="String"> 
 				<value>
-					<globalVariable name="USER_ID" />
+					<globalVariable name="USER_ID"/>
 				</value>	
 			</item>
-			<item name="SVBCIMP_ACTIVITY_DATE" logicalName="svbcimpActivityDate" type="java.util.Date" physicalName="SVBCIMP_ACTIVITY_DATE"   > 
+			<item logicalName="svbcimpActivityDate" name="SVBCIMP_ACTIVITY_DATE" physicalName="SVBCIMP_ACTIVITY_DATE" type="java.util.Date"> 
 				<value>
 					<systemVariable name="DBDATE"/>
 				</value>	
 			</item>
-			<item name="REIMPORT_FILE" logicalName="reimportFile" type="String"  virtual="true"  /> 
+			<item logicalName="reimportFile" name="REIMPORT_FILE" type="String" virtual="true"/> 
 		</items>
 		
 		<adapterClass>net.hedtech.las.studemre.banner.student.Svacimp.model.SvbcimpAdapter</adapterClass>

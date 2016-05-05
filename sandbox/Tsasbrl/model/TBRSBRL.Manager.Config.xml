@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="TBRSBRL.Manager.Config" name="TBRSBRL" targetTableName="TBRSBRL" keyMode="Unique" >
+		
+		<items>
+			<item name="TBRSBRL_VALUE" logicalName="tbrsbrlValue" type="String" physicalName="TBRSBRL_VALUE"/> 
+			<item name="TBRSBRL_SBRC_CODE" logicalName="tbrsbrlSbrcCode" type="String" physicalName="TBRSBRL_SBRC_CODE" key="true"/> 
+			<item name="TBRSBRL_TYPE_IND" logicalName="tbrsbrlTypeInd" type="String" physicalName="TBRSBRL_TYPE_IND"/> 
+			<item name="TBRSBRL_ACTIVITY_DATE" logicalName="tbrsbrlActivityDate" type="java.util.Date" physicalName="TBRSBRL_ACTIVITY_DATE"/> 
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.banner.arsys.Tsasbrl.model.TbrsbrlAdapter</adapterClass>
+
+	</manager>
+</b:beans>
