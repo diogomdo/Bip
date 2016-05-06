@@ -10,6 +10,7 @@ public class CopyValueStatement {
 	String itemCopyFrom;
 	String itemCopyTo;
 	String blockCopyTo;
+	String targetBlock;
 	
 	public CopyValueStatement(){};
 	
@@ -86,7 +87,8 @@ public class CopyValueStatement {
 	}
 
 	public void setTargetBlock(String targetBlock) {
-		this.setBlockCopyTo(targetBlock);
+		this.targetBlock = targetBlock;
+		this.setBlockCopyTo(targetBlock) ;
 		
 	}
 	

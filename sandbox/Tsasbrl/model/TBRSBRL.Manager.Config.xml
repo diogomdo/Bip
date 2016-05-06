@@ -1,16 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<b:beans 
-	xmlns="urn:schemas:morphis:foundations:businessobject"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:b="http://www.springframework.org/schema/beans"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
-	<manager id="TBRSBRL.Manager.Config" name="TBRSBRL" targetTableName="TBRSBRL" keyMode="Unique" >
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<b:beans xmlns:b="http://www.springframework.org/schema/beans" xmlns="urn:schemas:morphis:foundations:businessobject" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="TBRSBRL.Manager.Config" keyMode="Unique" name="TBRSBRL" targetTableName="TBRSBRL">
 		
 		<items>
-			<item name="TBRSBRL_VALUE" logicalName="tbrsbrlValue" type="String" physicalName="TBRSBRL_VALUE"/> 
-			<item name="TBRSBRL_SBRC_CODE" logicalName="tbrsbrlSbrcCode" type="String" physicalName="TBRSBRL_SBRC_CODE" key="true"/> 
-			<item name="TBRSBRL_TYPE_IND" logicalName="tbrsbrlTypeInd" type="String" physicalName="TBRSBRL_TYPE_IND"/> 
-			<item name="TBRSBRL_ACTIVITY_DATE" logicalName="tbrsbrlActivityDate" type="java.util.Date" physicalName="TBRSBRL_ACTIVITY_DATE"/> 
+			<item logicalName="tbrsbrlValue" name="TBRSBRL_VALUE" physicalName="TBRSBRL_VALUE" type="String"/> 
+			<item key="true" logicalName="tbrsbrlSbrcCode" name="TBRSBRL_SBRC_CODE" physicalName="TBRSBRL_SBRC_CODE" type="String">
+                <value>
+                    <item businessObject="KEY_BLOCK" name="KEYBLOC_SBRC_CODE"/>
+                </value>
+            <value>
+                    <item businessObject="KEY_BLOCK" name="KEYBLOC_SBRC_CODE"/>
+                </value>
+            <value>
+                    <item businessObject="KEY_BLOCK" name="KEYBLOC_SBRC_CODE"/>
+                </value>
+            <value>
+                    <item businessObject="KEY_BLOCK" name="KEYBLOC_SBRC_CODE"/>
+                </value>
+            <value>
+                    <item businessObject="KEY_BLOCK" name="KEYBLOC_SBRC_CODE"/>
+                </value>
+            <value>
+                    <item businessObject="KEY_BLOCK" name="KEYBLOC_SBRC_CODE"/>
+                </value>
+            <value>
+                    <item businessObject="KEY_BLOCK" name="KEYBLOC_SBRC_CODE"/>
+                </value>
+            <value>
+                    <item businessObject="KEY_BLOCK" name="KEYBLOC_SBRC_CODE"/>
+                </value>
+            </item> 
+			<item logicalName="tbrsbrlTypeInd" name="TBRSBRL_TYPE_IND" physicalName="TBRSBRL_TYPE_IND" type="String"/> 
+			<item logicalName="tbrsbrlActivityDate" name="TBRSBRL_ACTIVITY_DATE" physicalName="TBRSBRL_ACTIVITY_DATE" type="java.util.Date"/> 
 		</items>
 		
     <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>

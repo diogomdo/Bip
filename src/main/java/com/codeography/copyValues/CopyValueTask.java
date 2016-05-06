@@ -42,6 +42,7 @@ public class CopyValueTask implements Task, TargetComments{
 	private  String targetBlock;
 	private FileInputStream in;
 	public List<CopyValueStatement> listOfCopyValues;
+	public BlockListCopyValues allCopyValues;
 	public CopyValueStatement copyValueCmmt;
 	private Boolean jobTodDo = false;
 
@@ -49,6 +50,7 @@ public class CopyValueTask implements Task, TargetComments{
 		this.dir = file;
 		this.copyValueCmmt = new CopyValueStatement();
 		this.listOfCopyValues = new ArrayList<CopyValueStatement>();
+		this.allCopyValues = new BlockListCopyValues();
 		search();
 	}
 
@@ -73,8 +75,12 @@ public class CopyValueTask implements Task, TargetComments{
 					
 					commentChecker(loadedClass.getAllContainedComments());
 				}
+				
+				this.allCopyValues.listOfCopyValues.addAll(listOfCopyValues);
+				
 			}
-		if(this.listOfCopyValues!=null){
+		
+		if(listOfCopyValues!=null){
 			jobTodDo  =true;
 			
 		}else{
@@ -82,7 +88,7 @@ public class CopyValueTask implements Task, TargetComments{
 		}
 	}
 	
-	private boolean commentChecker(List<Comment> allContainedComments)  {
+	private void commentChecker(List<Comment> allContainedComments)  {
 		
 		for (Comment comment : allContainedComments){
 			if (comment.toString().contains(CommentsColl.F2J_COPYVALUE.getCommetMsg())){
@@ -94,11 +100,9 @@ public class CopyValueTask implements Task, TargetComments{
 				 * pode acontecer no comentario nao haver bloco correspondente a copia.
 				 */
 				
-				this.listOfCopyValues.add(copyValueCmmt);
-				return true;
+				listOfCopyValues.add(copyValueCmmt);
 			}
 		}
-		return false;
 	}
 
 	public void execute() throws ParseException, IOException {

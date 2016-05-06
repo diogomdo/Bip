@@ -3,11 +3,6 @@
 	<manager id="SVBCIMP.Manager.Config" name="SVBCIMP">
 		<items>
 			<item logicalName="svbcimpSqprCode" name="SVBCIMP_SQPR_CODE" physicalName="SVBCIMP_SQPR_CODE" type="String">
-                <value>
-                    <item businessObject="KEYBLOCK" name="PROCESS_CODE"/>
-                </value>
-            </item>
-
 			<item logicalName="svbcimpSystemReqInd" name="SVBCIMP_SYSTEM_REQ_IND" physicalName="SVBCIMP_SYSTEM_REQ_IND" type="String"> 
 				<value>
 					<constant>N</constant>
