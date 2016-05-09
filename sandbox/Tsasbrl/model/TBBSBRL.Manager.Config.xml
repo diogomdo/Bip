@@ -1,318 +1,318 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<b:beans 
-	xmlns="urn:schemas:morphis:foundations:businessobject"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:b="http://www.springframework.org/schema/beans"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
-	<manager id="TBBSBRL.Manager.Config" name="TBBSBRL" targetTableName="TBBSBRL" keyMode="Unique" >
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<b:beans xmlns:b="http://www.springframework.org/schema/beans" xmlns="urn:schemas:morphis:foundations:businessobject" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="TBBSBRL.Manager.Config" keyMode="Unique" name="TBBSBRL" targetTableName="TBBSBRL">
 		
 		<items>
-			<item name="TBBSBRL_USE_RULES_IND" logicalName="tbbsbrlUseRulesInd" type="String" physicalName="TBBSBRL_USE_RULES_IND"/> 
-			<item name="RULES_DESC" logicalName="rulesDesc" type="String"  virtual="true"/> 
-			<item name="TBBSBRL_EXCL_REG_IND" logicalName="tbbsbrlExclRegInd" type="String" physicalName="TBBSBRL_EXCL_REG_IND"> 
+			<item logicalName="tbbsbrlUseRulesInd" name="TBBSBRL_USE_RULES_IND" physicalName="TBBSBRL_USE_RULES_IND" type="String"/> 
+			<item logicalName="rulesDesc" name="RULES_DESC" type="String" virtual="true"/> 
+			<item logicalName="tbbsbrlExclRegInd" name="TBBSBRL_EXCL_REG_IND" physicalName="TBBSBRL_EXCL_REG_IND" type="String"> 
 				<value>
 					<constant>N</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_PRINT_FIN_MEMO_IND" logicalName="tbbsbrlPrintFinMemoInd" type="String" physicalName="TBBSBRL_PRINT_FIN_MEMO_IND"> 
+			<item logicalName="tbbsbrlPrintFinMemoInd" name="TBBSBRL_PRINT_FIN_MEMO_IND" physicalName="TBBSBRL_PRINT_FIN_MEMO_IND" type="String"> 
 				<value>
 					<constant>N</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_PRINT_OTHR_MEMOS_IND" logicalName="tbbsbrlPrintOthrMemosInd" type="String" physicalName="TBBSBRL_PRINT_OTHR_MEMOS_IND"> 
+			<item logicalName="tbbsbrlPrintOthrMemosInd" name="TBBSBRL_PRINT_OTHR_MEMOS_IND" physicalName="TBBSBRL_PRINT_OTHR_MEMOS_IND" type="String"> 
 				<value>
 					<constant>N</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_CDE_IND" logicalName="tbbsbrlCdeInd" type="String" physicalName="TBBSBRL_CDE_IND"> 
+			<item logicalName="tbbsbrlCdeInd" name="TBBSBRL_CDE_IND" physicalName="TBBSBRL_CDE_IND" type="String"> 
 				<value>
 					<constant>N</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_PRINT_DEP_IND" logicalName="tbbsbrlPrintDepInd" type="String" physicalName="TBBSBRL_PRINT_DEP_IND"> 
+			<item logicalName="tbbsbrlPrintDepInd" name="TBBSBRL_PRINT_DEP_IND" physicalName="TBBSBRL_PRINT_DEP_IND" type="String"> 
 				<value>
 					<constant>N</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_PRINT_EP_NOTE_IND" logicalName="tbbsbrlPrintEpNoteInd" type="String" physicalName="TBBSBRL_PRINT_EP_NOTE_IND"> 
+			<item logicalName="tbbsbrlPrintEpNoteInd" name="TBBSBRL_PRINT_EP_NOTE_IND" physicalName="TBBSBRL_PRINT_EP_NOTE_IND" type="String"> 
 				<value>
 					<constant>N</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_SUM_FINAID_MEMO_IND" logicalName="tbbsbrlSumFinaidMemoInd" type="String" physicalName="TBBSBRL_SUM_FINAID_MEMO_IND"> 
+			<item logicalName="tbbsbrlSumFinaidMemoInd" name="TBBSBRL_SUM_FINAID_MEMO_IND" physicalName="TBBSBRL_SUM_FINAID_MEMO_IND" type="String"> 
 				<value>
 					<constant>N</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_FINAID_MEMO_AFFECT_DUE" logicalName="tbbsbrlFinaidMemoAffectDue" type="String" physicalName="TBBSBRL_FINAID_MEMO_AFFECT_DUE"> 
+			<item logicalName="tbbsbrlFinaidMemoAffectDue" name="TBBSBRL_FINAID_MEMO_AFFECT_DUE" physicalName="TBBSBRL_FINAID_MEMO_AFFECT_DUE" type="String"> 
 				<value>
 					<constant>N</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_PREAUTH_CRED_AFF_DUE" logicalName="tbbsbrlPreauthCredAffDue" type="String" physicalName="TBBSBRL_PREAUTH_CRED_AFF_DUE"> 
+			<item logicalName="tbbsbrlPreauthCredAffDue" name="TBBSBRL_PREAUTH_CRED_AFF_DUE" physicalName="TBBSBRL_PREAUTH_CRED_AFF_DUE" type="String"> 
 				<value>
 					<constant>N</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_OTHER_MEMO_AFFECT_DUE" logicalName="tbbsbrlOtherMemoAffectDue" type="String" physicalName="TBBSBRL_OTHER_MEMO_AFFECT_DUE"> 
+			<item logicalName="tbbsbrlOtherMemoAffectDue" name="TBBSBRL_OTHER_MEMO_AFFECT_DUE" physicalName="TBBSBRL_OTHER_MEMO_AFFECT_DUE" type="String"> 
 				<value>
 					<constant>N</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_PREV_BAL_OFF_IND" logicalName="tbbsbrlPrevBalOffInd" type="String" physicalName="TBBSBRL_PREV_BAL_OFF_IND"> 
+			<item logicalName="tbbsbrlPrevBalOffInd" name="TBBSBRL_PREV_BAL_OFF_IND" physicalName="TBBSBRL_PREV_BAL_OFF_IND" type="String"> 
 				<value>
 					<constant>N</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_CURR_CRED_PREV_DBT_IND" logicalName="tbbsbrlCurrCredPrevDbtInd" type="String" physicalName="TBBSBRL_CURR_CRED_PREV_DBT_IND"> 
+			<item logicalName="tbbsbrlCurrCredPrevDbtInd" name="TBBSBRL_CURR_CRED_PREV_DBT_IND" physicalName="TBBSBRL_CURR_CRED_PREV_DBT_IND" type="String"> 
 				<value>
 					<constant>N</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_INCL_ENROLL_IND" logicalName="tbbsbrlInclEnrollInd" type="String" physicalName="TBBSBRL_INCL_ENROLL_IND"> 
+			<item logicalName="tbbsbrlInclEnrollInd" name="TBBSBRL_INCL_ENROLL_IND" physicalName="TBBSBRL_INCL_ENROLL_IND" type="String"> 
 				<value>
 					<constant>N</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_CRSE_REQUIRED_IND" logicalName="tbbsbrlCrseRequiredInd" type="String" physicalName="TBBSBRL_CRSE_REQUIRED_IND"> 
+			<item logicalName="tbbsbrlCrseRequiredInd" name="TBBSBRL_CRSE_REQUIRED_IND" physicalName="TBBSBRL_CRSE_REQUIRED_IND" type="String"> 
 				<value>
 					<constant>N</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_ACCT_BILLABLE_IND" logicalName="tbbsbrlAcctBillableInd" type="String" physicalName="TBBSBRL_ACCT_BILLABLE_IND"> 
+			<item logicalName="tbbsbrlAcctBillableInd" name="TBBSBRL_ACCT_BILLABLE_IND" physicalName="TBBSBRL_ACCT_BILLABLE_IND" type="String"> 
 				<value>
 					<constant>N</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_PRINT_ORDER" logicalName="tbbsbrlPrintOrder" type="String" physicalName="TBBSBRL_PRINT_ORDER"> 
+			<item logicalName="tbbsbrlPrintOrder" name="TBBSBRL_PRINT_ORDER" physicalName="TBBSBRL_PRINT_ORDER" type="String"> 
 				<value>
 					<constant>ZN</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_FORM_TYPE" logicalName="tbbsbrlFormType" type="String" physicalName="TBBSBRL_FORM_TYPE"> 
+			<item logicalName="tbbsbrlFormType" name="TBBSBRL_FORM_TYPE" physicalName="TBBSBRL_FORM_TYPE" type="String"> 
 				<value>
 					<constant>B</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_PRINT_HEADINGS_IND" logicalName="tbbsbrlPrintHeadingsInd" type="String" physicalName="TBBSBRL_PRINT_HEADINGS_IND"> 
+			<item logicalName="tbbsbrlPrintHeadingsInd" name="TBBSBRL_PRINT_HEADINGS_IND" physicalName="TBBSBRL_PRINT_HEADINGS_IND" type="String"> 
 				<value>
 					<constant>Y</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_PRINT_SCHEDULE_IND" logicalName="tbbsbrlPrintScheduleInd" type="String" physicalName="TBBSBRL_PRINT_SCHEDULE_IND"> 
+			<item logicalName="tbbsbrlPrintScheduleInd" name="TBBSBRL_PRINT_SCHEDULE_IND" physicalName="TBBSBRL_PRINT_SCHEDULE_IND" type="String"> 
 				<value>
 					<constant>Y</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_CURRENT_DUE_DATE" logicalName="tbbsbrlCurrentDueDate" type="java.util.Date" physicalName="TBBSBRL_CURRENT_DUE_DATE"/> 
-			<item name="TBBSBRL_SEL_TERM_CHARGES" logicalName="tbbsbrlSelTermCharges" type="String" physicalName="TBBSBRL_SEL_TERM_CHARGES"> 
+			<item logicalName="tbbsbrlCurrentDueDate" name="TBBSBRL_CURRENT_DUE_DATE" physicalName="TBBSBRL_CURRENT_DUE_DATE" type="java.util.Date"/> 
+			<item logicalName="tbbsbrlSelTermCharges" name="TBBSBRL_SEL_TERM_CHARGES" physicalName="TBBSBRL_SEL_TERM_CHARGES" type="String"> 
 				<value>
 					<constant>A</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_SUM_TERM_CHARGES" logicalName="tbbsbrlSumTermCharges" type="String" physicalName="TBBSBRL_SUM_TERM_CHARGES"> 
+			<item logicalName="tbbsbrlSumTermCharges" name="TBBSBRL_SUM_TERM_CHARGES" physicalName="TBBSBRL_SUM_TERM_CHARGES" type="String"> 
 				<value>
 					<constant>D</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_SUM_PAYMENTS" logicalName="tbbsbrlSumPayments" type="String" physicalName="TBBSBRL_SUM_PAYMENTS"> 
+			<item logicalName="tbbsbrlSumPayments" name="TBBSBRL_SUM_PAYMENTS" physicalName="TBBSBRL_SUM_PAYMENTS" type="String"> 
 				<value>
 					<constant>N</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_CURR_CODE" logicalName="tbbsbrlCurrCode" type="String" physicalName="TBBSBRL_CURR_CODE"/> 
-			<item name="CURR_TITLE" logicalName="currTitle" type="String"  virtual="true"/> 
-			<item name="TBBSBRL_SBRC_CODE" logicalName="tbbsbrlSbrcCode" type="String" physicalName="TBBSBRL_SBRC_CODE" key="true"/> 
-			<item name="TBBSBRL_ACTIVITY_DATE" logicalName="tbbsbrlActivityDate" type="java.util.Date" physicalName="TBBSBRL_ACTIVITY_DATE"/> 
-			<item name="CRN_LNTH" logicalName="crnLnth" type="java.math.BigDecimal"  virtual="true"> 
+			<item logicalName="tbbsbrlCurrCode" name="TBBSBRL_CURR_CODE" physicalName="TBBSBRL_CURR_CODE" type="String"/> 
+			<item logicalName="currTitle" name="CURR_TITLE" type="String" virtual="true"/> 
+			<item key="true" logicalName="tbbsbrlSbrcCode" name="TBBSBRL_SBRC_CODE" physicalName="TBBSBRL_SBRC_CODE" type="String">
+                <value>
+                    <item businessObject="KEY_BLOCK" name="KEYBLOC_SBRC_CODE"/>
+                </value>
+            </item> 
+			<item logicalName="tbbsbrlActivityDate" name="TBBSBRL_ACTIVITY_DATE" physicalName="TBBSBRL_ACTIVITY_DATE" type="java.util.Date"/> 
+			<item logicalName="crnLnth" name="CRN_LNTH" type="java.math.BigDecimal" virtual="true"> 
 				<value>
 					<constant>5</constant>
 				</value>	
 			</item>
-			<item name="SUBJ_LNTH" logicalName="subjLnth" type="java.math.BigDecimal"  virtual="true"> 
+			<item logicalName="subjLnth" name="SUBJ_LNTH" type="java.math.BigDecimal" virtual="true"> 
 				<value>
 					<constant>4</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_PROC_FINAID_IND" logicalName="tbbsbrlProcFinaidInd" type="String" physicalName="TBBSBRL_PROC_FINAID_IND"> 
+			<item logicalName="tbbsbrlProcFinaidInd" name="TBBSBRL_PROC_FINAID_IND" physicalName="TBBSBRL_PROC_FINAID_IND" type="String"> 
 				<value>
 					<constant>N</constant>
 				</value>	
 			</item>
-			<item name="CRSE_LNTH" logicalName="crseLnth" type="java.math.BigDecimal"  virtual="true"> 
+			<item logicalName="crseLnth" name="CRSE_LNTH" type="java.math.BigDecimal" virtual="true"> 
 				<value>
 					<constant>5</constant>
 				</value>	
 			</item>
-			<item name="SECT_LNTH" logicalName="sectLnth" type="java.math.BigDecimal"  virtual="true"> 
+			<item logicalName="sectLnth" name="SECT_LNTH" type="java.math.BigDecimal" virtual="true"> 
 				<value>
 					<constant>3</constant>
 				</value>	
 			</item>
-			<item name="CAMP_LNTH" logicalName="campLnth" type="java.math.BigDecimal"  virtual="true"> 
+			<item logicalName="campLnth" name="CAMP_LNTH" type="java.math.BigDecimal" virtual="true"> 
 				<value>
 					<constant>3</constant>
 				</value>	
 			</item>
-			<item name="CREDIT_HR_LNTH" logicalName="creditHrLnth" type="java.math.BigDecimal"  virtual="true"> 
+			<item logicalName="creditHrLnth" name="CREDIT_HR_LNTH" type="java.math.BigDecimal" virtual="true"> 
 				<value>
 					<constant>5</constant>
 				</value>	
 			</item>
-			<item name="LEVL_LNTH" logicalName="levlLnth" type="java.math.BigDecimal"  virtual="true"> 
+			<item logicalName="levlLnth" name="LEVL_LNTH" type="java.math.BigDecimal" virtual="true"> 
 				<value>
 					<constant>2</constant>
 				</value>	
 			</item>
-			<item name="STAT_LNTH" logicalName="statLnth" type="java.math.BigDecimal"  virtual="true"> 
+			<item logicalName="statLnth" name="STAT_LNTH" type="java.math.BigDecimal" virtual="true"> 
 				<value>
 					<constant>2</constant>
 				</value>	
 			</item>
-			<item name="MEET_DAY_LNTH" logicalName="meetDayLnth" type="java.math.BigDecimal"  virtual="true"> 
+			<item logicalName="meetDayLnth" name="MEET_DAY_LNTH" type="java.math.BigDecimal" virtual="true"> 
 				<value>
 					<constant>7</constant>
 				</value>	
 			</item>
-			<item name="MEET_TIME_LNTH" logicalName="meetTimeLnth" type="java.math.BigDecimal"  virtual="true"> 
+			<item logicalName="meetTimeLnth" name="MEET_TIME_LNTH" type="java.math.BigDecimal" virtual="true"> 
 				<value>
 					<constant>11</constant>
 				</value>	
 			</item>
-			<item name="BLDG_LNTH" logicalName="bldgLnth" type="java.math.BigDecimal"  virtual="true"> 
+			<item logicalName="bldgLnth" name="BLDG_LNTH" type="java.math.BigDecimal" virtual="true"> 
 				<value>
 					<constant>7</constant>
 				</value>	
 			</item>
-			<item name="GMOD_LNTH" logicalName="gmodLnth" type="java.math.BigDecimal"  virtual="true"> 
+			<item logicalName="gmodLnth" name="GMOD_LNTH" type="java.math.BigDecimal" virtual="true"> 
 				<value>
 					<constant>1</constant>
 				</value>	
 			</item>
-			<item name="PTRM_LNTH" logicalName="ptrmLnth" type="java.math.BigDecimal"  virtual="true"> 
+			<item logicalName="ptrmLnth" name="PTRM_LNTH" type="java.math.BigDecimal" virtual="true"> 
 				<value>
 					<constant>3</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_PTRM_CODE_IND" logicalName="tbbsbrlPtrmCodeInd" type="String" physicalName="TBBSBRL_PTRM_CODE_IND"/> 
-			<item name="TBBSBRL_PTRM_HDNG" logicalName="tbbsbrlPtrmHdng" type="String" physicalName="TBBSBRL_PTRM_HDNG"> 
+			<item logicalName="tbbsbrlPtrmCodeInd" name="TBBSBRL_PTRM_CODE_IND" physicalName="TBBSBRL_PTRM_CODE_IND" type="String"/> 
+			<item logicalName="tbbsbrlPtrmHdng" name="TBBSBRL_PTRM_HDNG" physicalName="TBBSBRL_PTRM_HDNG" type="String"> 
 				<value>
 					<constant>P/T</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_CRN_IND" logicalName="tbbsbrlCrnInd" type="String" physicalName="TBBSBRL_CRN_IND"/> 
-			<item name="TBBSBRL_CRN_HDNG" logicalName="tbbsbrlCrnHdng" type="String" physicalName="TBBSBRL_CRN_HDNG"> 
+			<item logicalName="tbbsbrlCrnInd" name="TBBSBRL_CRN_IND" physicalName="TBBSBRL_CRN_IND" type="String"/> 
+			<item logicalName="tbbsbrlCrnHdng" name="TBBSBRL_CRN_HDNG" physicalName="TBBSBRL_CRN_HDNG" type="String"> 
 				<value>
 					<constant>CRN</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_SUBJ_CODE_IND" logicalName="tbbsbrlSubjCodeInd" type="String" physicalName="TBBSBRL_SUBJ_CODE_IND"/> 
-			<item name="TBBSBRL_SUBJ_HDNG" logicalName="tbbsbrlSubjHdng" type="String" physicalName="TBBSBRL_SUBJ_HDNG"> 
+			<item logicalName="tbbsbrlSubjCodeInd" name="TBBSBRL_SUBJ_CODE_IND" physicalName="TBBSBRL_SUBJ_CODE_IND" type="String"/> 
+			<item logicalName="tbbsbrlSubjHdng" name="TBBSBRL_SUBJ_HDNG" physicalName="TBBSBRL_SUBJ_HDNG" type="String"> 
 				<value>
 					<constant>SUBJ</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_CRSE_NUMB_IND" logicalName="tbbsbrlCrseNumbInd" type="String" physicalName="TBBSBRL_CRSE_NUMB_IND"/> 
-			<item name="TBBSBRL_CRSE_HDNG" logicalName="tbbsbrlCrseHdng" type="String" physicalName="TBBSBRL_CRSE_HDNG"> 
+			<item logicalName="tbbsbrlCrseNumbInd" name="TBBSBRL_CRSE_NUMB_IND" physicalName="TBBSBRL_CRSE_NUMB_IND" type="String"/> 
+			<item logicalName="tbbsbrlCrseHdng" name="TBBSBRL_CRSE_HDNG" physicalName="TBBSBRL_CRSE_HDNG" type="String"> 
 				<value>
 					<constant>CRSE</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_SECT_IND" logicalName="tbbsbrlSectInd" type="String" physicalName="TBBSBRL_SECT_IND"/> 
-			<item name="TBBSBRL_SECT_HDNG" logicalName="tbbsbrlSectHdng" type="String" physicalName="TBBSBRL_SECT_HDNG"> 
+			<item logicalName="tbbsbrlSectInd" name="TBBSBRL_SECT_IND" physicalName="TBBSBRL_SECT_IND" type="String"/> 
+			<item logicalName="tbbsbrlSectHdng" name="TBBSBRL_SECT_HDNG" physicalName="TBBSBRL_SECT_HDNG" type="String"> 
 				<value>
 					<constant>SEC</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_CAMP_CODE_IND" logicalName="tbbsbrlCampCodeInd" type="String" physicalName="TBBSBRL_CAMP_CODE_IND"/> 
-			<item name="TBBSBRL_CAMP_HDNG" logicalName="tbbsbrlCampHdng" type="String" physicalName="TBBSBRL_CAMP_HDNG"> 
+			<item logicalName="tbbsbrlCampCodeInd" name="TBBSBRL_CAMP_CODE_IND" physicalName="TBBSBRL_CAMP_CODE_IND" type="String"/> 
+			<item logicalName="tbbsbrlCampHdng" name="TBBSBRL_CAMP_HDNG" physicalName="TBBSBRL_CAMP_HDNG" type="String"> 
 				<value>
 					<constant>CMP</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_CRSE_TITLE_IND" logicalName="tbbsbrlCrseTitleInd" type="String" physicalName="TBBSBRL_CRSE_TITLE_IND"/> 
-			<item name="TBBSBRL_TITLE_LNTH" logicalName="tbbsbrlTitleLnth" type="java.math.BigDecimal" physicalName="TBBSBRL_TITLE_LNTH"> 
+			<item logicalName="tbbsbrlCrseTitleInd" name="TBBSBRL_CRSE_TITLE_IND" physicalName="TBBSBRL_CRSE_TITLE_IND" type="String"/> 
+			<item logicalName="tbbsbrlTitleLnth" name="TBBSBRL_TITLE_LNTH" physicalName="TBBSBRL_TITLE_LNTH" type="java.math.BigDecimal"> 
 				<value>
 					<constant>30</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_TITLE_HDNG" logicalName="tbbsbrlTitleHdng" type="String" physicalName="TBBSBRL_TITLE_HDNG"> 
+			<item logicalName="tbbsbrlTitleHdng" name="TBBSBRL_TITLE_HDNG" physicalName="TBBSBRL_TITLE_HDNG" type="String"> 
 				<value>
 					<constant>COURSE TITLE</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_CREDIT_HR_IND" logicalName="tbbsbrlCreditHrInd" type="String" physicalName="TBBSBRL_CREDIT_HR_IND"/> 
-			<item name="TBBSBRL_CREDIT_HR_HDNG" logicalName="tbbsbrlCreditHrHdng" type="String" physicalName="TBBSBRL_CREDIT_HR_HDNG"> 
+			<item logicalName="tbbsbrlCreditHrInd" name="TBBSBRL_CREDIT_HR_IND" physicalName="TBBSBRL_CREDIT_HR_IND" type="String"/> 
+			<item logicalName="tbbsbrlCreditHrHdng" name="TBBSBRL_CREDIT_HR_HDNG" physicalName="TBBSBRL_CREDIT_HR_HDNG" type="String"> 
 				<value>
 					<constant>CREDS</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_LEVL_CODE_IND" logicalName="tbbsbrlLevlCodeInd" type="String" physicalName="TBBSBRL_LEVL_CODE_IND"/> 
-			<item name="TBBSBRL_LEVL_HDNG" logicalName="tbbsbrlLevlHdng" type="String" physicalName="TBBSBRL_LEVL_HDNG"> 
+			<item logicalName="tbbsbrlLevlCodeInd" name="TBBSBRL_LEVL_CODE_IND" physicalName="TBBSBRL_LEVL_CODE_IND" type="String"/> 
+			<item logicalName="tbbsbrlLevlHdng" name="TBBSBRL_LEVL_HDNG" physicalName="TBBSBRL_LEVL_HDNG" type="String"> 
 				<value>
 					<constant>LV</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_RSTS_CODE_IND" logicalName="tbbsbrlRstsCodeInd" type="String" physicalName="TBBSBRL_RSTS_CODE_IND"/> 
-			<item name="TBBSBRL_STAT_HDNG" logicalName="tbbsbrlStatHdng" type="String" physicalName="TBBSBRL_STAT_HDNG"> 
+			<item logicalName="tbbsbrlRstsCodeInd" name="TBBSBRL_RSTS_CODE_IND" physicalName="TBBSBRL_RSTS_CODE_IND" type="String"/> 
+			<item logicalName="tbbsbrlStatHdng" name="TBBSBRL_STAT_HDNG" physicalName="TBBSBRL_STAT_HDNG" type="String"> 
 				<value>
 					<constant>ST</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_MEET_DAY_IND" logicalName="tbbsbrlMeetDayInd" type="String" physicalName="TBBSBRL_MEET_DAY_IND"/> 
-			<item name="TBBSBRL_MEET_DAY_HDNG" logicalName="tbbsbrlMeetDayHdng" type="String" physicalName="TBBSBRL_MEET_DAY_HDNG"> 
+			<item logicalName="tbbsbrlMeetDayInd" name="TBBSBRL_MEET_DAY_IND" physicalName="TBBSBRL_MEET_DAY_IND" type="String"/> 
+			<item logicalName="tbbsbrlMeetDayHdng" name="TBBSBRL_MEET_DAY_HDNG" physicalName="TBBSBRL_MEET_DAY_HDNG" type="String"> 
 				<value>
 					<constant>DAYS</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_MEET_TIME_IND" logicalName="tbbsbrlMeetTimeInd" type="String" physicalName="TBBSBRL_MEET_TIME_IND"/> 
-			<item name="TBBSBRL_MEET_TIME_HDNG" logicalName="tbbsbrlMeetTimeHdng" type="String" physicalName="TBBSBRL_MEET_TIME_HDNG"> 
+			<item logicalName="tbbsbrlMeetTimeInd" name="TBBSBRL_MEET_TIME_IND" physicalName="TBBSBRL_MEET_TIME_IND" type="String"/> 
+			<item logicalName="tbbsbrlMeetTimeHdng" name="TBBSBRL_MEET_TIME_HDNG" physicalName="TBBSBRL_MEET_TIME_HDNG" type="String"> 
 				<value>
 					<constant>START/STOP</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_BLDG_CODE_IND" logicalName="tbbsbrlBldgCodeInd" type="String" physicalName="TBBSBRL_BLDG_CODE_IND"/> 
-			<item name="TBBSBRL_BLDG_HDNG" logicalName="tbbsbrlBldgHdng" type="String" physicalName="TBBSBRL_BLDG_HDNG"> 
+			<item logicalName="tbbsbrlBldgCodeInd" name="TBBSBRL_BLDG_CODE_IND" physicalName="TBBSBRL_BLDG_CODE_IND" type="String"/> 
+			<item logicalName="tbbsbrlBldgHdng" name="TBBSBRL_BLDG_HDNG" physicalName="TBBSBRL_BLDG_HDNG" type="String"> 
 				<value>
 					<constant>BUILD</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_ROOM_CODE_IND" logicalName="tbbsbrlRoomCodeInd" type="String" physicalName="TBBSBRL_ROOM_CODE_IND"/> 
-			<item name="TBBSBRL_ROOM_LNTH" logicalName="tbbsbrlRoomLnth" type="java.math.BigDecimal" physicalName="TBBSBRL_ROOM_LNTH"> 
+			<item logicalName="tbbsbrlRoomCodeInd" name="TBBSBRL_ROOM_CODE_IND" physicalName="TBBSBRL_ROOM_CODE_IND" type="String"/> 
+			<item logicalName="tbbsbrlRoomLnth" name="TBBSBRL_ROOM_LNTH" physicalName="TBBSBRL_ROOM_LNTH" type="java.math.BigDecimal"> 
 				<value>
 					<constant>5</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_ROOM_HDNG" logicalName="tbbsbrlRoomHdng" type="String" physicalName="TBBSBRL_ROOM_HDNG"> 
+			<item logicalName="tbbsbrlRoomHdng" name="TBBSBRL_ROOM_HDNG" physicalName="TBBSBRL_ROOM_HDNG" type="String"> 
 				<value>
 					<constant>ROOM</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_INSTRUCTOR_IND" logicalName="tbbsbrlInstructorInd" type="String" physicalName="TBBSBRL_INSTRUCTOR_IND"/> 
-			<item name="TBBSBRL_INSTR_LNTH" logicalName="tbbsbrlInstrLnth" type="java.math.BigDecimal" physicalName="TBBSBRL_INSTR_LNTH"> 
+			<item logicalName="tbbsbrlInstructorInd" name="TBBSBRL_INSTRUCTOR_IND" physicalName="TBBSBRL_INSTRUCTOR_IND" type="String"/> 
+			<item logicalName="tbbsbrlInstrLnth" name="TBBSBRL_INSTR_LNTH" physicalName="TBBSBRL_INSTR_LNTH" type="java.math.BigDecimal"> 
 				<value>
 					<constant>15</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_INSTR_HDNG" logicalName="tbbsbrlInstrHdng" type="String" physicalName="TBBSBRL_INSTR_HDNG"> 
+			<item logicalName="tbbsbrlInstrHdng" name="TBBSBRL_INSTR_HDNG" physicalName="TBBSBRL_INSTR_HDNG" type="String"> 
 				<value>
 					<constant>INSTRUCTOR</constant>
 				</value>	
 			</item>
-			<item name="TBBSBRL_GMOD_CODE_IND" logicalName="tbbsbrlGmodCodeInd" type="String" physicalName="TBBSBRL_GMOD_CODE_IND"/> 
-			<item name="TBBSBRL_GMOD_HDNG" logicalName="tbbsbrlGmodHdng" type="String" physicalName="TBBSBRL_GMOD_HDNG"> 
+			<item logicalName="tbbsbrlGmodCodeInd" name="TBBSBRL_GMOD_CODE_IND" physicalName="TBBSBRL_GMOD_CODE_IND" type="String"/> 
+			<item logicalName="tbbsbrlGmodHdng" name="TBBSBRL_GMOD_HDNG" physicalName="TBBSBRL_GMOD_HDNG" type="String"> 
 				<value>
 					<constant>G</constant>
 				</value>	
 			</item>
-			<item name="SELECT_TOTAL" logicalName="selectTotal" type="java.math.BigDecimal"  virtual="true"> 
+			<item logicalName="selectTotal" name="SELECT_TOTAL" type="java.math.BigDecimal" virtual="true"> 
 				<value>
 					<constant>0</constant>
 				</value>	
 			</item>
-			<item name="EFFDATE_EFF_DATE_TIME" logicalName="effdateEffDateTime" type="String"  virtual="true"/> 
-			<item name="HOLD_CONV_RATE" logicalName="holdConvRate" type="java.math.BigDecimal"  virtual="true"/> 
-			<item name="DEL_PENDING" logicalName="delPending" type="String"  virtual="true"> 
+			<item logicalName="effdateEffDateTime" name="EFFDATE_EFF_DATE_TIME" type="String" virtual="true"/> 
+			<item logicalName="holdConvRate" name="HOLD_CONV_RATE" type="java.math.BigDecimal" virtual="true"/> 
+			<item logicalName="delPending" name="DEL_PENDING" type="String" virtual="true"> 
 				<value>
 					<constant>N</constant>
 				</value>	

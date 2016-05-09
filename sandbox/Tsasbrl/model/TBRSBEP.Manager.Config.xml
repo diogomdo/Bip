@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<b:beans 
-	xmlns="urn:schemas:morphis:foundations:businessobject"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:b="http://www.springframework.org/schema/beans"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
-	<manager id="TBRSBEP.Manager.Config" name="tbrsbep" keyMode="Unique" >
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<b:beans xmlns:b="http://www.springframework.org/schema/beans" xmlns="urn:schemas:morphis:foundations:businessobject" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="TBRSBEP.Manager.Config" keyMode="Unique" name="tbrsbep">
 		
 		<items>
-			<item name="TBRSBEP_SBRC_CODE" logicalName="tbrsbepSbrcCode" type="String" physicalName="TBRSBEP_SBRC_CODE"/> 
-			<item name="TBRSBEP_TERM_CODE" logicalName="tbrsbepTermCode" type="String" physicalName="TBRSBEP_TERM_CODE"/> 
-			<item name="TBRSBEP_CUTOFF_DATE" logicalName="tbrsbepCutoffDate" type="java.util.Date" physicalName="TBRSBEP_CUTOFF_DATE"/> 
-			<item name="TBRSBEP_DUE_DATE" logicalName="tbrsbepDueDate" type="java.util.Date" physicalName="TBRSBEP_DUE_DATE"/> 
-			<item name="TBRSBEP_ACTIVITY_DATE" logicalName="tbrsbepActivityDate" type="java.util.Date" physicalName="TBRSBEP_ACTIVITY_DATE"/> 
-			<item name="TBRSBEP_USER_ID" logicalName="tbrsbepUserId" type="String" physicalName="TBRSBEP_USER_ID"/> 
-			<item name="TBRSBEP_DATA_ORIGIN" logicalName="tbrsbepDataOrigin" type="String" physicalName="TBRSBEP_DATA_ORIGIN"/> 
-			<item name="TBRSBEP_SURROGATE_ID" logicalName="tbrsbepSurrogateId" type="java.math.BigDecimal" physicalName="TBRSBEP_SURROGATE_ID"/> 
-			<item name="TBRSBEP_VERSION" logicalName="tbrsbepVersion" type="java.math.BigDecimal" physicalName="TBRSBEP_VERSION"/> 
-			<item name="TBRSBEP_VPDI_CODE" logicalName="tbrsbepVpdiCode" type="String" physicalName="TBRSBEP_VPDI_CODE"/> 
+			<item logicalName="tbrsbepSbrcCode" name="TBRSBEP_SBRC_CODE" physicalName="TBRSBEP_SBRC_CODE" type="String">
+                <value>
+                    <item businessObject="KEY_BLOCK" name="KEYBLOC_SBRC_CODE"/>
+                </value>
+            </item>
+			<item logicalName="tbrsbepTermCode" name="TBRSBEP_TERM_CODE" physicalName="TBRSBEP_TERM_CODE" type="String"/> 
+			<item logicalName="tbrsbepCutoffDate" name="TBRSBEP_CUTOFF_DATE" physicalName="TBRSBEP_CUTOFF_DATE" type="java.util.Date"/> 
+			<item logicalName="tbrsbepDueDate" name="TBRSBEP_DUE_DATE" physicalName="TBRSBEP_DUE_DATE" type="java.util.Date"/> 
+			<item logicalName="tbrsbepActivityDate" name="TBRSBEP_ACTIVITY_DATE" physicalName="TBRSBEP_ACTIVITY_DATE" type="java.util.Date"/> 
+			<item logicalName="tbrsbepUserId" name="TBRSBEP_USER_ID" physicalName="TBRSBEP_USER_ID" type="String"/> 
+			<item logicalName="tbrsbepDataOrigin" name="TBRSBEP_DATA_ORIGIN" physicalName="TBRSBEP_DATA_ORIGIN" type="String"/> 
+			<item logicalName="tbrsbepSurrogateId" name="TBRSBEP_SURROGATE_ID" physicalName="TBRSBEP_SURROGATE_ID" type="java.math.BigDecimal"/> 
+			<item logicalName="tbrsbepVersion" name="TBRSBEP_VERSION" physicalName="TBRSBEP_VERSION" type="java.math.BigDecimal"/> 
+			<item logicalName="tbrsbepVpdiCode" name="TBRSBEP_VPDI_CODE" physicalName="TBRSBEP_VPDI_CODE" type="String"/> 
 		</items>
 		
     <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>

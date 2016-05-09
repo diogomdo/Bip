@@ -8,29 +8,12 @@
                 <value>
                     <item businessObject="KEY_BLOCK" name="KEYBLOC_SBRC_CODE"/>
                 </value>
-            <value>
-                    <item businessObject="KEY_BLOCK" name="KEYBLOC_SBRC_CODE"/>
-                </value>
-            <value>
-                    <item businessObject="KEY_BLOCK" name="KEYBLOC_SBRC_CODE"/>
-                </value>
-            <value>
-                    <item businessObject="KEY_BLOCK" name="KEYBLOC_SBRC_CODE"/>
-                </value>
-            <value>
-                    <item businessObject="KEY_BLOCK" name="KEYBLOC_SBRC_CODE"/>
-                </value>
-            <value>
-                    <item businessObject="KEY_BLOCK" name="KEYBLOC_SBRC_CODE"/>
-                </value>
-            <value>
-                    <item businessObject="KEY_BLOCK" name="KEYBLOC_SBRC_CODE"/>
-                </value>
-            <value>
-                    <item businessObject="KEY_BLOCK" name="KEYBLOC_SBRC_CODE"/>
+            </item>
+			<item logicalName="tbrsbrlTypeInd" name="TBRSBRL_TYPE_IND" physicalName="TBRSBRL_TYPE_IND" type="String">
+                <value>
+                    <item businessObject="KEYBLOCK" name="tbbsbrl_sel_term_charges"/>
                 </value>
             </item> 
-			<item logicalName="tbrsbrlTypeInd" name="TBRSBRL_TYPE_IND" physicalName="TBRSBRL_TYPE_IND" type="String"/> 
 			<item logicalName="tbrsbrlActivityDate" name="TBRSBRL_ACTIVITY_DATE" physicalName="TBRSBRL_ACTIVITY_DATE" type="java.util.Date"/> 
 		</items>
 		

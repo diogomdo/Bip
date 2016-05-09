@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<b:beans 
-	xmlns="urn:schemas:morphis:foundations:businessobject"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:b="http://www.springframework.org/schema/beans"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
-	<manager id="TBRSBMS.Manager.Config" name="TBRSBMS" targetTableName="TBRSBMS" keyMode="Unique" >
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<b:beans xmlns:b="http://www.springframework.org/schema/beans" xmlns="urn:schemas:morphis:foundations:businessobject" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="TBRSBMS.Manager.Config" keyMode="Unique" name="TBRSBMS" targetTableName="TBRSBMS">
 		
 		<items>
-			<item name="TBRSBMS_MESSAGE" logicalName="tbrsbmsMessage" type="String" physicalName="TBRSBMS_MESSAGE"/> 
-			<item name="TBRSBMS_SEQ_NUMBER" logicalName="tbrsbmsSeqNumber" type="java.math.BigDecimal" physicalName="TBRSBMS_SEQ_NUMBER"/> 
-			<item name="TBRSBMS_ACTIVITY_DATE" logicalName="tbrsbmsActivityDate" type="java.util.Date" physicalName="TBRSBMS_ACTIVITY_DATE"/> 
-			<item name="TBRSBMS_SBRC_CODE" logicalName="tbrsbmsSbrcCode" type="String" physicalName="TBRSBMS_SBRC_CODE" key="true"/> 
+			<item logicalName="tbrsbmsMessage" name="TBRSBMS_MESSAGE" physicalName="TBRSBMS_MESSAGE" type="String"/> 
+			<item logicalName="tbrsbmsSeqNumber" name="TBRSBMS_SEQ_NUMBER" physicalName="TBRSBMS_SEQ_NUMBER" type="java.math.BigDecimal"/> 
+			<item logicalName="tbrsbmsActivityDate" name="TBRSBMS_ACTIVITY_DATE" physicalName="TBRSBMS_ACTIVITY_DATE" type="java.util.Date"/> 
+			<item key="true" logicalName="tbrsbmsSbrcCode" name="TBRSBMS_SBRC_CODE" physicalName="TBRSBMS_SBRC_CODE" type="String">
+                <value>
+                    <item businessObject="KEY_BLOCK" name="KEYBLOC_SBRC_CODE"/>
+                </value>
+            </item>
 		</items>
 		
     <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>

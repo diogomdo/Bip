@@ -48,7 +48,6 @@ public class CopyValueTask implements Task, TargetComments{
 
 	public CopyValueTask(File file) throws Exception {
 		this.dir = file;
-		this.copyValueCmmt = new CopyValueStatement();
 		this.listOfCopyValues = new ArrayList<CopyValueStatement>();
 		this.allCopyValues = new BlockListCopyValues();
 		search();
@@ -70,13 +69,13 @@ public class CopyValueTask implements Task, TargetComments{
 				if (file.getAbsoluteFile().getName().endsWith("Adapter.java") ){
 					
 					CompilationUnit loadedClass = new ClassNavigator(file).LoadClass();
-
+					
 					targetBlock = file.getAbsoluteFile().getName().split("Adapter.java")[0];
 					
 					commentChecker(loadedClass.getAllContainedComments());
 				}
 				
-				this.allCopyValues.listOfCopyValues.addAll(listOfCopyValues);
+//				this.allCopyValues.listOfCopyValues.addAll(listOfCopyValues);
 				
 			}
 		
@@ -92,6 +91,7 @@ public class CopyValueTask implements Task, TargetComments{
 		
 		for (Comment comment : allContainedComments){
 			if (comment.toString().contains(CommentsColl.F2J_COPYVALUE.getCommetMsg())){
+				this.copyValueCmmt = new CopyValueStatement();
 				copyValueCmmt.create(comment.toString());
 				copyValueCmmt.setTargetBlock(targetBlock.toUpperCase());
 				
@@ -100,7 +100,7 @@ public class CopyValueTask implements Task, TargetComments{
 				 * pode acontecer no comentario nao haver bloco correspondente a copia.
 				 */
 				
-				listOfCopyValues.add(copyValueCmmt);
+				this.listOfCopyValues.add(copyValueCmmt);
 			}
 		}
 	}
